@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team | Human-Agent Ally Lab</title>
+  <meta name="description" content="Meet the researchers and collaborators at Human-Agent Ally Lab.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    /* 姓名首字母頭像樣式 */
+    .avatar-placeholder {
+      width: 64px;
+      height: 64px;
+      background-color: var(--primary, #2563eb); /* 若 CSS 變數未定義則使用藍色 */
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 1rem;
+    }
+    
+    /* 區塊標題間距 */
+    .section-divider {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--muted, #e5e7eb);
+      padding-bottom: 1rem;
+    }
+    
+    .section-header-small {
+      font-size: 1.75rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      color: var(--foreground, #0f172a);
+    }
+
+    /* 引用文獻樣式微調 */
+    blockquote {
+      font-size: 0.9rem;
+      color: var(--muted-foreground, #64748b);
+      border-left: 3px solid var(--muted, #e5e7eb);
+      padding-left: 1rem;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+    
+    blockquote a {
+      color: var(--primary, #2563eb);
+      text-decoration: none;
+    }
+    
+    blockquote a:hover {
+      text-decoration: underline;
+    }
+
+    .topic-tag {
+        display: inline-block;
+        background-color: var(--muted, #f1f5f9);
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">H</div>
+        <div class="nav-logo-text">
+          <div class="nav-title">HAA Lab</div>
+          <div class="nav-subtitle">Human-Agent Ally</div>
+        </div>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="research.html" class="nav-link">Research</a>
+        <a href="people.html" class="nav-link">People</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+        <svg><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+      </button>
+    </div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="container mobile-menu-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="research.html" class="nav-link">Research</a>
+        <a href="people.html" class="nav-link">People</a>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="page-section">
+    <div class="container" style="max-width: 88rem;">
+      <div class="section-header">
+        <h1 class="section-title font-outfit">Our Team</h1>
+        <p class="section-description">
+          Meet the talented researchers and innovators driving forward the future of
+          human-agent collaboration.
+        </p>
+      </div>
+      
+      <div class="card" style="padding: 2.5rem; margin-bottom: 2rem;">
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
+            <div class="avatar-placeholder" style="width: 80px; height: 80px; font-size: 2rem; flex-shrink: 0;">CC</div>
+            <div>
+              <h2 class="font-outfit" style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">Dr. Chung-Chi Chen</h2>
+              <p style="font-size: 1.1rem; color: var(--primary); font-weight: 500; margin-bottom: 1rem;">
+                Researcher at the Artificial Intelligence Research Center, AIST, Japan
+              </p>
+            </div>
+          </div>
+          
+          <div style="line-height: 1.7; color: var(--muted-foreground);">
+            <p style="margin-bottom: 1rem;">
+              Chung-Chi Chen is currently a researcher at the Artificial Intelligence Research Center, AIST, Japan. His scholarly pursuits revolve around the intricate realm of financial opinion mining and the nuanced understanding and generation of financial documents.
+            </p>
+            <p style="margin-bottom: 1rem;">
+              He is the founder of ACL SIG-FinTech, and he has orchestrated the FinNLP/FinWeb workshop series within prestigious conferences such as IJCAI, WWW, EMNLP, and IJCNLP-AACL since 2019. He has guided the FinNum and FinArg shared task series on the NTCIR since 2018. He was also a presenter in the AACL-2020, EMNLP-2021, ECAI-2024, and SIGIR-2025 tutorials. He served as Program Co-Chair of NTCIR-18, Senior Area Chair of ACL-2024, and PC member in many representative conferences.
+            </p>
+            <p style="margin-bottom: 1rem;">
+              In academic competitions, he fortunately won the SIGIR Early Career Researcher Award (Excellence in Community Engagement), in addition to two Thesis Awards and Technology Innovation Award. Beyond academia, he has also ventured into the dynamic realm of FinTech. He earned one prize in a startup competition and four prizes in FinTech competitions. In addition to FinTech, he also has been honored with three prizes in LegalTech competitions.
+            </p>
+          </div>
+
+          <div style="background-color: var(--muted); padding: 1.5rem; border-radius: 0.5rem; margin-top: 0.5rem;">
+            <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Education</h3>
+            <ul style="list-style: none; padding: 0; display: grid; gap: 0.75rem;">
+              <li><strong>Ph.D.</strong>, NLP Lab, Dept. of Computer Science and Information Engineering, National Taiwan University</li>
+              <li><strong>M.S.</strong>, Dept. of Quantitative Finance, National Tsing Hua University</li>
+              <li><strong>B.S.</strong>, Major in Dept. of Economics, Minor in Dept. of CSIE, National Taipei University</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider">
+        <h2 class="section-header-small">Group Members</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">TT</div>
+          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Takehiro Takayanagi</h3>
+          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">The University of Tokyo - AIST RA</p>
+          <div class="topic-tag">Personalized Recommendation</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">YC</div>
+          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Yu-Yu Chang</h3>
+          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Chung Cheng University, Taiwan</p>
+          <div class="topic-tag">Presidential Debate Analysis</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">HH</div>
+          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Huan-Wen Ho</h3>
+          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Chung Cheng University, Taiwan</p>
+          <div class="topic-tag">Presidential Debate Analysis</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">TL</div>
+          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Tzu-En Liu</h3>
+          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <div class="topic-tag">Financial Compliance</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">GY</div>
+          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Guan-Bo Yang</h3>
+          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <div class="topic-tag">Financial Compliance</div>
+        </div>
+      </div>
+
+      <div class="section-divider">
+        <h2 class="section-header-small">Ongoing Collaboration</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">IG</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Iryna Gurevych</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Technische Universität Darmstadt, Germany</p>
+          <div class="topic-tag">Quality Assurance in Scholarly Communication</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">SA</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Sophia Ananiadou</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Manchester University, UK</p>
+          <div class="topic-tag">Multi-Agent Interactions</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">YH</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Yufang Hou</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">IT:U - Interdisciplinary Transformation University Austria</p>
+          <div class="topic-tag">Turning Evidence into Actionable Insights</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">YL</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Yongjae Lee</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">The Ulsan National Institute of Science and Technology</p>
+          <div class="topic-tag">Personalized Financial Education</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">FI</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Filip Ilievski</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Vrije Universiteit Amsterdam</p>
+          <div class="topic-tag">Assess Text Creativity</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">MD</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Min-Yuh Day</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">National Taipei University, Taiwan</p>
+          <div class="topic-tag">Chinese ESG Factor Analysis</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">YS</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Yohei Seki</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">University of Tsukuba, Japan</p>
+          <div class="topic-tag">Cross-Lingual ESG Scoring</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">JK</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Dr. Juyeon Kang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">3DS Outscale, France</p>
+          <div class="topic-tag">Cross-Lingual ESG Scoring</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">MW</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Ming-Hung Wang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">National Chung Cheng University, Taiwan</p>
+          <div class="topic-tag">Presidential Debate Analysis</div>
+        </div>
+        
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">DW</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Dittaya Wanvarie</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Chulalongkorn University, Thailand</p>
+          <div class="topic-tag">Multilingual ESG Compliance</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">AK</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Atsushi Keyaki</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Hitotsubashi University, Japan</p>
+          <div class="topic-tag">Multilingual ESG Compliance</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">CK</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Chun-Wei Kang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">National Yang Ming Chiao Tung University</p>
+          <div class="topic-tag">Prompt Recommendation</div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <div class="avatar-placeholder">YH</div>
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">You-Mei Huang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground);">National Yang Ming Chiao Tung University</p>
+          <div class="topic-tag">Agent Recommendation</div>
+        </div>
+      </div>
+
+      <div class="section-divider">
+        <h2 class="section-header-small">Former Members and Collaborators</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Tsung-Hsuan Pan</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University, Taiwan</p>
+          <blockquote>
+            Why Has the Least Side Effect on Model Editing. arXiv. <a href="https://arxiv.org/abs/2409.18679">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yung-Yu Shih</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University, Taiwan</p>
+          <div style="font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">Outstanding Award in the 18th TSC Thesis Award</div>
+          <blockquote>
+            Company-Specific Knowledge Matters... In <i>CIKM'25</i>. <a href="">pdf</a><br>
+            Rehearsing Answers... arXiv. <a href="https://arxiv.org/abs/2409.18678">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ke-Ching Chang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Yang Ming Chiao Tung University</p>
+          <blockquote>
+            Paraphrase-Aligned Machine Translation. arXiv. <a href="https://arxiv.org/abs/2412.05916">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Bo-Wei Chen</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Yang Ming Chiao Tung University</p>
+          <blockquote>
+            Refining Financial Consumer Complaints... arXiv. <a href="https://arxiv.org/abs/2504.09903">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Giulia D'Agostino</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Università della Svizzera Italiana - AIST Intern</p>
+          <blockquote>
+            Modeling Professionalism in Expert Questioning... arXiv. <a href="https://arxiv.org/pdf/2507.20249">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yu-Shang Huang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University - AIST Intern</p>
+          <blockquote>
+            Decision-oriented Text Evaluation. arXiv. <a href="https://arxiv.org/abs/2507.01923">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yu-Min Tseng</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University, Taiwan</p>
+          <div style="font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">Hon Hai Technology Award</div>
+          <blockquote>
+            Evaluating Large Language Models... <i>COLM'25</i>. <a href="https://arxiv.org/abs/2410.03254">arXiv</a><br>
+            DynamicESG... <i>CIKM'23</i>. <a href="papers/DynamicESG.pdf">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Hsiu-Hung Lee</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Yang Ming Chiao Tung University</p>
+          <blockquote>
+            RAG-Enhanced Evidence Recommendation... <i>WWW'25</i>.
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Chin-Yi Lin</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+            Argument-Based Sentiment Analysis... <i>ACL 2024</i>. <a href="papers/ACL24-Argument.pdf">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yi-Ning Juan</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+            Co-Trained Retriever-Generator... <i>WWW'25</i>. <a href="https://arxiv.org/abs/2409.18677">pdf</a><br>
+            Generating Multiple Questions... <i>INLG'23</i>. <a href="https://aclanthology.org/2023.inlg-main.35/">pdf</a><br>
+            CustodiAI... <i>IJCNLP-AACL'23</i>. <a href="https://aclanthology.org/2023.ijcnlp-demo.2/">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Tomas Goldsack</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">University of Sheffield - AIST Intern</p>
+          <blockquote>
+            From Facts to Insights... <i>COLING-2025</i>. <a href="https://arxiv.org/abs/2410.01039">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Sin-Han Yang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+            Entity-Aware Dual Co-Attention Network... <i>EACL 2023</i>. <a href="https://aclanthology.org/2023.findings-eacl.7/">pdf</a>
+          </blockquote>
+        </div>
+        
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Wei-Lin Chen</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University - AIST Intern</p>
+          <blockquote>
+            Fidelity-Enriched Contrastive Search... <i>EMNLP'23</i>. <a href="https://arxiv.org/pdf/2310.14981.pdf">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Chr-Jr Chiu</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+            Pre-Finetuning with Impact Duration... <i>WWW'25</i>. <a href="https://arxiv.org/abs/2409.17419">pdf</a><br>
+            Learning Strategies... <i>LREC-COLING'24</i>. <a href="https://aclanthology.org/2024.lrec-main.898/">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ming-Xuan Shi</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+            Enhancing Volatility Forecasting... <i>IJCNLP-AACL'23</i>. <a href="">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ai-Ni Li</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+            Financial Statement Adequacy
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yi-Ting Liu</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+             Dynamic Graph Transformer... <i>EACL'21</i>. <a href="papers/Implicit_Tag_Recognition_EACL_2021.pdf">pdf</a><br>
+             FinSense... <i>WSDM'21</i>. <a href="papers/FinSense_WSDM_Demo_2021.pdf">pdf</a>
+          </blockquote>
+        </div>
+        
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ting-Wei Hsu</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+             Semantics-Preserved Data Augmentation... <i>EMNLP'21</i>. <a href="papers/EMNLP2021.pdf">pdf</a><br>
+             Risk-aware Regularization... <i>ICWSM'21</i>. <a href="papers/Opinion_based_Portfolio_Selection___ICWSM_2021_____.pdf">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">JianTao Huang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+             NumHG: A Dataset for Number-Focused Headline Generation. <i>LREC-COLING'24</i>. <a href="https://arxiv.org/abs/2309.01455">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Tsun-Hsien Tang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+             Retrieving Implicit Information... <i>SIGIR'21</i>. <a href="papers/Retrieving_Implicit_Information_for_Stock_Movement_Prediction___SIGIR_2021.pdf">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Pei-Wei Kao</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+             NTUNLPL at FinCausal 2020... <a href="https://www.aclweb.org/anthology/2020.fnp-1.11.pdf">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Jui Chu</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+             Learning to Generate Correct Numeric Values... <i>WWW'20</i>. <a href="papers/HeadlineGeneration.pdf">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Hsiu-Hsuan Yeh</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
+          <blockquote>
+             Automation of Text-Based Economic Indicator Construction... <i>CIKM'24</i>. <a href="">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ramon Ruiz Dolz</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Universitat Politècnica de València</p>
+          <blockquote>
+             Learning Strategies for Robust Argument Mining... <i>LREC-COLING'24</i>. <a href="https://aclanthology.org/2024.lrec-main.898/">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Sohom Ghosh</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Jadavpur University</p>
+          <blockquote>
+             Generator-Guided Crowd Reaction Assessment. <i>WWW'24</i>. <a href="https://arxiv.org/abs/2403.09702">pdf</a><br>
+             The Mask One At a Time Framework... <i>FIRE'23</i>. <a href="">pdf</a>
+          </blockquote>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yuchen Eleanor Jiang</h3>
+          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">ETH Zürich - AIST Intern</p>
+          <blockquote>
+             Financial Q&A
+          </blockquote>
+        </div>
+      </div>
+      
+      <div class="mt-16">
+        <div class="card text-center" style="padding: 3rem; background: linear-gradient(135deg, hsla(30, 90%, 55%, 0.1), hsla(45, 95%, 65%, 0.1)); border: 1px solid hsla(30, 90%, 55%, 0.2);">
+          <h2 class="font-outfit" style="font-size: 1.875rem; font-weight: bold; margin-bottom: 1rem;">
+            Join Our Team
+          </h2>
+          <p style="color: var(--muted-foreground); margin-bottom: 2rem; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.625;">
+            We're always looking for passionate researchers, collaborators, and partners who share our vision of creating a harmonious human-agent society.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>Human-Agent Ally Lab</h3>
+          <p>
+            Preparing for the human-agent society through innovative research in
+            human-agent teaming and societal transformation.
+          </p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="research.html">Research Areas</a></li>
+            <li><a href="people.html">Our Team</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="footer-social">
+            <a href="mailto:c.c.chen@acm.org" class="footer-social-link">
+              <svg><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            </a>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--muted-foreground);">
+            Email: c.c.chen@acm.org
+          </p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> Human-Agent Ally Lab. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
