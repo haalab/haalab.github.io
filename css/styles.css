@@ -448,7 +448,8 @@ body {
 .hero-image-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=800&fit=crop');
+  /* 原本是 Unsplash 的連結，現在換成本地圖片 */
+  background-image: url('logo.png');
   background-size: cover;
   background-position: center;
   opacity: 0.4;
