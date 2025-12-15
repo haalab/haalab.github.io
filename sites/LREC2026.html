@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Shared Tasks to Benchmark Datasets: Lessons from NTCIR’s 26-Year Journey - LREC 2026 Tutorial</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .conf-info {
+            background-color: #eef7ff;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+        }
+
+        .conf-info strong {
+            color: var(--accent-color);
+        }
+
+        section {
+            padding: 40px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        .abstract-text {
+            text-align: justify;
+        }
+
+        /* Outline Section */
+        .outline-item {
+            margin-bottom: 25px;
+        }
+
+        .outline-item h3 {
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        .outline-speaker {
+            font-style: italic;
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Presenter Grid */
+        .presenters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .presenter-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .presenter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .presenter-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid var(--accent-color);
+        }
+
+        .presenter-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .presenter-affil {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            min-height: 40px; /* Align heights */
+        }
+
+        .presenter-bio {
+            font-size: 0.9rem;
+            text-align: left;
+            margin-top: 15px;
+            color: #555;
+        }
+
+        /* Material Section */
+        .material-box {
+            background-color: #fdfdfd;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            color: #888;
+        }
+
+        .btn-disabled {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ccc;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: not-allowed;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .presenters-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>From Shared Tasks to Benchmark Datasets:<br>Lessons from NTCIR’s 26-Year Journey</h1>
+        <div class="subtitle">A Tutorial at LREC 2026</div>
+        
+        <div class="conf-info">
+            <p><strong>Event:</strong> The 15th edition of the Language Resources and Evaluation Conference (LREC 2026)</p>
+            <p><strong>Location:</strong> Palau de Congressos de Palma, Palma de Mallorca (Spain)</p>
+            <p><strong>Date:</strong> 11-16 May 2026 (Tutorial Date: <strong>TBA</strong>)</p>
+        </div>
+    </header>
+
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <div class="abstract-text">
+            <p>This <strong>half-day</strong> tutorial will introduce the history and experiences of the NTCIR evaluation series (NII Testbeds and Community for Information access Research) from its inception in 1999 to the present. We will focus on how NTCIR pioneered multilingual information access evaluation, the challenges of collecting benchmark datasets (e.g. for Japanese, Chinese, and other languages) and how these challenges were addressed.</p>
+            
+            <p>The tutorial will be <strong>Introductory to adjacent areas</strong> – providing an overview from the beginning until now – so no prior knowledge of NTCIR is required. We will cover the evolution of NTCIR’s shared tasks, the methods used to gather and curate evaluation corpora, and lessons learned in organizing international benchmark test collections.</p>
+            
+            <p>Attendees will gain insight into NTCIR’s contributions to information retrieval (IR) and natural language processing (NLP) research – from cross-lingual search to question answering and beyond – and understand best practices for creating and sharing evaluation resources. The target audience includes researchers and practitioners interested in language resources and evaluation campaigns. By the end of the tutorial, participants will have a clear understanding of NTCIR’s legacy, the practical aspects of running collaborative evaluations, and open challenges for future multilingual evaluation initiatives.</p>
+        </div>
+    </section>
+
+    <section id="outline">
+        <h2>Tutorial Outline</h2>
+        
+        <div class="outline-item">
+            <h3>Part 1: NTCIR History and Test Collection Development (1 hour)</h3>
+            <span class="outline-speaker">Presented by Noriko Kando</span>
+            <p>This part will introduce the inception and evolution of NTCIR. We will cover the motivations behind the first NTCIR workshop in 1999. Noriko Kando will recount how the early Japanese and Chinese IR test collections were constructed essentially from scratch, discussing challenges in document collection, topic design, relevance criteria, and handling linguistic differences (e.g., word segmentation). It highlights the "community building" aspect of NTCIR.</p>
+        </div>
+
+        <div class="outline-item">
+            <h3>Part 2: Participants, Experiments, and Key Findings (1 hour)</h3>
+            <span class="outline-speaker">Presented by Makoto P. Kato</span>
+            <p>This part focuses on insights gained from NTCIR’s many tasks (Ad Hoc retrieval, QA, Patent Search, Math Retrieval, Lifelog, etc.) and contributions to the research community. We will present statistics on the global growth of the NTCIR community and discuss notable experimental findings and methodological innovations that emerged from these shared tasks.</p>
+        </div>
+
+        <div class="outline-item">
+            <h3>Part 3: Organizing Evaluation Campaigns and Dataset Sharing (1.5 hours)</h3>
+            <span class="outline-speaker">Presented by Chung-Chi Chen</span>
+            <p>The final part focuses on the practical aspects of organizing shared evaluation campaigns. Drawing on experience from FinNum, FinArg, and NTCIR coordination, this session outlines the end-to-end process: developing task proposals, recruiting participants, dataset curation (including ethics/privacy), submission handling, and assessment procedures. It provides practical insights into organizing reliable and impactful evaluation campaigns.</p>
+        </div>
+    </section>
+
+    <section id="presenters">
+        <h2>Presenters</h2>
+        <div class="presenters-grid">
+            <a href="https://nlpfin.github.io/" target="_blank" class="presenter-link-wrapper">
+            <div class="presenter-card">
+                <img src="./photo/chungchi.jpg" alt="Chung-Chi Chen" class="presenter-img">
+                <div class="presenter-name">Chung-Chi Chen</div>
+                <div class="presenter-affil">AIST, Japan</div>
+                <div class="presenter-bio">
+                    Dr. Chung-Chi Chen is a Researcher at AIST’s Artificial Intelligence Research Center. His expertise is in NLP for finance and evaluation. He is the Program Committee Co-Chair of NTCIR-18 and has organized tasks like FinNum and FinArg. He founded ACL SIG-FinTech and organizes the FinNLP workshop series.
+                </div>
+            </div>
+            </a>
+            
+            <a href="https://www.mpkato.net/" target="_blank" class="presenter-link-wrapper">
+            <div class="presenter-card">
+                <img src="./photo/makoto.jpg" alt="Makoto P. Kato" class="presenter-img">
+                <div class="presenter-name">Makoto P. Kato</div>
+                <div class="presenter-affil">University of Tsukuba, Japan<br>National Institute of Informatics</div>
+                <div class="presenter-bio">
+                    Dr. Makoto Kato is an Associate Professor at the University of Tsukuba. His research interests lie in IR, web mining, and user behavior analysis. He has been deeply involved in NTCIR as a General Co-Chair and task organizer. He has extensive experience in mentoring and teaching international students.
+                </div>
+            </div>
+            </a>
+
+            <a href="https://research.nii.ac.jp/~kando/index-e.html" target="_blank" class="presenter-link-wrapper">
+            <div class="presenter-card">
+                <img src="./photo/norikokando.jpeg" alt="Noriko Kando" class="presenter-img">
+                <div class="presenter-name">Noriko Kando</div>
+                <div class="presenter-affil">National Institute of Informatics, Japan</div>
+                <div class="presenter-bio">
+                    Dr. Noriko Kando is a Professor at NII and the founder of the NTCIR workshop series. With over 25 years of experience in IR evaluation and cross-lingual information access, she has led NTCIR since 1999. She is a pioneer in evaluating information access for Asian languages.
+                </div>
+            </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section id="materials">
+        <h2>Tutorial Materials</h2>
+        <div class="material-box">
+            <h3>Slides and Resources</h3>
+            <p>The materials for this tutorial will be available here closer to the conference date.</p>
+            <span class="btn-disabled">Download Link (Coming Soon)</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>LREC 2026, Palma de Mallorca, Spain.</p>
+    </footer>
+</div>
+
+</body>
+</html>

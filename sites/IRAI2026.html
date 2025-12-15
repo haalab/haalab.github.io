@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The First Workshop on Information Retrieval for Accountability and Integrity (IRAI)</title>
+  <meta name="description" content="IRAI: Information Retrieval for Accountability and Integrity — a half-day workshop aligning IR with accountability, integrity, and forward-looking statements." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;
+      --bg-soft: #111735;
+      --card: #121a3a;
+      --muted: #a9b3d6;
+      --text: #eaf0ff;
+      --accent: #6dd3ff;
+      --accent-2: #b98aff;
+      --ring: rgba(173, 223, 255, .35);
+      --ok: #67e8f9;
+      --warn: #ffd166;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background: radial-gradient(1200px 700px at 80% -10%, #1b2761 0%, transparent 60%), radial-gradient(900px 600px at -10% 20%, #1a3b66 0%, transparent 55%), var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol"; line-height:1.55}
+    a{color: var(--accent)}
+    header{position:relative; overflow:hidden}
+    .wrap{max-width:1100px; margin:0 auto; padding:24px}
+    .hero{
+      display:grid; gap:18px; padding:72px 0 48px; align-items:center;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+    .hero h1{
+      font-size: clamp(28px, 4.4vw, 48px);
+      line-height:1.05; margin:0 0 10px; font-weight:800;
+      letter-spacing: -0.02em;
+    }
+    .sub{color:var(--muted); font-size: clamp(15px, 2.2vw, 18px)}
+    .chipbar{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .chip{border:1px solid #2b3564; background: linear-gradient(180deg, #16204a, #0f1635); color:#cfe3ff; padding:8px 12px; border-radius:999px; font-size:13px}
+    .cta{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
+    .btn{background: linear-gradient(90deg, var(--accent), var(--accent-2)); color:#0b0f1f; padding:12px 16px; border-radius:12px; font-weight:700; border:none; cursor:pointer; text-decoration:none; box-shadow: 0 0 0 4px var(--ring); transition: transform .08s ease}
+    .btn:hover{transform: translateY(-1px)}
+    .btn.secondary{background:transparent; color:var(--text); border:1px solid #34407a; box-shadow:none}
+    nav{position:sticky; top:0; z-index:20; backdrop-filter: blur(8px); background: rgba(10,14,34,.55); border-bottom:1px solid rgba(120,145,255,.12)}
+    nav .navwrap{max-width:1100px; margin:0 auto; padding:10px 24px; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:800; letter-spacing:.2px}
+    .navlinks{display:flex; gap:18px; flex-wrap:wrap}
+    .navlinks a{color:#cfdbff; text-decoration:none; font-size:14px; opacity:.9}
+    .grid{display:grid; gap:18px}
+    .card{background: linear-gradient(180deg, #0e1534 0%, #0a1230 70%); border:1px solid rgba(160,189,255,.12); border-radius:16px; padding:20px}
+    .card h3{margin:0 0 8px; font-size:20px}
+    section{padding:42px 0}
+    h2{font-size: clamp(22px, 3.3vw, 32px); margin:0 0 16px}
+    p{margin:0 0 12px}
+    .two{grid-template-columns: repeat(2, minmax(0,1fr))}
+    .three{grid-template-columns: repeat(3, minmax(0,1fr))}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; background:#15204f; border:1px solid #33407a; color:#cfe3ff}
+    ul, ol{margin:10px 0 12px 20px}
+    li{margin:6px 0}
+    .schedule{width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:14px; border:1px solid rgba(160,189,255,.16)}
+    .schedule th, .schedule td{padding:12px 14px; text-align:left}
+    .schedule thead{background:#111943}
+    .schedule tbody tr:nth-child(odd){background:#0f173d}
+    .schedule tbody tr:nth-child(even){background:#0d1438}
+    .pill{display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; margin-left:8px; border:1px solid #33407a; color:#dce7ff}
+    .people{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:16px}
+    .person{background: linear-gradient(180deg, #0e1638, #0c1334); border:1px solid rgba(160,189,255,.12); border-radius:14px; padding:14px}
+    .person h4{margin:0 0 6px}
+    .affil{font-size:13px; color:#b9c6f2; margin-bottom:8px}
+    .foot{padding:40px 0 60px; color:#b8c7ff; font-size:14px}
+    .kicker{letter-spacing:.2em; text-transform:uppercase; color:#9ccaff; font-weight:700; font-size:12px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{font-size:12px; background:#132054; border:1px solid #2f3e7d; padding:6px 10px; border-radius:999px}
+    .callout{border-left:3px solid var(--ok); padding:10px 14px; background:rgba(103,232,249,.08); border-radius:8px}
+    .note{font-size:13px; color:#cbd7ff}
+    .center{display:flex; justify-content:center; align-items:center}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px}
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr}
+      .two, .three{grid-template-columns: 1fr}
+      .people{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="navwrap">
+      <div class="brand">IRAI 2026</div>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#submission">Submission</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="wrap hero">
+      <div>
+        <span class="kicker">ECIR-2026 Workshop</span>
+        <h1>The First Workshop on Information Retrieval for Accountability and Integrity (IRAI)</h1>
+        <p class="sub">
+          A half-day pilot workshop exploring how IR can evaluate forward-looking statements,
+          verify commitments, and foster evidence-based accountability across public and private domains.
+        </p>
+        <div class="chipbar">
+          <div class="chip">Focus: Accountability & Integrity</div>
+          <div class="chip">IR × NLP</div>
+          <div class="chip">Half-day • Interactive</div>
+          <div class="chip">Proceedings via CEUR (opt-in)</div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#submission">Call for Papers</a>
+          <a class="btn secondary" href="#schedule">Workshop Format</a>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h3>At a Glance</h3>
+          <div class="grid two">
+            <div>
+              <div class="muted">When</div>
+              <div><strong>April 2nd, 2026</strong></div>
+            </div>
+            <div>
+              <div class="muted">Where</div>
+              <div><strong>Delft, The Netherlands</strong></div>
+            </div>
+            <div>
+              <div class="muted">Duration</div>
+              <div>Half-Day</div>
+            </div>
+            <div>
+              <div class="muted">Submission Site</div>
+              <div><a href="https://easychair.org/conferences?conf=irai2026">EasyChair</a></div>
+            </div>
+          </div>
+          <div class="tags" style="margin-top:12px">
+            <span class="tag">Claim & Promise Verification</span>
+            <span class="tag">Forecast Evaluation</span>
+            <span class="tag">Corporate & Policy Accountability</span>
+            <span class="tag">Responsible AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section id="about">
+      <h2>Motivation</h2>
+      <div class="grid two">
+        <div class="card">
+          <p>
+            Information systems shape public discourse, decisions, and trust—yet we lack systematic ways to evaluate
+            the accuracy of forward-looking statements (e.g., campaign promises, corporate forecasts).
+            Media coverage is selective, standards are uneven, and the signal is buried in noise.
+            The result: accountability gaps and eroded confidence.
+          </p>
+          <p>
+            IRAI brings IR and NLP communities together to design frameworks and tools that retrieve evidence,
+            synthesize signals over time, and assess the fulfillment and reliability of claims and commitments.
+            It complements ECIR’s mission by tackling a pressing, real-world challenge with societal impact.
+          </p>
+          <div class="callout">
+            <strong>Why now?</strong> New multilingual datasets and shared tasks (e.g., corporate promise verification)
+            make it timely to connect IR retrieval, aggregation, and evaluation with accountability questions at scale.
+          </div>
+        </div>
+        <div class="card">
+          <h3>What IRAI Aims to Do</h3>
+          <ul>
+            <li>Evaluate the accuracy of forecasts and predictions by individuals, organizations, or systems.</li>
+            <li>Assess fulfillment of commitments (political promises, corporate goals, public policies).</li>
+            <li>Identify patterns of exaggeration or accountability gaps in public discourse.</li>
+            <li>Promote transparency through evidence-based assessments and reproducible methodologies.</li>
+          </ul>
+          <p class="note">
+            IRAI aspires to bridge NLP and IR, fostering shared benchmarks, methods, and open conversations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="themes">
+      <h2>Theme & Purpose</h2>
+      <div class="grid three">
+        <div class="card">
+          <h3>Core Theme</h3>
+          <p>Applying IR to enhance accountability and integrity in public and private domains.</p>
+          <p class="muted">Emphasis on forward-looking statements and longitudinal evidence retrieval.</p>
+        </div>
+        <div class="card">
+          <h3>What Makes IRAI Different</h3>
+          <ul>
+            <li>Focus on <em>using</em> IR to evaluate claims (not only making IR <em>systems</em> fair/transparent).</li>
+            <li>Bridges IR methods with policy, regulation, journalism, and industry practice.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Complement to ECIR</h3>
+          <p>Centers ethical &amp; societal dimensions of IR and concrete applications for social good.</p>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section id="submission">
+      <h2>Submission &amp; Selection</h2>
+    
+      <div class="grid two">
+        <div class="card">
+          <h3>Call for Papers</h3>
+          <ul>
+            <li>Short research papers, position papers, datasets, demos, or work-in-progress relevant to IRAI themes.</li>
+            <li>High-quality works not selected for talks may join lightning discussion sessions.</li>
+          </ul>
+          <p class="muted">Proceedings via CEUR (authors may opt out).</p>
+        </div>
+    
+        <div class="card">
+          <h3>Review &amp; Criteria</h3>
+          <ul>
+            <li>Each paper reviewed by at least <strong>two</strong> PC members.</li>
+            <li>Selection balances quality, relevance, and topical diversity.</li>
+            <li>Post-workshop overview to be shared on arXiv and submitted to ACM SIGIR Forum.</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="grid two" style="margin-top:14px">
+        <div class="card">
+          <h3>Formats</h3>
+          <ul>
+            <li><strong>Template:</strong> Authors should consult Springer's authors' guidelines and use their proceedings templates, either for LaTeX or for Word (to be found at <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines">https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines</a>)</li>
+            <li><strong>Length (including figures/tables; excluding references and appendixes):</strong>
+              <ul>
+                <li>Research paper (Long): <strong>up to 12 pages</strong></li>
+                <li>Work-in-progress (Short): <strong>up to 6 pages</strong></li>
+              </ul>
+            </li>
+            <li><strong>File:</strong> PDF only. Double-blind review.</li>
+          </ul>
+        </div>
+    
+        <div class="card">
+          <h3>Topics of Interest</h3>
+          <ul>
+            <li>Claim/promise retrieval and verification; forecast accuracy estimation</li>
+            <li>Longitudinal &amp; cross-temporal IR; evidence aggregation</li>
+            <li>Corporate, policy, and societal accountability via IR/NLP</li>
+            <li>Datasets, benchmarks, and evaluation protocols</li>
+            <li>Responsible/Trustworthy AI for accountability &amp; integrity</li>
+          </ul>
+        </div>
+      </div>
+
+  <div class="card" style="margin-top:14px">
+    <h3>Important Dates</h3>
+    <ul>
+      <li><strong>Paper submission:</strong> February 1st, 2026</li>
+      <li><strong>Notification:</strong>February 21st, 2026</li>
+      <li><strong>Camera-ready (optional CEUR):</strong> March 1st, 2026 </li>
+      <li><strong>Workshop:</strong> April 2nd, 2026</li>
+    </ul>
+  </div>
+
+  <div class="grid two" style="margin-top:14px">
+    <div class="card">
+      <h3>Submission Site</h3>
+      <br>
+        <a class="btn" href="https://easychair.org/conferences?conf=irai2026" aria-disabled="true" onclick="return false;">Easychair</a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Contact</h3>
+      <p>Questions about scope or format? Email the organizers:</p>
+      <p class="mono">
+        <a href="mailto:c.c.chen@acm.org">c.c.chen@acm.org</a> 
+      </p>
+    </div>
+  </div>
+</section>
+
+
+   
+
+    <section id="organizers">
+      <h2>Organizers</h2>
+      <div class="people" style="margin-top:12px">
+        <div class="person">
+          <h4>Chung-Chi Chen</h4>
+          <div class="affil">AIST, Japan</div>
+          <p>Researcher focusing on forward-looking statements and scenario planning in finance; co-founded ACL SIG-FinTech; co-organizer of FinNLP/FinWeb and shared tasks (FinNum, FinArg, PromiseEval). SIGIR Early Career Researcher Award (Community Engagement).</p>
+          <p class="mono"><a href="mailto:c.c.chen@acm.org">c.c.chen@acm.org</a> · <a href="https://nlpfin.github.io/" target="_blank" rel="noopener">homepage</a></p>
+        </div>
+        <div class="person">
+          <h4>Juyeon Kang</h4>
+          <div class="affil">3DS Outscale – Dassault Systèmes, France</div>
+          <p>Data Science team lead; PhD in NLP (2011); industry experience across aeronautics, naval, public opinion, FinTech/RegTech; co-organizer of shared tasks (FinSBD, FinTOC, FinSim, ML-ESG, PromiseEval).</p>
+          <p class="mono"><a href="mailto:juyeon.kang@outscale.com">juyeon.kang@outscale.com</a> · <a href="https://www.linkedin.com/in/juyeon-kang-b978ba69" target="_blank" rel="noopener">LinkedIn</a></p>
+        </div>
+        <div class="person">
+          <h4>Anaïs Lhuissier</h4>
+          <div class="affil">3DS Outscale – Dassault Systèmes, France</div>
+          <p>Data & Language Analyst; end-to-end AI data management; ESG expertise in FinTech/RegTech; designs multilingual guidelines and shared tasks.</p>
+        </div>
+        <div class="person">
+          <h4>Dittaya Wanvarie</h4>
+          <div class="affil">Chulalongkorn University, Thailand</div>
+          <p>Assistant Professor in Math & CS; works on NLP, IR, and ML; current project on knowledge from listed companies’ annual reports.</p>
+        </div>
+        <div class="person">
+          <h4>Min-Yuh Day</h4>
+          <div class="affil">National Taipei University, Taiwan</div>
+          <p>Professor and Director of FinTech & Green Finance Center; research in AI/GenAI, ESG, green FinTech, big data, and NLP for finance & sustainability; Associate Editor and active in industry collaboration.</p>
+          <p class="mono"><a href="mailto:myday@gm.ntpu.edu.tw">myday@gm.ntpu.edu.tw</a> · <a href="https://web.ntpu.edu.tw/~myday/index.htm" target="_blank" rel="noopener">homepage</a></p>
+        </div>
+        <div class="person">
+          <h4>Hiroya Takamura</h4>
+          <div class="affil">AIST, Japan</div>
+          <p>Research Team Leader (Knowledge & Information Research Team). Interests: sentiment analysis, summarization, generation. Served as AC/PC for major NLP venues.</p>
+          <p class="mono"><a href="mailto:takamura.hiroya@aist.go.jp">takamura.hiroya@aist.go.jp</a> · <a href="https://sites.google.com/view/hjtakamura" target="_blank" rel="noopener">homepage</a></p>
+        </div>
+        <div class="person">
+          <h4>Yohei Seki</h4>
+          <div class="affil">University of Tsukuba, Japan</div>
+          <p>Professor; research in citizen sentiment and social information access; ICADL 2022 best paper runner-up; NTCIR multilingual opinion analysis co-organizer; co-editor of smart city standards (ISO/IEC 30146, 30145-3).</p>
+          <p class="mono"><a href="mailto:yohei@slis.tsukuba.ac.jp">yohei@slis.tsukuba.ac.jp</a> · <a href="https://cu.slis.tsukuba.ac.jp/english/index.html" target="_blank" rel="noopener">lab</a></p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid two">
+        <div class="card">
+          <p><strong>General Inquiries</strong></p>
+          <p class="muted">Primary host (onsite): Chung-Chi Chen</p>
+          <p>
+            <a href="mailto:c.c.chen@acm.org">c.c.chen@acm.org</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot center">
+      <div>
+        <div class="center" style="gap:10px; margin-bottom:6px">
+          <span class="badge">IRAI 2026</span>
+          <span class="badge">ECIR-aligned</span>
+          <span class="badge">Half-day Workshop</span>
+        </div>
+        <div class="center muted">© IRAI Organizing Team — All rights reserved.</div>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
