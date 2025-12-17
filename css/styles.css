@@ -112,6 +112,13 @@ body {
   margin-top: -0.25rem;
 }
 
+/* 新增這個樣式給你的 logo 圖片 */
+.nav-logo-img {
+  height: 40px;        /* 設定高度，建議 40px 到 50px 之間 */
+  width: auto;         /* 寬度自動，保持圖片比例 */
+  margin-right: 0.75rem; /* 圖片跟右邊文字的距離 */
+  border-radius: 4px;  /* 如果想要圖片有一點圓角可以加這行，不需要可刪除 */
+}
 .nav-links {
   display: none;
   gap: 0.25rem;
