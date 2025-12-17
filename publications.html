@@ -8,145 +8,272 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    .publication-type-section {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
+    /* --- 核心變數與基礎設定 --- */
+    :root {
+      --primary: #2563eb;
+      --primary-light: #eff6ff;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
     }
-    .publication-type-section:first-child {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
     }
-    .publication-type-title {
-      font-size: 1.75rem;
+    
+    .font-outfit { font-family: 'Outfit', sans-serif; }
+
+    /* --- Page Header --- */
+    .page-header {
+      background: white;
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 3rem;
+    }
+    .page-title {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    /* --- 佈局 Grid --- */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    /* --- 左側黏性導航 Sidebar --- */
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+      height: fit-content;
+      padding-right: 1rem;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    
+    .sidebar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .sidebar-link {
+      display: block;
+      padding: 0.6rem 1rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    .sidebar-link:hover {
+      color: var(--primary);
+      border-left-color: var(--primary);
+      background: linear-gradient(90deg, var(--primary-light), transparent);
+    }
+
+    .sidebar-header {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #9ca3af;
+      margin: 1.5rem 0 0.5rem 1rem;
       font-weight: 700;
-      color: var(--foreground);
-      margin-bottom: 1.5rem;
+    }
+    .sidebar-header:first-child { margin-top: 0; }
+
+    /* --- 內容區塊樣式 --- */
+    .publication-type-section {
+      margin-bottom: 5rem;
+      scroll-margin-top: 2rem;
+    }
+
+    .publication-type-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border-color);
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      color: var(--text-main);
     }
-    .publication-type-title::before {
-      content: '';
-      width: 6px;
-      height: 1.75rem;
-      background: linear-gradient(180deg, var(--primary), var(--accent));
-      border-radius: 3px;
-    }
-    .publication-item {
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .publication-item:last-child {
-      border-bottom: none;
-    }
-    .publication-item-title {
-      font-weight: 600;
-      color: var(--foreground);
-      margin-bottom: 0.25rem;
-    }
-    .publication-item-authors {
-      font-size: 0.9rem;
-      color: var(--muted-foreground);
-      margin-bottom: 0.25rem;
-    }
-    .publication-item-venue {
-      font-size: 0.875rem;
-      color: var(--muted-foreground);
-      font-style: italic;
-    }
-    .publication-item-links {
-      margin-top: 0.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-    .publication-item-links a {
-      font-size: 0.8rem;
-      color: var(--primary);
-      text-decoration: none;
-      padding: 0.25rem 0.5rem;
-      border: 1px solid var(--primary);
-      border-radius: 4px;
-      transition: all 0.2s;
-    }
-    .publication-item-links a:hover {
-      background: var(--primary);
-      color: white;
-    }
+    
+    .publication-type-title i { color: var(--primary); }
+
     .publication-year-header {
-      font-size: 1.25rem;
-      font-weight: 600;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
       color: var(--primary);
-      margin: 2rem 0 1rem 0;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--primary);
+      margin: 3rem 0 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      scroll-margin-top: 6rem; /* Offset for sticky header if needed */
     }
+    .publication-year-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+      opacity: 0.5;
+    }
+
+    /* --- 卡片設計 --- */
+    .publication-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: all 0.2s ease-in-out;
+      position: relative;
+    }
+
+    .publication-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      border-color: #cbd5e1;
+    }
+
+    .publication-item-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .publication-item-authors {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+    
+    .publication-item-authors strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .publication-item-venue {
+      font-size: 0.9rem;
+      color: #4b5563;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    /* --- Tags (保留原始配色) --- */
     .publication-categories {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: 0.5rem;
+      margin-bottom: 1rem;
     }
+
     .category-tag {
       font-size: 0.7rem;
-      padding: 0.2rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 9999px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* 原始 Tag 配色移植 */
+    .category-tag.ir-agents { background: hsl(200, 80%, 90%); color: hsl(200, 80%, 30%); }
+    .category-tag.llm-arch { background: hsl(260, 80%, 90%); color: hsl(260, 80%, 30%); }
+    .category-tag.performance { background: hsl(140, 70%, 90%); color: hsl(140, 70%, 25%); }
+    .category-tag.higher-order { background: hsl(30, 90%, 90%); color: hsl(30, 90%, 30%); }
+    .category-tag.high-stakes { background: hsl(0, 80%, 90%); color: hsl(0, 80%, 30%); }
+    .category-tag.high-fidelity { background: hsl(180, 70%, 90%); color: hsl(180, 70%, 25%); }
+    .category-tag.societal { background: hsl(320, 70%, 90%); color: hsl(320, 70%, 30%); }
+    .category-tag.economic { background: hsl(50, 90%, 85%); color: hsl(50, 90%, 25%); }
+    .category-tag.governance { background: hsl(220, 70%, 90%); color: hsl(220, 70%, 30%); }
+
+    /* --- 連結按鈕 --- */
+    .publication-item-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .publication-item-links a {
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
       font-weight: 500;
+      transition: all 0.2s;
+      background: white;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
     }
-    .category-tag.ir-agents {
-      background: hsl(200, 80%, 90%);
-      color: hsl(200, 80%, 30%);
+
+    .publication-item-links a:hover {
+      background: var(--text-main);
+      color: white;
+      border-color: var(--text-main);
     }
-    .category-tag.llm-arch {
-      background: hsl(260, 80%, 90%);
-      color: hsl(260, 80%, 30%);
+    
+    /* PDF 按鈕特殊色 */
+    .publication-item-links a[href$=".pdf"]:hover, 
+    .publication-item-links a:contains("pdf"):hover { /* Note: CSS doesn't support :contains but logically we treat pdf links */
+      background: #ef4444;
+      border-color: #ef4444;
     }
-    .category-tag.performance {
-      background: hsl(140, 70%, 90%);
-      color: hsl(140, 70%, 25%);
-    }
-    .category-tag.higher-order {
-      background: hsl(30, 90%, 90%);
-      color: hsl(30, 90%, 30%);
-    }
-    .category-tag.high-stakes {
-      background: hsl(0, 80%, 90%);
-      color: hsl(0, 80%, 30%);
-    }
-    .category-tag.high-fidelity {
-      background: hsl(180, 70%, 90%);
-      color: hsl(180, 70%, 25%);
-    }
-    .category-tag.societal {
-      background: hsl(320, 70%, 90%);
-      color: hsl(320, 70%, 30%);
-    }
-    .category-tag.economic {
-      background: hsl(50, 90%, 85%);
-      color: hsl(50, 90%, 25%);
-    }
-    .category-tag.governance {
-      background: hsl(220, 70%, 90%);
-      color: hsl(220, 70%, 30%);
+
+    /* RWD */
+    @media (max-width: 900px) {
+      .layout-grid { grid-template-columns: 1fr; }
+      .sidebar { display: none; } /* 行動版隱藏側邊欄 */
+      .page-title { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
+
   <nav class="nav">
     <div class="container nav-container">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">H</div>
-        <div class="nav-logo-text">
-          <div class="nav-title">HAA Lab</div>
-          <div class="nav-subtitle">Human-Agent Ally</div>
-        </div>
-      </a>
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.png" alt="HAA Lab Logo" class="nav-logo-img">
+          
+          <div class="nav-logo-text">
+            <div class="nav-title">HAA Lab</div>
+            <div class="nav-subtitle">Human-Agent Ally</div>
+          </div>
+        </a>
       
       <div class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
@@ -173,1268 +300,1296 @@
       </div>
     </div>
   </nav>
-  
-  <section class="page-section">
+
+  <header class="page-header">
     <div class="container" style="max-width: 80rem;">
-      <div class="section-header">
-        <h1 class="section-title font-outfit">Publications</h1>
-        <p class="section-description">
-          Our contributions to advancing human-agent collaboration research
-        </p>
-      </div>
+      <h1 class="page-title font-outfit">Publications</h1>
+    </div>
+  </header>
 
-      <div class="publication-type-section">
-        <h2 class="publication-type-title">Book</h2>
+  <section class="page-section" style="padding-top: 0;">
+    <div class="container" style="max-width: 80rem;">
+      <div class="layout-grid">
         
-        <div class="publication-item">
-          <div class="publication-item-title">Agent AI for Finance: From Financial Argument Mining to Agent-Based Modeling</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, and Hiroya Takamura. 2025.</div>
-          <div class="publication-item-venue">Springer Nature.</div>
-          <div class="publication-categories">
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://link.springer.com/book/9783031946868?srsltid=AfmBOooERxWxnqlmRhTs4TwamOrCxhAECmi786btXJ8WIIkR3zD9V9gd" target="_blank">Open Access</a>
-            <a href="https://sites.google.com/view/finagent/home" target="_blank">ECAI-2024 Tutorial</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">From Opinion Mining to Financial Argument Mining</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Springer Nature.</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://link.springer.com/book/10.1007/978-981-16-2881-8" target="_blank">Open Access</a>
-            <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/financial-opinion-mining/home" target="_blank">EMNLP-2021 Tutorial</a>
-          </div>
-        </div>
-      </div>
+        <aside class="sidebar font-outfit">
+          <div class="sidebar-header">Category</div>
+          <ul class="sidebar-menu">
+            <li><a href="#book" class="sidebar-link">Book</a></li>
+            <li><a href="#conf" class="sidebar-link">Conference Papers</a></li>
+            <li><a href="#journal" class="sidebar-link">Journal Articles</a></li>
+            <li><a href="#preprint" class="sidebar-link">Preprints</a></li>
+            <li><a href="#agenda" class="sidebar-link">Research Agenda</a></li>
+            <li><a href="#workshop" class="sidebar-link">Workshops</a></li>
+          </ul>
 
-      <div class="publication-type-section">
-        <h2 class="publication-type-title">Peer-Reviewed Conference Papers</h2>
-        
-        <h3 class="publication-year-header">2025</h3>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Observing Micromotives and Macrobehavior of Large Language Models</div>
-          <div class="publication-item-authors">Yuyang Cheng, Xingwei Qu, Tomas Goldsack, Chenghua Lin, <strong>Chung-Chi Chen</strong>. 2025.</div>
-          <div class="publication-item-venue">Proceedings of the International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL).</div>
-          <div class="publication-categories">
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2412.10428" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Enhancing Investment Opinion Ranking through Argument-Based Sentiment Analysis</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen, Hiroya Takamura, Ichiro Kobayashi, Yusuke Miyao. 2025.</div>
-          <div class="publication-item-venue">Proceedings of the International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL).</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2409.17417" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">ML-Promise: A Multilingual Dataset for Corporate Promise Verification</div>
-          <div class="publication-item-authors">Yohei Seki, Hakusen Shu, Anaïs Lhuissier, Hanwool Lee, Juyeon Kang, Min-Yuh Day, and <strong>Chung-Chi Chen</strong>. 2025.</div>
-          <div class="publication-item-venue">Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP'25).</div>
-          <div class="publication-categories">
-            <span class="category-tag governance">Governance & Policy Design</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2411.04473v1" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Company-Specific Knowledge Matters: Retrieval-Augmented Generation for Earnings Call Answer Rehearsal</div>
-          <div class="publication-item-authors">Yung-Yu Shih, Yun-Nung Chen, <strong>Chung-Chi Chen</strong>. 2025.</div>
-          <div class="publication-item-venue">Proceedings of The 34th ACM International Conference on Information and Knowledge Management (CIKM'25).</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Live Commentary Planning and Generation</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Huan-Wen Ho, Yu-Yu Chang, Ming-Hung Wang, Ramon Ruiz-Dolz, Chris Reed, Ichiro Kobayashi, Yusuke Miyao, Hiroya Takamura. 2025.</div>
-          <div class="publication-item-venue">Proceedings of the 18th International Natural Language Generation Conference: Generation Challenges (INLG'25).</div>
-          <div class="publication-categories">
-            <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://drive.google.com/file/d/1gxRZevwwfdcqpXWPscfwYVOWwX7hU5Wn/view?usp=sharing" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Evaluating Large Language Models as Expert Annotators</div>
-          <div class="publication-item-authors">Yu-Min Tseng, Wei-Lin Chen, <strong>Chung-Chi Chen</strong>, Hsin-Hsi Chen. 2025.</div>
-          <div class="publication-item-venue">Proceedings of Second Conference on Language Modeling (COLM'25).</div>
-          <div class="publication-categories">
-            <span class="category-tag performance">Performance & Efficiency</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2508.07827" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Can GPT-4 Sway Experts' Decisions?</div>
-          <div class="publication-item-authors">Takehiro Takayanagi, Hiroya Takamura, Kiyoshi Izumi, <strong>Chung-Chi Chen</strong>. 2025.</div>
-          <div class="publication-item-venue">Findings of the Association for Computational Linguistics: NAACL 2025.</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2409.16710" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Co-Trained Retriever-Generator Framework for Question Generation in Earnings Calls</div>
-          <div class="publication-item-authors">Yining Juan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2025.</div>
-          <div class="publication-item-venue">Companion Proceedings of the Web Conference 2025 (WWW'25).</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2409.18677" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Pre-Finetuning with Impact Duration Awareness for Stock Movement Prediction</div>
-          <div class="publication-item-authors">Chr-Jr Chiu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2025.</div>
-          <div class="publication-item-venue">Companion Proceedings of the Web Conference 2025 (WWW'25).</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2409.17419" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">RAG-Enhanced Evidence Recommendation in Financial Legal Resolutions</div>
-          <div class="publication-item-authors">Hsiu-Hung Lee, <strong>Chung-Chi Chen</strong>, An-Zi Yen. 2025.</div>
-          <div class="publication-item-venue">Companion Proceedings of the Web Conference 2025 (WWW'25).</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag governance">Governance & Policy Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">From Facts to Insights: A Study on the Generation and Evaluation of Analytical Reports for Deciphering Earnings Calls</div>
-          <div class="publication-item-authors">Tomas Goldsack, Yang Wang, Chenghua Lin, and <strong>Chung-Chi Chen</strong>. 2025.</div>
-          <div class="publication-item-venue">Proceedings of the 31st International Conference on Computational Linguistics (COLING-2025).</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2410.01039" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">GADFA: Generator-Assisted Decision-Focused Approach for Opinion Expressing Timing Identification</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi, Yusuke Miyao, Hsin-Hsi Chen. 2025.</div>
-          <div class="publication-item-venue">Proceedings of the 31st International Conference on Computational Linguistics (COLING-2025).</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2410.01169" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <h3 class="publication-year-header">2024</h3>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Professionalism-Aware Pre-Finetuning for Profitability Ranking</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
-          <div class="publication-item-venue">Proceedings of The 33rd ACM International Conference on Information and Knowledge Management (CIKM'24). (Acceptance Rate: 26.76%, 141/527)</div>
-          <div class="publication-categories">
-            <span class="category-tag performance">Performance & Efficiency</span>
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Automation of Text-Based Economic Indicator Construction: A Pilot Exploration on Economic Policy Uncertainty Index</div>
-          <div class="publication-item-authors">Hsiu-Hsuan Yeh, Yu-Lieh Huang, Ziho Park, and <strong>Chung-Chi Chen</strong>. 2024.</div>
-          <div class="publication-item-venue">Proceedings of The 33rd ACM International Conference on Information and Knowledge Management (CIKM'24). (Acceptance Rate: 26.76%, 141/527)</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Argument-Based Sentiment Analysis on Forward-Looking Statements</div>
-          <div class="publication-item-authors">Chin-Yi Lin, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2024.</div>
-          <div class="publication-item-venue">Findings of the Association for Computational Linguistics: ACL 2024.</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/ACL24-Argument.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">DBQR-QA: A Question Answering Dataset on a Hybrid of Database Querying and Reasoning</div>
-          <div class="publication-item-authors">Rungsiman Nararatwong, <strong>Chung-Chi Chen</strong>, Natthawut Kertkeidkachorn, Hiroya Takamura, and Ryutaro Ichise. 2024.</div>
-          <div class="publication-item-venue">Findings of the Association for Computational Linguistics: ACL 2024.</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/ACL24-DBQR-QA.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">The Impact of Language on Arithmetic Proficiency: A Multilingual Investigation with Cross-Agent Checking Computation</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
-          <div class="publication-item-venue">Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL'24). (Acceptance Rate: 23.2%, 565/2434)</div>
-          <div class="publication-categories">
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2024.naacl-short.53/" target="_blank">pdf</a>
-            <a href="https://drive.google.com/file/u/1/d/1WahChtYNj4wYy59gYDkvSThFzgQSN7Zh/view?usp=sharing" target="_blank">data</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">News-Driven Price Movement Forecasting with Label-Prior Graph Attention</div>
-          <div class="publication-item-authors">Yi-Ting Liou, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2024.</div>
-          <div class="publication-item-venue">Companion Proceedings of the Web Conference 2024 (WWW'24).</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://dl.acm.org/doi/abs/10.1145/3589335.3651539" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Generator-Guided Crowd Reaction Assessment</div>
-          <div class="publication-item-authors">Sohom Ghosh, <strong>Chung-Chi Chen</strong>, Sudip Kumar Naskar. 2024.</div>
-          <div class="publication-item-venue">Companion Proceedings of the Web Conference 2024 (WWW'24).</div>
-          <div class="publication-categories">
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-            <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2403.09702" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Term-Driven Forward-Looking Claim Synthesis in Earnings Calls</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura. 2024.</div>
-          <div class="publication-item-venue">Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING'24). (Acceptance Rate: 52%)</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2024.lrec-main.1368/" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">NumHG: A Dataset for Number-Focused Headline Generation</div>
-          <div class="publication-item-authors">Jian-Tao Huang, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2024.</div>
-          <div class="publication-item-venue">Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING'24). (Acceptance Rate: 52%)</div>
-          <div class="publication-categories">
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2309.01455" target="_blank">pdf</a>
-            <a href="https://sites.google.com/view/numeval/" target="_blank">NumEval@SemEval-2024 Dataset</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Learning Strategies for Robust Argument Mining: An Analysis of Variations in Language and Domain</div>
-          <div class="publication-item-authors">Ramon Ruiz-Dolz, Chr-Jr Chiu, <strong>Chung-Chi Chen</strong>, Noriko Kando, Hsin-Hsi Chen. 2024.</div>
-          <div class="publication-item-venue">Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING'24). (Acceptance Rate: 52%)</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2024.lrec-main.898/" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Enhancing Society-Undermining Disinformation Detection through Fine-Grained Sentiment Analysis Pre-Finetuning</div>
-          <div class="publication-item-authors">Tsung-Hsuan Pan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2024.</div>
-          <div class="publication-item-venue">Findings of the Association for Computational Linguistics: EACL 2024. (Acceptance Rate: 34.8%)</div>
-          <div class="publication-categories">
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-            <span class="category-tag governance">Governance & Policy Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2024.findings-eacl.92/" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <h3 class="publication-year-header">2023</h3>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Fidelity-Enriched Contrastive Search: Reconciling the Faithfulness-Diversity Trade-Off in Text Generation</div>
-          <div class="publication-item-authors">Wei-Lin Chen, Cheng-Kuang Wu, Hsin-Hsi Chen, <strong>Chung-Chi Chen</strong>. 2023.</div>
-          <div class="publication-item-venue">Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP'23). (Acceptance Rate: 14.02%, 146/1041)</div>
-          <div class="publication-categories">
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/pdf/2310.14981.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Personalized Dynamic Recommender System for Investors</div>
-          <div class="publication-item-authors">Takehiro Takayanagi, <strong>Chung-Chi Chen</strong>, Kiyoshi Izumi. 2023.</div>
-          <div class="publication-item-venue">Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'23). (Acceptance Rate: 25.12%, 154/613)</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/SIGIR23.pdf" target="_blank">pdf</a>
-            <a href="https://github.com/TTsamurai/PDRSI_public_code" target="_blank">resource</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">DynamicESG: A Dataset for Dynamically Unearthing ESG Ratings from News Articles</div>
-          <div class="publication-item-authors">Yu-Min Tseng, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
-          <div class="publication-item-venue">Proceedings of The 32nd ACM International Conference on Information and Knowledge Management (CIKM'23). (Acceptance Rate: 27.2%, 22/81)</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag governance">Governance & Policy Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/DynamicESG.pdf" target="_blank">pdf</a>
-            <a href="https://github.com/ymntseng/DynamicESG/" target="_blank">resource</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Enhancing Volatility Forecasting in Financial Markets: A General Numeral Attachment Dataset for Understanding Earnings Calls</div>
-          <div class="publication-item-authors">Ming-Xuan Shi, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
-          <div class="publication-item-venue">Proceedings of The 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL'23). (Acceptance Rate: 19.13%, 22/115)</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Generating Multiple Questions from Presentation Transcripts: A Pilot Study on Earnings Conference Calls</div>
-          <div class="publication-item-authors">Yi-Ning Juan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
-          <div class="publication-item-venue">Proceedings of the 16th International Conference on Natural Language Generation (INLG'23).</div>
-          <div class="publication-categories">
-            <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/MQG-INLG23.pdf" target="_blank">pdf</a>
-            <a href="posters/INLG23_Poster.pdf" target="_blank">poster</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">CustodiAI: A System for Predicting Child Custody Outcomes</div>
-          <div class="publication-item-authors">Yi-Ning Juan, <strong>Chung-Chi Chen</strong>, Hsin-Hsi Chen, and Daw-Wei Wang. 2023.</div>
-          <div class="publication-item-venue">Proceedings of The 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics: System Demonstrations (IJCNLP-AACL'23).</div>
-          <div class="publication-categories">
-            <span class="category-tag governance">Governance & Policy Design</span>
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-            <a href="https://demo-cjdp-aifr.herokuapp.com/demo-home" target="_blank">demo</a>
-            <a href="https://drive.google.com/file/d/1i8DYl0mK2ErtlXwGUcNU3wsN8rTszb3W/view" target="_blank">video</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Improving Numeracy by Input Reframing and Quantitative Pre-Finetuning Task</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2023.</div>
-          <div class="publication-item-venue">Findings of the Association for Computational Linguistics: EACL 2023. (Acceptance Rate: 17.2%)</div>
-          <div class="publication-categories">
-            <span class="category-tag performance">Performance & Efficiency</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2023.findings-eacl.4/" target="_blank">pdf</a>
-            <a href="posters/EACL2023_numeracy.pdf" target="_blank">poster</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Entity-Aware Dual Co-Attention Network for Fake News Detection</div>
-          <div class="publication-item-authors">Sin-Han Yang, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
-          <div class="publication-item-venue">Findings of the Association for Computational Linguistics: EACL 2023. (Acceptance Rate: 17.2%)</div>
-          <div class="publication-categories">
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-            <span class="category-tag governance">Governance & Policy Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2023.findings-eacl.7/" target="_blank">pdf</a>
-            <a href="posters/EACL2023_fakenews.pdf" target="_blank">poster</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">The Mask One At a Time Framework for Detecting the Relationship between Financial Entities</div>
-          <div class="publication-item-authors">Sohom Ghosh, Sachin Umrao, <strong>Chung-Chi Chen</strong>, and Sudip Kumar Naskar. 2023.</div>
-          <div class="publication-item-venue">Proceedings of the 15th Annual Meeting of the Forum for Information Retrieval Evaluation. (Acceptance Rate: 48%)</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <h3 class="publication-year-header">2021</h3>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Evaluating the Rationales of Amateur Investors</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of The Web Conference 2021 (WWW'21). (Acceptance Rate: 20.6%, 357/1736)</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/WWW_2021.pdf" target="_blank">pdf</a>
-            <a href="slides/WWW-2021_Rationales_of_Amateur_investor.pdf" target="_blank">slides</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/ICRD/" target="_blank">resource</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/FinProLex/" target="_blank">lexicon</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">NQuAD: 70,000+ Questions for Machine Comprehension of the Numerals in Text</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of The 30th ACM International Conference on Information and Knowledge Management (CIKM'21). (Acceptance Rate: 28.3%, 177/626)</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/NQuAD_CIKM21.pdf" target="_blank">pdf</a>
-            <a href="slides/NQuAD-CIKM-2021_Slides.pdf" target="_blank">slides</a>
-            <a href="http://nquad.nlpfin.com" target="_blank">resource</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Distilling Numeral Information for Volatility Forecasting</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Yu-Lieh Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of The 30th ACM International Conference on Information and Knowledge Management (CIKM'21). (Acceptance Rate: 28.3%, 177/626)</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/ECNum_CIKM21.pdf" target="_blank">pdf</a>
-            <a href="slides/ConCall-CIKM-2021_Slides.pdf" target="_blank">slides</a>
-            <a href="https://drive.google.com/drive/folders/1M8hBAGTGOBTIwticb26Azs2j4oP0d4Oc?usp=sharing" target="_blank">resource</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Constructing Noise Free Economic Policy Uncertainty Index</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Yu-Lieh Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of The 30th ACM International Conference on Information and Knowledge Management (CIKM'21). (Acceptance Rate: 28.3%, 177/626)</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag governance">Governance & Policy Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/EPU_CIKM21.pdf" target="_blank">pdf</a>
-            <a href="slides/EPU-CIKM-2021_Slides.pdf" target="_blank">slides</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Retrieving Implicit Information for Stock Movement Prediction</div>
-          <div class="publication-item-authors">Tsun-Hsien Tang, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'21). (Acceptance Rate: 27.6%, 145/526)</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/Retrieving_Implicit_Information_for_Stock_Movement_Prediction___SIGIR_2021.pdf" target="_blank">pdf</a>
-            <a href="slides/SIGIR2021_Slides.pdf" target="_blank">slides</a>
-            <a href="posters/SIGIR2021_Poster.pdf" target="_blank">poster</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Semantics-Preserved Data Augmentation for Aspect-Based Sentiment Analysis</div>
-          <div class="publication-item-authors">Ting-Wei Hsu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP'21). (Acceptance Rate: 17.9%, 190/1060)</div>
-          <div class="publication-categories">
-            <span class="category-tag performance">Performance & Efficiency</span>
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/EMNLP2021.pdf" target="_blank">pdf</a>
-            <a href="slides/EMNLP-2021_Slides.pdf" target="_blank">slides</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Dynamic Graph Transformer for Implicit Tag Recognition</div>
-          <div class="publication-item-authors">Yi-Ting Liou, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics (EACL'21). (Acceptance Rate: 24.7%)</div>
-          <div class="publication-categories">
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/Implicit_Tag_Recognition_EACL_2021.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">A Research Agenda for Financial Opinion Mining</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of 15th International Conference on Web and Social Media (ICWSM'21).</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/Financial_Opinion_Mining_Research_Agenda___ICWSM_2021.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Which Kind of Rumors May Undermine Society: Perspectives from Court Orders</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of the IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM'21).</div>
-          <div class="publication-categories">
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-            <span class="category-tag governance">Governance & Policy Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/ASONAM2021.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">FinSense: An Assistant System for Financial Journalists and Investors</div>
-          <div class="publication-item-authors">Yi-Ting Liou, <strong>Chung-Chi Chen</strong>, Tsun-Hsien Tang, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of the 14th International Conference on Web Search and Data Mining (WSDM'21).</div>
-          <div class="publication-categories">
-            <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/FinSense_WSDM_Demo_2021.pdf" target="_blank">pdf</a>
-            <a href="http://nlg6.csie.ntu.edu.tw/FinSense" target="_blank">demo</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Risk-aware Regularization for Opinion-based Portfolio Selection</div>
-          <div class="publication-item-authors">Ting-Wei Hsu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">Proceedings of 15th International Conference on Web and Social Media (ICWSM'21).</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/Opinion_based_Portfolio_Selection___ICWSM_2021_____.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <h3 class="publication-year-header">2020</h3>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">NumClaim: Investor's Fine-grained Claim Detection</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
-          <div class="publication-item-venue">Proceedings of the 29th ACM International Conference on Information and Knowledge Management (CIKM'20). (Acceptance Rate: 25.9%, 103/397)</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag governance">Governance & Policy Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/NumClaim.pdf" target="_blank">pdf</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/NumClaim/" target="_blank">resource</a>
-            <a href="slides/NumClaim.pdf" target="_blank">slides</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Issues and Perspectives from 10,000 Annotated Financial Social Media Data</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
-          <div class="publication-item-venue">Proceedings of the 12th International Conference on Language Resources and Evaluation (LREC'20).</div>
-          <div class="publication-categories">
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/FinSoMe.pdf" target="_blank">pdf</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/FinSoMe/" target="_blank">resource</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Learning to Generate Correct Numeric Values in News Headlines</div>
-          <div class="publication-item-authors">Jui Chu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
-          <div class="publication-item-venue">Companion Proceedings of the Web Conference 2020 (WWW'20).</div>
-          <div class="publication-categories">
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/HeadlineGeneration.pdf" target="_blank">pdf</a>
-            <a href="slides/Headline_Generation.pdf" target="_blank">slides</a>
-            <a href="posters/Generate_Headlines.pdf" target="_blank">poster</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Hedging via Opinion-based Pair Trading Strategy</div>
-          <div class="publication-item-authors">Ting-Wei Hsu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Meng Chang Chen, and Hsin-Hsi Chen. 2020.</div>
-          <div class="publication-item-venue">Companion Proceedings of the Web Conference 2020 (WWW'20).</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://doi.org/10.1145/3366424.3382701" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <h3 class="publication-year-header">2019</h3>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Numeracy-600K: Learning Numeracy for Detecting Exaggerated Information in Market Comments</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura and Hsin-Hsi Chen. 2019.</div>
-          <div class="publication-item-venue">Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (ACL'19). (Acceptance Rate: 18.2%, 213/1168)</div>
-          <div class="publication-categories">
-            <span class="category-tag performance">Performance & Efficiency</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://www.aclweb.org/anthology/P19-1635/" target="_blank">pdf</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/Numeracy600K/" target="_blank">resource</a>
-            <a href="posters/Numeracy600K.pdf" target="_blank">poster</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Numeral Attachment with Auxiliary Tasks</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2019.</div>
-          <div class="publication-item-venue">Proceedings of the 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'19). (Acceptance Rate: 24.4%, 108/443)</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://dl.acm.org/citation.cfm?id=3331361" target="_blank">pdf</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/NumAttach/" target="_blank">resource</a>
-            <a href="posters/NumAttach.pdf" target="_blank">poster</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Crowd View: Converting Investors' Opinions into Indicators</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2019.</div>
-          <div class="publication-item-venue">Proceedings of the 28th International Joint Conference on Artificial Intelligence (IJCAI'19).</div>
-          <div class="publication-categories">
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://www.ijcai.org/proceedings/2019/0936.pdf" target="_blank">pdf</a>
-            <a href="https://ntu-nlp.shinyapps.io/crowdview/" target="_blank">demo</a>
-            <a href="posters/CrowdView.pdf" target="_blank">poster</a>
-            <a href="slides/CrowdView.pdf" target="_blank">slides</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">CrowdPT: Summarizing Crowd Opinions as Professional Analyst</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Chia-Wen Tsai, and Hsin-Hsi Chen. 2019.</div>
-          <div class="publication-item-venue">Proceedings of the 2019 World Wide Web Conference (WWW'19).</div>
-          <div class="publication-categories">
-            <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://dl.acm.org/citation.cfm?id=3314122" target="_blank">pdf</a>
-            <a href="http://nlg6.csie.ntu.edu.tw/CrowdPT" target="_blank">demo</a>
-            <a href="posters/CrowdPT.pdf" target="_blank">poster</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Next Cashtag Prediction on Social Trading Platforms with Auxiliary Tasks</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2019.</div>
-          <div class="publication-item-venue">Proceedings of the IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM'19).</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://dl.acm.org/doi/abs/10.1145/3341161.3342945" target="_blank">pdf</a>
-            <a href="posters/NextCashtagPrediction.pdf" target="_blank">poster</a>
-            <a href="slides/NextCashtagPrediction.pdf" target="_blank">slides</a>
-          </div>
-        </div>
-        
-        <h3 class="publication-year-header">2018</h3>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Numeral Understanding in Financial Tweets for Fine-grained Crowd-based Forecasting</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Yow-Ting Shiue, and Hsin-Hsi Chen. 2018.</div>
-          <div class="publication-item-venue">Proceedings of the 2018 IEEE/WIC/ACM International Conference on Web Intelligence (WI 2018).</div>
-          <div class="publication-categories">
-            <span class="category-tag performance">Performance & Efficiency</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://ieeexplore.ieee.org/abstract/document/8609586" target="_blank">pdf</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/FinNum/" target="_blank">resource</a>
-            <a href="http://prezi.com/j5-gkeu3jeos/?utm_campaign=share&utm_medium=copy" target="_blank">slides</a>
-          </div>
-        </div>
-      </div>
+          <div class="sidebar-header">Year (Conference)</div>
+          <ul class="sidebar-menu">
+            <li><a href="#2025" class="sidebar-link">2025</a></li>
+            <li><a href="#2024" class="sidebar-link">2024</a></li>
+            <li><a href="#2023" class="sidebar-link">2023</a></li>
+            <li><a href="#2021" class="sidebar-link">2021</a></li>
+            <li><a href="#2020" class="sidebar-link">2020</a></li>
+            <li><a href="#2019" class="sidebar-link">2019</a></li>
+            <li><a href="#2018" class="sidebar-link">2018</a></li>
+          </ul>
+        </aside>
 
-      <div class="publication-type-section">
-        <h2 class="publication-type-title">Journal Articles</h2>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Semantics Matter: An Empirical Study on Economic Policy Uncertainty Index</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yu-Lieh Huang, and Fang Yang. 2024.</div>
-          <div class="publication-item-venue">International Review of Economics and Finance. [SSCI] [Impact Factor@2022: 4.5, Q1 (26/111), Category: Business, Finance]</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag governance">Governance & Policy Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1059056023003350" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Economic Policy Uncertainty Index for Taiwan</div>
-          <div class="publication-item-authors">Yu-Lieh Huang, Jin-Huei Yeh, and <strong>Chung-Chi Chen</strong>. 2019.</div>
-          <div class="publication-item-venue">Taiwan Economic Review.</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag governance">Governance & Policy Design</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="http://www.econ.ntu.edu.tw/ter/new/data/new/forthcoming/108-001.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-      </div>
+        <main class="content">
 
-      <div class="publication-type-section">
-        <h2 class="publication-type-title">Preprint</h2>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Diagnosing Model Editing via Knowledge Spectrum</div>
-          <div class="publication-item-authors">Tsung-Hsuan Pan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2025.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
+          <div id="book" class="publication-type-section">
+            <h2 class="publication-type-title"><i class="fa-solid fa-book"></i> Book</h2>
+            
+            <div class="publication-item">
+              <div class="publication-item-title">Agent AI for Finance: From Financial Argument Mining to Agent-Based Modeling</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, and Hiroya Takamura. 2025.</div>
+              <div class="publication-item-venue">Springer Nature.</div>
+              <div class="publication-categories">
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://link.springer.com/book/9783031946868?srsltid=AfmBOooERxWxnqlmRhTs4TwamOrCxhAECmi786btXJ8WIIkR3zD9V9gd" target="_blank"><i class="fa-solid fa-book-open"></i> Open Access</a>
+                <a href="https://sites.google.com/view/finagent/home" target="_blank"><i class="fa-solid fa-chalkboard-user"></i> ECAI-2024 Tutorial</a>
+              </div>
+            </div>
+            
+            <div class="publication-item">
+              <div class="publication-item-title">From Opinion Mining to Financial Argument Mining</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Springer Nature.</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://link.springer.com/book/10.1007/978-981-16-2881-8" target="_blank"><i class="fa-solid fa-book-open"></i> Open Access</a>
+                <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/financial-opinion-mining/home" target="_blank"><i class="fa-solid fa-chalkboard-user"></i> EMNLP-2021 Tutorial</a>
+              </div>
+            </div>
           </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2509.17482" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Decision-oriented Text Evaluation</div>
-          <div class="publication-item-authors">Yu-Shiang Huang, Chuan-Ju Wang, <strong>Chung-Chi Chen</strong>. 2025.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2507.01923" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Modeling Professionalism in Expert Questioning through Linguistic Differentiation</div>
-          <div class="publication-item-authors">Giulia D'Agostino, <strong>Chung-Chi Chen</strong>. 2025.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/pdf/2507.20249" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Refining Financial Consumer Complaints through Multi-Scale Model Interaction</div>
-          <div class="publication-item-authors">Bo-Wei Chen, An-Zi Yen, <strong>Chung-Chi Chen</strong>. 2025.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag governance">Governance & Policy Design</span>
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2504.09903" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">The Impact and Feasibility of Self-Confidence Shaping for AI-Assisted Decision-Making</div>
-          <div class="publication-item-authors">Takehiro Takayanagi, Ryuji Hashimoto, <strong>Chung-Chi Chen</strong>, Kiyoshi Izumi. 2025.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2504.09903" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Paraphrase-Aligned Machine Translation</div>
-          <div class="publication-item-authors">Ke-Ching Chang, <strong>Chung-Chi Chen</strong>, An-Zi Yen. 2024.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag performance">Performance & Efficiency</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2412.05916" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Rehearsing Answers to Probable Questions with Perspective-Taking</div>
-          <div class="publication-item-authors">Yung-Yu Shih, Ziwei Xu, Hiroya Takamura, Yun-Nung Chen, <strong>Chung-Chi Chen</strong>. 2024.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2409.18678" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Hierarchical Organization Simulacra in the Investment Sector</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2410.00354" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Distilling Analysis from Generative Models for Investment Decisions</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2410.07225" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">FinGen: A Dataset for Argument Generation in Finance</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2405.20708" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Why Has the Least Side Effect on Model Editing</div>
-          <div class="publication-item-authors">Tsung-Hsuan Pan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2024.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag performance">Performance & Efficiency</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2409.18679" target="_blank">pdf</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="publication-type-section">
-        <h2 class="publication-type-title">Research Agenda / Tutorial / Shared Task Overview Paper</h2>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">SemEval-2025 Task 6: Multinational, Multilingual, Multi-Industry Promise Verification</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yohei Seki, Hakusen Shu, Anais Lhuissier, Juyeon Kang, Hanwool Lee, Min-Yuh Day and Hiroya Takamura.</div>
-          <div class="publication-item-venue">Proceedings of the 19th International Workshop on Semantic Evaluation (SemEval'25).</div>
-          <div class="publication-categories">
-            <span class="category-tag governance">Governance & Policy Design</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-            <a href="https://sites.google.com/view/promiseeval/promiseeval" target="_blank">PromiseEval @ SemEval-2025</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">SemEval-2024 Task 7: Numeral-Aware Language Understanding and Generation</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Jian-Tao Huang, Hen-Hsen Huang, Hiroya Takamura, Hsin-Hsi Chen. 2024.</div>
-          <div class="publication-item-venue">Proceedings of the 18th International Workshop on Semantic Evaluation (SemEval'24).</div>
-          <div class="publication-categories">
-            <span class="category-tag performance">Performance & Efficiency</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2024.semeval-1.213/" target="_blank">pdf</a>
-            <a href="https://sites.google.com/view/numeval/" target="_blank">NumEval @ SemEval-2024</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Multi-Lingual ESG Impact Duration Inference</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Yohei Seki, Hanwool Lee, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2024.</div>
-          <div class="publication-item-venue">Proceedings of The Joint Workshop of the 7th Financial Technology and Natural Language Processing, the 5th Knowledge Discovery from Unstructured Data in Financial Services, and the 4th Workshop on Economics and Natural Language Processing.</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Overview of the NTCIR-17 FinArg-1 Task: Fine-grained Argument Understanding in Financial Analysis</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Chin-Yi Lin, Chr-Jr Chiu, Hen-Hsen Huang, Alaa Alhamzeh, Yu-Lieh Huang, Hiroya Takamura, and Hsin-Hsi Chen. 2023.</div>
-          <div class="publication-item-venue">Proceedings of the 17th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-17).</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="#" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Multi-Lingual ESG Impact Type Identification</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Yohei Seki, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2023.</div>
-          <div class="publication-item-venue">Proceedings of the Sixth Workshop on Financial Technology and Natural Language Processing (FinNLP'23).</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2023.finnlp-2.6/" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Multi-Lingual ESG Issue Identification</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2023.</div>
-          <div class="publication-item-venue">Proceedings of the Fifth Workshop on Financial Technology and Natural Language Processing and the Second Multimodal AI For Financial Forecasting (FinNLP'23).</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2023.finnlp-1.11/" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">FinTech for Social Good: A Research Agenda from NLP Perspective</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, and Hsin-Hsi Chen. 2022.</div>
-          <div class="publication-item-venue">arXiv.</div>
-          <div class="publication-categories">
-            <span class="category-tag societal">Societal Transformation Analysis</span>
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/FinTech for Social Good_ A Research Agenda from NLP Perspective (arXiv).pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Overview of the FinNLP-2022 ERAI Task: Evaluating the Rationales of Amateur Investors</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura, and Hsin-Hsi Chen. 2022.</div>
-          <div class="publication-item-venue">Proceedings of the Fourth Workshop on Financial Technology and Natural Language Processing (FinNLP'22).</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/ERAI_Overview_FinNLP_EMNLP_2022.pdf" target="_blank">pdf</a>
-            <a href="https://github.com/ymntseng/FinNLP2023_ML-ESG_ChineseCrawler" target="_blank">resource</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">An Overview of Financial Technology Innovation</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura, and Hsin-Hsi Chen. 2022.</div>
-          <div class="publication-item-venue">Companion Proceedings of the The Web Conference (WWW'22).</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/WWW_2022.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Overview of the NTCIR-16 FinNum-3 Task: Investor's and Manager's Fine-grained Claim Detection</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Yu-Lieh Huang, Hiroya Takamura, and Hsin-Hsi Chen. 2022.</div>
-          <div class="publication-item-venue">Proceedings of the 16th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-16).</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/FinNum3.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Financial Opinion Mining</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
-          <div class="publication-item-venue">EMNLP-2021.</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://aclanthology.org/2021.emnlp-tutorials.2/" target="_blank">pdf</a>
-            <a href="https://link.springer.com/book/10.1007/978-981-16-2881-8" target="_blank">book</a>
-            <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/financial-opinion-mining/home" target="_blank">EMNLP-2021 Tutorial</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">NLP in FinTech Applications: Past, Present and Future</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
-          <div class="publication-item-venue">arXiv:2005.01320.</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/2005.01320.pdf" target="_blank">pdf</a>
-            <a href="https://arxiv.org/abs/2005.01320" target="_blank">arXiv</a>
-            <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/nlpfintech" target="_blank">AACL-2020 Tutorial</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Overview of the NTCIR-15 FinNum-2 Task: Numeral Attachment in Financial Tweets</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura and Hsin-Hsi Chen. 2020.</div>
-          <div class="publication-item-venue">Proceedings of the 15th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-15).</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="http://research.nii.ac.jp/ntcir/workshop/OnlineProceedings15/pdf/ntcir/01-NTCIR15-OV-FINNUM-ChenC.pdf" target="_blank">pdf</a>
-            <a href="slides/FinNum2020.pdf" target="_blank">slides</a>
-            <a href="posters/FinNum2020.pdf" target="_blank">poster</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/NumAttach/" target="_blank">resource</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Final Report of the NTCIR-14 FinNum Task: Challenges and Current Status of Fine-Grained Numeral Understanding in Financial Social Media Data</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura and Hsin-Hsi Chen. 2019.</div>
-          <div class="publication-item-venue">Lecture Notes in Computer Science. Springer International Publishing, Switzerland.</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://link.springer.com/chapter/10.1007/978-3-030-36805-0_14" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Overview of the NTCIR-14 FinNum Task: Fine-Grained Numeral Understanding in Financial Social Media Data</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura and Hsin-Hsi Chen. 2019.</div>
-          <div class="publication-item-venue">Proceedings of the 14th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-14).</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="http://research.nii.ac.jp/ntcir/workshop/OnlineProceedings14/pdf/ntcir/01-NTCIR14-OV-FINNUM-ChenC.pdf" target="_blank">pdf</a>
-            <a href="slides/FinNum2019.pdf" target="_blank">slides</a>
-            <a href="posters/FinNum2019.pdf" target="_blank">poster</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/FinNum/" target="_blank">resource</a>
-          </div>
-        </div>
-      </div>
+          <div id="conf" class="publication-type-section">
+            <h2 class="publication-type-title"><i class="fa-solid fa-users-rectangle"></i> Peer-Reviewed Conference Papers</h2>
+            
+            <h3 id="2025" class="publication-year-header">2025</h3>
+            
+            <div class="publication-item">
+              <div class="publication-item-title">Observing Micromotives and Macrobehavior of Large Language Models</div>
+              <div class="publication-item-authors">Yuyang Cheng, Xingwei Qu, Tomas Goldsack, Chenghua Lin, <strong>Chung-Chi Chen</strong>. 2025.</div>
+              <div class="publication-item-venue">Proceedings of the International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL).</div>
+              <div class="publication-categories">
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2412.10428" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
 
-      <div class="publication-type-section">
-        <h2 class="publication-type-title">Workshop Paper</h2>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Enhancing Financial Sentiment Analysis with Expert-Designed Hint</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi, and Yusuke Miyao. 2024.</div>
-          <div class="publication-item-venue">Proceedings of the International Workshop on Computational Reproducibility in Social Sciences @ ICWSM-2025.</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://arxiv.org/abs/2409.17448" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Exploration Reduction by Selecting a Hierarchical Order of Implicit Author Demographic Characterizations</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
-          <div class="publication-item-venue">Proceedings of the 1st International Workshop on Implicit Author Characterization from Texts for Search and Retrieval @ SIGIR-2023.</div>
-          <div class="publication-categories">
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://ceur-ws.org/Vol-3477/paper1.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">NTUNLPL at FinCausal 2020, Task 2: Improving Causality Detection Using Viterbi Decoder</div>
-          <div class="publication-item-authors">Pei-Wei Kao, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
-          <div class="publication-item-venue">Proceedings of the 1st Joint Workshop on Financial Narrative Processing and MultiLing Financial Summarisation @ COLING-2020.</div>
-          <div class="publication-categories">
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-            <span class="category-tag performance">Performance & Efficiency</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://www.aclweb.org/anthology/2020.fnp-1.11.pdf" target="_blank">pdf</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">NTUSD-Fin: A Market Sentiment Dictionary for Financial Social Media Data Applications</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2018.</div>
-          <div class="publication-item-venue">Proceedings of the 1st Financial Narrative Processing Workshop @ LREC-2018.</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="papers/NTUSD-Fin_Market_Sentiment_Dictionary_for_Financial_Social_Media_Data.pdf" target="_blank">pdf</a>
-            <a href="http://nlg.csie.ntu.edu.tw/nlpresource/NTUSD-Fin/" target="_blank">resource</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">Fine-Grained Analysis of Financial Tweets</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2018.</div>
-          <div class="publication-item-venue">Companion Proceedings of the The Web Conference (WWW'18), pages 1943-1949.</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag ir-agents">Information Retrieval for Agents</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="https://dl.acm.org/citation.cfm?id=3184558.3191824" target="_blank">pdf</a>
-            <a href="https://prezi.com/view/OGYHAFFKNtnZT53JjWeO/" target="_blank">slides</a>
-          </div>
-        </div>
-        
-        <div class="publication-item">
-          <div class="publication-item-title">NLG301 at SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogs and News</div>
-          <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2017.</div>
-          <div class="publication-item-venue">Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval 2017).</div>
-          <div class="publication-categories">
-            <span class="category-tag economic">Economic & Cultural Impact</span>
-            <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
-          </div>
-          <div class="publication-item-links">
-            <a href="http://www.aclweb.org/anthology/S17-2144" target="_blank">pdf</a>
-            <a href="images/SemEval2017.jpg" target="_blank">poster</a>
-          </div>
-        </div>
-      </div>
+            <div class="publication-item">
+              <div class="publication-item-title">Enhancing Investment Opinion Ranking through Argument-Based Sentiment Analysis</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen, Hiroya Takamura, Ichiro Kobayashi, Yusuke Miyao. 2025.</div>
+              <div class="publication-item-venue">Proceedings of the International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL).</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2409.17417" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
 
+            <div class="publication-item">
+              <div class="publication-item-title">ML-Promise: A Multilingual Dataset for Corporate Promise Verification</div>
+              <div class="publication-item-authors">Yohei Seki, Hakusen Shu, Anaïs Lhuissier, Hanwool Lee, Juyeon Kang, Min-Yuh Day, and <strong>Chung-Chi Chen</strong>. 2025.</div>
+              <div class="publication-item-venue">Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP'25).</div>
+              <div class="publication-categories">
+                <span class="category-tag governance">Governance & Policy Design</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2411.04473v1" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Company-Specific Knowledge Matters: Retrieval-Augmented Generation for Earnings Call Answer Rehearsal</div>
+              <div class="publication-item-authors">Yung-Yu Shih, Yun-Nung Chen, <strong>Chung-Chi Chen</strong>. 2025.</div>
+              <div class="publication-item-venue">Proceedings of The 34th ACM International Conference on Information and Knowledge Management (CIKM'25).</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Live Commentary Planning and Generation</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Huan-Wen Ho, Yu-Yu Chang, Ming-Hung Wang, Ramon Ruiz-Dolz, Chris Reed, Ichiro Kobayashi, Yusuke Miyao, Hiroya Takamura. 2025.</div>
+              <div class="publication-item-venue">Proceedings of the 18th International Natural Language Generation Conference: Generation Challenges (INLG'25).</div>
+              <div class="publication-categories">
+                <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://drive.google.com/file/d/1gxRZevwwfdcqpXWPscfwYVOWwX7hU5Wn/view?usp=sharing" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Evaluating Large Language Models as Expert Annotators</div>
+              <div class="publication-item-authors">Yu-Min Tseng, Wei-Lin Chen, <strong>Chung-Chi Chen</strong>, Hsin-Hsi Chen. 2025.</div>
+              <div class="publication-item-venue">Proceedings of Second Conference on Language Modeling (COLM'25).</div>
+              <div class="publication-categories">
+                <span class="category-tag performance">Performance & Efficiency</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2508.07827" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Can GPT-4 Sway Experts' Decisions?</div>
+              <div class="publication-item-authors">Takehiro Takayanagi, Hiroya Takamura, Kiyoshi Izumi, <strong>Chung-Chi Chen</strong>. 2025.</div>
+              <div class="publication-item-venue">Findings of the Association for Computational Linguistics: NAACL 2025.</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2409.16710" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Co-Trained Retriever-Generator Framework for Question Generation in Earnings Calls</div>
+              <div class="publication-item-authors">Yining Juan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2025.</div>
+              <div class="publication-item-venue">Companion Proceedings of the Web Conference 2025 (WWW'25).</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2409.18677" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Pre-Finetuning with Impact Duration Awareness for Stock Movement Prediction</div>
+              <div class="publication-item-authors">Chr-Jr Chiu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2025.</div>
+              <div class="publication-item-venue">Companion Proceedings of the Web Conference 2025 (WWW'25).</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2409.17419" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">RAG-Enhanced Evidence Recommendation in Financial Legal Resolutions</div>
+              <div class="publication-item-authors">Hsiu-Hung Lee, <strong>Chung-Chi Chen</strong>, An-Zi Yen. 2025.</div>
+              <div class="publication-item-venue">Companion Proceedings of the Web Conference 2025 (WWW'25).</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag governance">Governance & Policy Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">From Facts to Insights: A Study on the Generation and Evaluation of Analytical Reports for Deciphering Earnings Calls</div>
+              <div class="publication-item-authors">Tomas Goldsack, Yang Wang, Chenghua Lin, and <strong>Chung-Chi Chen</strong>. 2025.</div>
+              <div class="publication-item-venue">Proceedings of the 31st International Conference on Computational Linguistics (COLING-2025).</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2410.01039" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">GADFA: Generator-Assisted Decision-Focused Approach for Opinion Expressing Timing Identification</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi, Yusuke Miyao, Hsin-Hsi Chen. 2025.</div>
+              <div class="publication-item-venue">Proceedings of the 31st International Conference on Computational Linguistics (COLING-2025).</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2410.01169" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <h3 id="2024" class="publication-year-header">2024</h3>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Professionalism-Aware Pre-Finetuning for Profitability Ranking</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
+              <div class="publication-item-venue">Proceedings of The 33rd ACM International Conference on Information and Knowledge Management (CIKM'24). (Acceptance Rate: 26.76%, 141/527)</div>
+              <div class="publication-categories">
+                <span class="category-tag performance">Performance & Efficiency</span>
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Automation of Text-Based Economic Indicator Construction: A Pilot Exploration on Economic Policy Uncertainty Index</div>
+              <div class="publication-item-authors">Hsiu-Hsuan Yeh, Yu-Lieh Huang, Ziho Park, and <strong>Chung-Chi Chen</strong>. 2024.</div>
+              <div class="publication-item-venue">Proceedings of The 33rd ACM International Conference on Information and Knowledge Management (CIKM'24). (Acceptance Rate: 26.76%, 141/527)</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Argument-Based Sentiment Analysis on Forward-Looking Statements</div>
+              <div class="publication-item-authors">Chin-Yi Lin, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2024.</div>
+              <div class="publication-item-venue">Findings of the Association for Computational Linguistics: ACL 2024.</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/ACL24-Argument.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">DBQR-QA: A Question Answering Dataset on a Hybrid of Database Querying and Reasoning</div>
+              <div class="publication-item-authors">Rungsiman Nararatwong, <strong>Chung-Chi Chen</strong>, Natthawut Kertkeidkachorn, Hiroya Takamura, and Ryutaro Ichise. 2024.</div>
+              <div class="publication-item-venue">Findings of the Association for Computational Linguistics: ACL 2024.</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/ACL24-DBQR-QA.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">The Impact of Language on Arithmetic Proficiency: A Multilingual Investigation with Cross-Agent Checking Computation</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
+              <div class="publication-item-venue">Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL'24). (Acceptance Rate: 23.2%, 565/2434)</div>
+              <div class="publication-categories">
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2024.naacl-short.53/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://drive.google.com/file/u/1/d/1WahChtYNj4wYy59gYDkvSThFzgQSN7Zh/view?usp=sharing" target="_blank"><i class="fa-solid fa-database"></i> data</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">News-Driven Price Movement Forecasting with Label-Prior Graph Attention</div>
+              <div class="publication-item-authors">Yi-Ting Liou, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2024.</div>
+              <div class="publication-item-venue">Companion Proceedings of the Web Conference 2024 (WWW'24).</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://dl.acm.org/doi/abs/10.1145/3589335.3651539" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Generator-Guided Crowd Reaction Assessment</div>
+              <div class="publication-item-authors">Sohom Ghosh, <strong>Chung-Chi Chen</strong>, Sudip Kumar Naskar. 2024.</div>
+              <div class="publication-item-venue">Companion Proceedings of the Web Conference 2024 (WWW'24).</div>
+              <div class="publication-categories">
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+                <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2403.09702" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Term-Driven Forward-Looking Claim Synthesis in Earnings Calls</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura. 2024.</div>
+              <div class="publication-item-venue">Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING'24). (Acceptance Rate: 52%)</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2024.lrec-main.1368/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">NumHG: A Dataset for Number-Focused Headline Generation</div>
+              <div class="publication-item-authors">Jian-Tao Huang, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2024.</div>
+              <div class="publication-item-venue">Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING'24). (Acceptance Rate: 52%)</div>
+              <div class="publication-categories">
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2309.01455" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://sites.google.com/view/numeval/" target="_blank"><i class="fa-solid fa-database"></i> NumEval@SemEval-2024 Dataset</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Learning Strategies for Robust Argument Mining: An Analysis of Variations in Language and Domain</div>
+              <div class="publication-item-authors">Ramon Ruiz-Dolz, Chr-Jr Chiu, <strong>Chung-Chi Chen</strong>, Noriko Kando, Hsin-Hsi Chen. 2024.</div>
+              <div class="publication-item-venue">Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING'24). (Acceptance Rate: 52%)</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2024.lrec-main.898/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Enhancing Society-Undermining Disinformation Detection through Fine-Grained Sentiment Analysis Pre-Finetuning</div>
+              <div class="publication-item-authors">Tsung-Hsuan Pan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2024.</div>
+              <div class="publication-item-venue">Findings of the Association for Computational Linguistics: EACL 2024. (Acceptance Rate: 34.8%)</div>
+              <div class="publication-categories">
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+                <span class="category-tag governance">Governance & Policy Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2024.findings-eacl.92/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <h3 id="2023" class="publication-year-header">2023</h3>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Fidelity-Enriched Contrastive Search: Reconciling the Faithfulness-Diversity Trade-Off in Text Generation</div>
+              <div class="publication-item-authors">Wei-Lin Chen, Cheng-Kuang Wu, Hsin-Hsi Chen, <strong>Chung-Chi Chen</strong>. 2023.</div>
+              <div class="publication-item-venue">Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP'23). (Acceptance Rate: 14.02%, 146/1041)</div>
+              <div class="publication-categories">
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/pdf/2310.14981.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Personalized Dynamic Recommender System for Investors</div>
+              <div class="publication-item-authors">Takehiro Takayanagi, <strong>Chung-Chi Chen</strong>, Kiyoshi Izumi. 2023.</div>
+              <div class="publication-item-venue">Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'23). (Acceptance Rate: 25.12%, 154/613)</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/SIGIR23.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://github.com/TTsamurai/PDRSI_public_code" target="_blank"><i class="fa-brands fa-github"></i> resource</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">DynamicESG: A Dataset for Dynamically Unearthing ESG Ratings from News Articles</div>
+              <div class="publication-item-authors">Yu-Min Tseng, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
+              <div class="publication-item-venue">Proceedings of The 32nd ACM International Conference on Information and Knowledge Management (CIKM'23). (Acceptance Rate: 27.2%, 22/81)</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag governance">Governance & Policy Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/DynamicESG.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://github.com/ymntseng/DynamicESG/" target="_blank"><i class="fa-brands fa-github"></i> resource</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Enhancing Volatility Forecasting in Financial Markets: A General Numeral Attachment Dataset for Understanding Earnings Calls</div>
+              <div class="publication-item-authors">Ming-Xuan Shi, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
+              <div class="publication-item-venue">Proceedings of The 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL'23). (Acceptance Rate: 19.13%, 22/115)</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Generating Multiple Questions from Presentation Transcripts: A Pilot Study on Earnings Conference Calls</div>
+              <div class="publication-item-authors">Yi-Ning Juan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
+              <div class="publication-item-venue">Proceedings of the 16th International Conference on Natural Language Generation (INLG'23).</div>
+              <div class="publication-categories">
+                <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/MQG-INLG23.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="posters/INLG23_Poster.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">CustodiAI: A System for Predicting Child Custody Outcomes</div>
+              <div class="publication-item-authors">Yi-Ning Juan, <strong>Chung-Chi Chen</strong>, Hsin-Hsi Chen, and Daw-Wei Wang. 2023.</div>
+              <div class="publication-item-venue">Proceedings of The 13th International Joint Conference on Natural Language Processing and the 3rd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics: System Demonstrations (IJCNLP-AACL'23).</div>
+              <div class="publication-categories">
+                <span class="category-tag governance">Governance & Policy Design</span>
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://demo-cjdp-aifr.herokuapp.com/demo-home" target="_blank"><i class="fa-solid fa-desktop"></i> demo</a>
+                <a href="https://drive.google.com/file/d/1i8DYl0mK2ErtlXwGUcNU3wsN8rTszb3W/view" target="_blank"><i class="fa-solid fa-video"></i> video</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Improving Numeracy by Input Reframing and Quantitative Pre-Finetuning Task</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2023.</div>
+              <div class="publication-item-venue">Findings of the Association for Computational Linguistics: EACL 2023. (Acceptance Rate: 17.2%)</div>
+              <div class="publication-categories">
+                <span class="category-tag performance">Performance & Efficiency</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2023.findings-eacl.4/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="posters/EACL2023_numeracy.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Entity-Aware Dual Co-Attention Network for Fake News Detection</div>
+              <div class="publication-item-authors">Sin-Han Yang, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
+              <div class="publication-item-venue">Findings of the Association for Computational Linguistics: EACL 2023. (Acceptance Rate: 17.2%)</div>
+              <div class="publication-categories">
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+                <span class="category-tag governance">Governance & Policy Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2023.findings-eacl.7/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="posters/EACL2023_fakenews.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">The Mask One At a Time Framework for Detecting the Relationship between Financial Entities</div>
+              <div class="publication-item-authors">Sohom Ghosh, Sachin Umrao, <strong>Chung-Chi Chen</strong>, and Sudip Kumar Naskar. 2023.</div>
+              <div class="publication-item-venue">Proceedings of the 15th Annual Meeting of the Forum for Information Retrieval Evaluation. (Acceptance Rate: 48%)</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <h3 id="2021" class="publication-year-header">2021</h3>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Evaluating the Rationales of Amateur Investors</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of The Web Conference 2021 (WWW'21). (Acceptance Rate: 20.6%, 357/1736)</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/WWW_2021.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="slides/WWW-2021_Rationales_of_Amateur_investor.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/ICRD/" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/FinProLex/" target="_blank"><i class="fa-solid fa-book-bookmark"></i> lexicon</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">NQuAD: 70,000+ Questions for Machine Comprehension of the Numerals in Text</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of The 30th ACM International Conference on Information and Knowledge Management (CIKM'21). (Acceptance Rate: 28.3%, 177/626)</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/NQuAD_CIKM21.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="slides/NQuAD-CIKM-2021_Slides.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+                <a href="http://nquad.nlpfin.com" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Distilling Numeral Information for Volatility Forecasting</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Yu-Lieh Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of The 30th ACM International Conference on Information and Knowledge Management (CIKM'21). (Acceptance Rate: 28.3%, 177/626)</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/ECNum_CIKM21.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="slides/ConCall-CIKM-2021_Slides.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+                <a href="https://drive.google.com/drive/folders/1M8hBAGTGOBTIwticb26Azs2j4oP0d4Oc?usp=sharing" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Constructing Noise Free Economic Policy Uncertainty Index</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Yu-Lieh Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of The 30th ACM International Conference on Information and Knowledge Management (CIKM'21). (Acceptance Rate: 28.3%, 177/626)</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag governance">Governance & Policy Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/EPU_CIKM21.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="slides/EPU-CIKM-2021_Slides.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Retrieving Implicit Information for Stock Movement Prediction</div>
+              <div class="publication-item-authors">Tsun-Hsien Tang, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'21). (Acceptance Rate: 27.6%, 145/526)</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/Retrieving_Implicit_Information_for_Stock_Movement_Prediction___SIGIR_2021.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="slides/SIGIR2021_Slides.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+                <a href="posters/SIGIR2021_Poster.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Semantics-Preserved Data Augmentation for Aspect-Based Sentiment Analysis</div>
+              <div class="publication-item-authors">Ting-Wei Hsu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP'21). (Acceptance Rate: 17.9%, 190/1060)</div>
+              <div class="publication-categories">
+                <span class="category-tag performance">Performance & Efficiency</span>
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/EMNLP2021.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="slides/EMNLP-2021_Slides.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Dynamic Graph Transformer for Implicit Tag Recognition</div>
+              <div class="publication-item-authors">Yi-Ting Liou, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics (EACL'21). (Acceptance Rate: 24.7%)</div>
+              <div class="publication-categories">
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/Implicit_Tag_Recognition_EACL_2021.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">A Research Agenda for Financial Opinion Mining</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of 15th International Conference on Web and Social Media (ICWSM'21).</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/Financial_Opinion_Mining_Research_Agenda___ICWSM_2021.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Which Kind of Rumors May Undermine Society: Perspectives from Court Orders</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of the IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM'21).</div>
+              <div class="publication-categories">
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+                <span class="category-tag governance">Governance & Policy Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/ASONAM2021.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">FinSense: An Assistant System for Financial Journalists and Investors</div>
+              <div class="publication-item-authors">Yi-Ting Liou, <strong>Chung-Chi Chen</strong>, Tsun-Hsien Tang, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of the 14th International Conference on Web Search and Data Mining (WSDM'21).</div>
+              <div class="publication-categories">
+                <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/FinSense_WSDM_Demo_2021.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="http://nlg6.csie.ntu.edu.tw/FinSense" target="_blank"><i class="fa-solid fa-desktop"></i> demo</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Risk-aware Regularization for Opinion-based Portfolio Selection</div>
+              <div class="publication-item-authors">Ting-Wei Hsu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">Proceedings of 15th International Conference on Web and Social Media (ICWSM'21).</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/Opinion_based_Portfolio_Selection___ICWSM_2021_____.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <h3 id="2020" class="publication-year-header">2020</h3>
+
+            <div class="publication-item">
+              <div class="publication-item-title">NumClaim: Investor's Fine-grained Claim Detection</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
+              <div class="publication-item-venue">Proceedings of the 29th ACM International Conference on Information and Knowledge Management (CIKM'20). (Acceptance Rate: 25.9%, 103/397)</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag governance">Governance & Policy Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/NumClaim.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/NumClaim/" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+                <a href="slides/NumClaim.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Issues and Perspectives from 10,000 Annotated Financial Social Media Data</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
+              <div class="publication-item-venue">Proceedings of the 12th International Conference on Language Resources and Evaluation (LREC'20).</div>
+              <div class="publication-categories">
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/FinSoMe.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/FinSoMe/" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Learning to Generate Correct Numeric Values in News Headlines</div>
+              <div class="publication-item-authors">Jui Chu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
+              <div class="publication-item-venue">Companion Proceedings of the Web Conference 2020 (WWW'20).</div>
+              <div class="publication-categories">
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/HeadlineGeneration.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="slides/Headline_Generation.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+                <a href="posters/Generate_Headlines.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Hedging via Opinion-based Pair Trading Strategy</div>
+              <div class="publication-item-authors">Ting-Wei Hsu, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Meng Chang Chen, and Hsin-Hsi Chen. 2020.</div>
+              <div class="publication-item-venue">Companion Proceedings of the Web Conference 2020 (WWW'20).</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://doi.org/10.1145/3366424.3382701" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <h3 id="2019" class="publication-year-header">2019</h3>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Numeracy-600K: Learning Numeracy for Detecting Exaggerated Information in Market Comments</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura and Hsin-Hsi Chen. 2019.</div>
+              <div class="publication-item-venue">Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (ACL'19). (Acceptance Rate: 18.2%, 213/1168)</div>
+              <div class="publication-categories">
+                <span class="category-tag performance">Performance & Efficiency</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://www.aclweb.org/anthology/P19-1635/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/Numeracy600K/" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+                <a href="posters/Numeracy600K.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Numeral Attachment with Auxiliary Tasks</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2019.</div>
+              <div class="publication-item-venue">Proceedings of the 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'19). (Acceptance Rate: 24.4%, 108/443)</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://dl.acm.org/citation.cfm?id=3331361" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/NumAttach/" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+                <a href="posters/NumAttach.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Crowd View: Converting Investors' Opinions into Indicators</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2019.</div>
+              <div class="publication-item-venue">Proceedings of the 28th International Joint Conference on Artificial Intelligence (IJCAI'19).</div>
+              <div class="publication-categories">
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://www.ijcai.org/proceedings/2019/0936.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://ntu-nlp.shinyapps.io/crowdview/" target="_blank"><i class="fa-solid fa-desktop"></i> demo</a>
+                <a href="posters/CrowdView.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+                <a href="slides/CrowdView.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">CrowdPT: Summarizing Crowd Opinions as Professional Analyst</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Chia-Wen Tsai, and Hsin-Hsi Chen. 2019.</div>
+              <div class="publication-item-venue">Proceedings of the 2019 World Wide Web Conference (WWW'19).</div>
+              <div class="publication-categories">
+                <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://dl.acm.org/citation.cfm?id=3314122" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="http://nlg6.csie.ntu.edu.tw/CrowdPT" target="_blank"><i class="fa-solid fa-desktop"></i> demo</a>
+                <a href="posters/CrowdPT.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Next Cashtag Prediction on Social Trading Platforms with Auxiliary Tasks</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2019.</div>
+              <div class="publication-item-venue">Proceedings of the IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM'19).</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://dl.acm.org/doi/abs/10.1145/3341161.3342945" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="posters/NextCashtagPrediction.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+                <a href="slides/NextCashtagPrediction.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+              </div>
+            </div>
+
+            <h3 id="2018" class="publication-year-header">2018</h3>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Numeral Understanding in Financial Tweets for Fine-grained Crowd-based Forecasting</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Yow-Ting Shiue, and Hsin-Hsi Chen. 2018.</div>
+              <div class="publication-item-venue">Proceedings of the 2018 IEEE/WIC/ACM International Conference on Web Intelligence (WI 2018).</div>
+              <div class="publication-categories">
+                <span class="category-tag performance">Performance & Efficiency</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://ieeexplore.ieee.org/abstract/document/8609586" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/FinNum/" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+                <a href="http://prezi.com/j5-gkeu3jeos/?utm_campaign=share&utm_medium=copy" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="journal" class="publication-type-section">
+            <h2 class="publication-type-title"><i class="fa-solid fa-scroll"></i> Journal Articles</h2>
+            
+            <div class="publication-item">
+              <div class="publication-item-title">Semantics Matter: An Empirical Study on Economic Policy Uncertainty Index</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yu-Lieh Huang, and Fang Yang. 2024.</div>
+              <div class="publication-item-venue">International Review of Economics and Finance. <span style="color:#d97706; font-weight:700;">[SSCI] [Impact Factor@2022: 4.5, Q1]</span></div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag governance">Governance & Policy Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1059056023003350" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Economic Policy Uncertainty Index for Taiwan</div>
+              <div class="publication-item-authors">Yu-Lieh Huang, Jin-Huei Yeh, and <strong>Chung-Chi Chen</strong>. 2019.</div>
+              <div class="publication-item-venue">Taiwan Economic Review.</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag governance">Governance & Policy Design</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="http://www.econ.ntu.edu.tw/ter/new/data/new/forthcoming/108-001.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="preprint" class="publication-type-section">
+            <h2 class="publication-type-title"><i class="fa-solid fa-file-lines"></i> Preprints</h2>
+            
+            <div class="publication-item">
+              <div class="publication-item-title">Diagnosing Model Editing via Knowledge Spectrum</div>
+              <div class="publication-item-authors">Tsung-Hsuan Pan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2025.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2509.17482" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Decision-oriented Text Evaluation</div>
+              <div class="publication-item-authors">Yu-Shiang Huang, Chuan-Ju Wang, <strong>Chung-Chi Chen</strong>. 2025.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2507.01923" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Modeling Professionalism in Expert Questioning through Linguistic Differentiation</div>
+              <div class="publication-item-authors">Giulia D'Agostino, <strong>Chung-Chi Chen</strong>. 2025.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/pdf/2507.20249" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Refining Financial Consumer Complaints through Multi-Scale Model Interaction</div>
+              <div class="publication-item-authors">Bo-Wei Chen, An-Zi Yen, <strong>Chung-Chi Chen</strong>. 2025.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag governance">Governance & Policy Design</span>
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2504.09903" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">The Impact and Feasibility of Self-Confidence Shaping for AI-Assisted Decision-Making</div>
+              <div class="publication-item-authors">Takehiro Takayanagi, Ryuji Hashimoto, <strong>Chung-Chi Chen</strong>, Kiyoshi Izumi. 2025.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2504.09903" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Paraphrase-Aligned Machine Translation</div>
+              <div class="publication-item-authors">Ke-Ching Chang, <strong>Chung-Chi Chen</strong>, An-Zi Yen. 2024.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag performance">Performance & Efficiency</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2412.05916" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Rehearsing Answers to Probable Questions with Perspective-Taking</div>
+              <div class="publication-item-authors">Yung-Yu Shih, Ziwei Xu, Hiroya Takamura, Yun-Nung Chen, <strong>Chung-Chi Chen</strong>. 2024.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag high-fidelity">High-Fidelity Interaction Design</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2409.18678" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Hierarchical Organization Simulacra in the Investment Sector</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2410.00354" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Distilling Analysis from Generative Models for Investment Decisions</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2410.07225" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">FinGen: A Dataset for Argument Generation in Finance</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi and Yusuke Miyao. 2024.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2405.20708" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Why Has the Least Side Effect on Model Editing</div>
+              <div class="publication-item-authors">Tsung-Hsuan Pan, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hsin-Hsi Chen. 2024.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag performance">Performance & Efficiency</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2409.18679" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="agenda" class="publication-type-section">
+            <h2 class="publication-type-title"><i class="fa-solid fa-map-location-dot"></i> Research Agenda & Tutorials</h2>
+            
+            <div class="publication-item">
+              <div class="publication-item-title">SemEval-2025 Task 6: Multinational, Multilingual, Multi-Industry Promise Verification</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yohei Seki, Hakusen Shu, Anais Lhuissier, Juyeon Kang, Hanwool Lee, Min-Yuh Day and Hiroya Takamura.</div>
+              <div class="publication-item-venue">Proceedings of the 19th International Workshop on Semantic Evaluation (SemEval'25).</div>
+              <div class="publication-categories">
+                <span class="category-tag governance">Governance & Policy Design</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://sites.google.com/view/promiseeval/promiseeval" target="_blank"><i class="fa-solid fa-globe"></i> PromiseEval @ SemEval-2025</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">SemEval-2024 Task 7: Numeral-Aware Language Understanding and Generation</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Jian-Tao Huang, Hen-Hsen Huang, Hiroya Takamura, Hsin-Hsi Chen. 2024.</div>
+              <div class="publication-item-venue">Proceedings of the 18th International Workshop on Semantic Evaluation (SemEval'24).</div>
+              <div class="publication-categories">
+                <span class="category-tag performance">Performance & Efficiency</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2024.semeval-1.213/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://sites.google.com/view/numeval/" target="_blank"><i class="fa-solid fa-globe"></i> NumEval @ SemEval-2024</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Multi-Lingual ESG Impact Duration Inference</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Yohei Seki, Hanwool Lee, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2024.</div>
+              <div class="publication-item-venue">Proceedings of The Joint Workshop of the 7th Financial Technology and Natural Language Processing.</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Overview of the NTCIR-17 FinArg-1 Task: Fine-grained Argument Understanding in Financial Analysis</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Chin-Yi Lin, Chr-Jr Chiu, Hen-Hsen Huang, Alaa Alhamzeh, Yu-Lieh Huang, Hiroya Takamura, and Hsin-Hsi Chen. 2023.</div>
+              <div class="publication-item-venue">Proceedings of the 17th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-17).</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Multi-Lingual ESG Impact Type Identification</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Yohei Seki, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2023.</div>
+              <div class="publication-item-venue">Proceedings of the Sixth Workshop on Financial Technology and Natural Language Processing (FinNLP'23).</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2023.finnlp-2.6/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Multi-Lingual ESG Issue Identification</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2023.</div>
+              <div class="publication-item-venue">Proceedings of the Fifth Workshop on Financial Technology and Natural Language Processing.</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2023.finnlp-1.11/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">FinTech for Social Good: A Research Agenda from NLP Perspective</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, and Hsin-Hsi Chen. 2022.</div>
+              <div class="publication-item-venue">arXiv.</div>
+              <div class="publication-categories">
+                <span class="category-tag societal">Societal Transformation Analysis</span>
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/FinTech for Social Good_ A Research Agenda from NLP Perspective (arXiv).pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Overview of the FinNLP-2022 ERAI Task: Evaluating the Rationales of Amateur Investors</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura, and Hsin-Hsi Chen. 2022.</div>
+              <div class="publication-item-venue">Proceedings of the Fourth Workshop on Financial Technology and Natural Language Processing (FinNLP'22).</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/ERAI_Overview_FinNLP_EMNLP_2022.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://github.com/ymntseng/FinNLP2023_ML-ESG_ChineseCrawler" target="_blank"><i class="fa-brands fa-github"></i> resource</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">An Overview of Financial Technology Innovation</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura, and Hsin-Hsi Chen. 2022.</div>
+              <div class="publication-item-venue">Companion Proceedings of the The Web Conference (WWW'22).</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/WWW_2022.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Overview of the NTCIR-16 FinNum-3 Task: Investor's and Manager's Fine-grained Claim Detection</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Yu-Lieh Huang, Hiroya Takamura, and Hsin-Hsi Chen. 2022.</div>
+              <div class="publication-item-venue">Proceedings of the 16th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-16).</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag high-stakes">High-Stakes Decision-Making</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/FinNum3.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Financial Opinion Mining</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2021.</div>
+              <div class="publication-item-venue">EMNLP-2021.</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://aclanthology.org/2021.emnlp-tutorials.2/" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://link.springer.com/book/10.1007/978-981-16-2881-8" target="_blank"><i class="fa-solid fa-book"></i> book</a>
+                <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/financial-opinion-mining/home" target="_blank"><i class="fa-solid fa-chalkboard-user"></i> EMNLP-2021 Tutorial</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">NLP in FinTech Applications: Past, Present and Future</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
+              <div class="publication-item-venue">arXiv:2005.01320.</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag llm-arch">LLM-based Agent Architectures</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/2005.01320.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://arxiv.org/abs/2005.01320" target="_blank"><i class="fa-solid fa-globe"></i> arXiv</a>
+                <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/nlpfintech" target="_blank"><i class="fa-solid fa-chalkboard-user"></i> AACL-2020 Tutorial</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Overview of the NTCIR-15 FinNum-2 Task: Numeral Attachment in Financial Tweets</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura and Hsin-Hsi Chen. 2020.</div>
+              <div class="publication-item-venue">Proceedings of the 15th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-15).</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="http://research.nii.ac.jp/ntcir/workshop/OnlineProceedings15/pdf/ntcir/01-NTCIR15-OV-FINNUM-ChenC.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="slides/FinNum2020.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+                <a href="posters/FinNum2020.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/NumAttach/" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Final Report of the NTCIR-14 FinNum Task: Challenges and Current Status of Fine-Grained Numeral Understanding in Financial Social Media Data</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura and Hsin-Hsi Chen. 2019.</div>
+              <div class="publication-item-venue">Lecture Notes in Computer Science. Springer International Publishing, Switzerland.</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://link.springer.com/chapter/10.1007/978-3-030-36805-0_14" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Overview of the NTCIR-14 FinNum Task: Fine-Grained Numeral Understanding in Financial Social Media Data</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, Hiroya Takamura and Hsin-Hsi Chen. 2019.</div>
+              <div class="publication-item-venue">Proceedings of the 14th NTCIR Conference on Evaluation of Information Access Technologies (NTCIR-14).</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="http://research.nii.ac.jp/ntcir/workshop/OnlineProceedings14/pdf/ntcir/01-NTCIR14-OV-FINNUM-ChenC.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="slides/FinNum2019.pdf" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+                <a href="posters/FinNum2019.pdf" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/FinNum/" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="workshop" class="publication-type-section">
+            <h2 class="publication-type-title"><i class="fa-solid fa-laptop-code"></i> Workshop Papers</h2>
+            
+            <div class="publication-item">
+              <div class="publication-item-title">Enhancing Financial Sentiment Analysis with Expert-Designed Hint</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hiroya Takamura, Ichiro Kobayashi, and Yusuke Miyao. 2024.</div>
+              <div class="publication-item-venue">Proceedings of the International Workshop on Computational Reproducibility in Social Sciences @ ICWSM-2025.</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://arxiv.org/abs/2409.17448" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Exploration Reduction by Selecting a Hierarchical Order of Implicit Author Demographic Characterizations</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2023.</div>
+              <div class="publication-item-venue">Proceedings of the 1st International Workshop on Implicit Author Characterization from Texts for Search and Retrieval @ SIGIR-2023.</div>
+              <div class="publication-categories">
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://ceur-ws.org/Vol-3477/paper1.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">NTUNLPL at FinCausal 2020, Task 2: Improving Causality Detection Using Viterbi Decoder</div>
+              <div class="publication-item-authors">Pei-Wei Kao, <strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2020.</div>
+              <div class="publication-item-venue">Proceedings of the 1st Joint Workshop on Financial Narrative Processing and MultiLing Financial Summarisation @ COLING-2020.</div>
+              <div class="publication-categories">
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+                <span class="category-tag performance">Performance & Efficiency</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://www.aclweb.org/anthology/2020.fnp-1.11.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">NTUSD-Fin: A Market Sentiment Dictionary for Financial Social Media Data Applications</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2018.</div>
+              <div class="publication-item-venue">Proceedings of the 1st Financial Narrative Processing Workshop @ LREC-2018.</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="papers/NTUSD-Fin_Market_Sentiment_Dictionary_for_Financial_Social_Media_Data.pdf" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="http://nlg.csie.ntu.edu.tw/nlpresource/NTUSD-Fin/" target="_blank"><i class="fa-solid fa-database"></i> resource</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">Fine-Grained Analysis of Financial Tweets</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2018.</div>
+              <div class="publication-item-venue">Companion Proceedings of the The Web Conference (WWW'18).</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag ir-agents">Information Retrieval for Agents</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="https://dl.acm.org/citation.cfm?id=3184558.3191824" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="https://prezi.com/view/OGYHAFFKNtnZT53JjWeO/" target="_blank"><i class="fa-regular fa-file-powerpoint"></i> slides</a>
+              </div>
+            </div>
+
+            <div class="publication-item">
+              <div class="publication-item-title">NLG301 at SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogs and News</div>
+              <div class="publication-item-authors"><strong>Chung-Chi Chen</strong>, Hen-Hsen Huang, and Hsin-Hsi Chen. 2017.</div>
+              <div class="publication-item-venue">Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval 2017).</div>
+              <div class="publication-categories">
+                <span class="category-tag economic">Economic & Cultural Impact</span>
+                <span class="category-tag higher-order">Higher-Order Thinking Augmentation</span>
+              </div>
+              <div class="publication-item-links">
+                <a href="http://www.aclweb.org/anthology/S17-2144" target="_blank"><i class="fa-regular fa-file-pdf"></i> pdf</a>
+                <a href="images/SemEval2017.jpg" target="_blank"><i class="fa-regular fa-image"></i> poster</a>
+              </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
     </div>
   </section>
   
@@ -1455,18 +1610,12 @@
             <li><a href="research.html">Research Areas</a></li>
             <li><a href="people.html">Our Team</a></li>
             <li><a href="publications.html">Publications</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
         
         <div class="footer-section">
           <h3>Connect With Us</h3>
-          <div class="footer-social">
-            <a href="mailto:c.c.chen@acm.org" class="footer-social-link">
-              <svg><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-            </a>
-          </div>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground);">
+          <p style="font-size: 0.875rem; color: var(--text-muted);">
             Email: c.c.chen@acm.org
           </p>
         </div>
@@ -1479,5 +1628,29 @@
   </footer>
   
   <script src="js/script.js"></script>
+  <script>
+    // Smooth scrolling for sidebar links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                // Adjust for sticky header or padding
+                const headerOffset = 100;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // Update Footer Year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
