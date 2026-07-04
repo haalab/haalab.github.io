@@ -3,103 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Team | Human-Agent Ally Lab</title>
-  <meta name="description" content="Meet the researchers and collaborators at Human-Agent Ally Lab.">
-  
+  <title>People | HAA Lab — Meet the Human-Agent Ally Lab Team</title>
+  <meta name="description" content="Meet the HAA Lab team: PI Dr. Chung-Chi Chen (Assistant Professor, NII), group members, and international collaborators from 12+ countries working on human-agent research.">
+  <meta name="author" content="Human-Agent Ally Lab">
+  <link rel="canonical" href="https://haalab.github.io/people.html">
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <meta property="og:site_name" content="Human-Agent Ally Lab">
+  <meta property="og:title" content="People | HAA Lab">
+  <meta property="og:description" content="The international team behind the Human-Agent Ally Lab at NII, Japan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://haalab.github.io/people.html">
+  <meta property="og:image" content="https://haalab.github.io/images/logo_with_haalab.png">
+  <meta name="twitter:card" content="summary">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="css/styles.css">
-  
-  <style>
-    /* 姓名首字母頭像樣式 */
-    .avatar-placeholder {
-      width: 64px;
-      height: 64px;
-      background-color: var(--primary, #2563eb); /* 若 CSS 變數未定義則使用藍色 */
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      font-family: 'Outfit', sans-serif;
-      margin-bottom: 1rem;
-    }
-    
-    /* 區塊標題間距 */
-    .section-divider {
-      margin-top: 4rem;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid var(--muted, #e5e7eb);
-      padding-bottom: 1rem;
-    }
-    
-    .section-header-small {
-      font-size: 1.75rem;
-      font-weight: 700;
-      font-family: 'Outfit', sans-serif;
-      color: var(--foreground, #0f172a);
-    }
 
-    /* 引用文獻樣式微調 */
-    blockquote {
-      font-size: 0.9rem;
-      color: var(--muted-foreground, #64748b);
-      border-left: 3px solid var(--muted, #e5e7eb);
-      padding-left: 1rem;
-      margin-top: 0.75rem;
-      line-height: 1.5;
-    }
-    
-    blockquote a {
-      color: var(--primary, #2563eb);
-      text-decoration: none;
-    }
-    
-    blockquote a:hover {
-      text-decoration: underline;
-    }
-
-    .topic-tag {
-        display: inline-block;
-        background-color: var(--muted, #f1f5f9);
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-size: 0.75rem;
-        font-weight: 500;
-        margin-top: 0.5rem;
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://nlpfin.github.io/#person",
+    "name": "Chung-Chi Chen",
+    "jobTitle": "Assistant Professor",
+    "worksFor": { "@type": "ResearchOrganization", "name": "National Institute of Informatics", "url": "https://www.nii.ac.jp/en/" },
+    "url": "https://nlpfin.github.io/",
+    "email": "chen@nii.ac.jp",
+    "sameAs": [
+      "https://scholar.google.com.tw/citations?user=sJwWSg8AAAAJ",
+      "https://www.linkedin.com/in/chung-chi-chen-a6b8a6138/",
+      "https://twitter.com/nlpfin"
+    ],
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "National Taiwan University" },
+      { "@type": "CollegeOrUniversity", "name": "National Tsing Hua University" },
+      { "@type": "CollegeOrUniversity", "name": "National Taipei University" }
+    ],
+    "award": [
+      "SIGIR Early Career Researcher Award (Excellence in Community Engagement)",
+      "ANLP Outstanding Paper Award 2025"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
     <div class="container nav-container">
-        <a href="index.html" class="nav-logo">
-          <img src="images/logo.png" alt="HAA Lab Logo" class="nav-logo-img">
-          
-          <div class="nav-logo-text">
-            <div class="nav-title">HAA Lab</div>
-            <div class="nav-subtitle">Human-Agent Ally</div>
-          </div>
-        </a>
-      
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="HAA Lab logo" class="nav-logo-img">
+        <div class="nav-logo-text">
+          <div class="nav-title">HAA Lab</div>
+          <div class="nav-subtitle">Human-Agent Ally</div>
+        </div>
+      </a>
       <div class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="research.html" class="nav-link">Research</a>
         <a href="people.html" class="nav-link">People</a>
         <a href="publications.html" class="nav-link">Publications</a>
         <a href="events.html" class="nav-link">Events</a>
-        <a href="contact.html" class="nav-link">Recruitment</a>
+        <a href="contact.html" class="nav-link nav-cta">Join Us</a>
       </div>
-      
       <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
-        <svg><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+        <svg viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
       </button>
     </div>
-    
     <div class="mobile-menu" id="mobile-menu">
       <div class="container mobile-menu-links">
         <a href="index.html" class="nav-link">Home</a>
@@ -107,609 +78,480 @@
         <a href="people.html" class="nav-link">People</a>
         <a href="publications.html" class="nav-link">Publications</a>
         <a href="events.html" class="nav-link">Events</a>
-        <a href="contact.html" class="nav-link">Recruitment</a>
+        <a href="contact.html" class="nav-link">Join Us</a>
       </div>
     </div>
   </nav>
-  
-  <section class="page-section">
-    <div class="container" style="max-width: 88rem;">
-      
-      <div class="card" style="padding: 2.5rem; margin-bottom: 2rem;">
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
-            <div class="avatar-placeholder" style="width: 80px; height: 80px; font-size: 2rem; flex-shrink: 0;">CC</div>
-            <div>
-              <h2 class="font-outfit" style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">Dr. Chung-Chi Chen</h2>
-              <p style="font-size: 1.1rem; color: var(--primary); font-weight: 500; margin-bottom: 1rem;">
-                Assistant Professor, National Institute of Informatics, Japan
-              </p>
-            </div>
-          </div>
-          
-          <div style="line-height: 1.7; color: var(--muted-foreground);">
-            <p style="margin-bottom: 1rem;">
-              His recent research investigates how large language models and agents mediate communication, 
-              reshape human decision-making, and influence society. He is particularly interested in 
-              LLM-mediated communication, the social impact of agents, human-agent collaboration in 
-              high-stakes settings, and the detection and verification of forward-looking exaggeration and 
-              misinformation.
-            </p>
-            
-            <p style="margin-bottom: 1rem;">
-              His earlier work centered on natural language processing and information retrieval for 
-              high-stakes domains, including finance, law, and social science. Across these areas, he has 
-              worked on forward-looking argument mining, financial text analysis, legal technology, expert 
-              decision support, and evaluation frameworks for language technologies used in consequential 
-              contexts.
-            </p>
-            
-            <p style="margin-bottom: 1rem;">
-              He is the founder of ACL SIG-FinTech and has organized the FinNLP/FinWeb workshop series at 
-              leading international conferences, including IJCAI, WWW, EMNLP, and IJCNLP-AACL. He has also 
-              led the FinNum and FinArg shared task series at NTCIR, delivered tutorials at major conferences 
-              such as AACL, EMNLP, ECAI, and SIGIR, and served the research community through roles including 
-              Program Co-Chair, Senior Area Chair, and Program Committee member.
-            </p>
-            
-            <p style="margin-bottom: 1rem;">
-              He is the recipient of the SIGIR Early Career Researcher Award (Excellence in Community Engagement), 
-              along with multiple thesis awards and a technology innovation award. 
-              Beyond academia, he has actively engaged in FinTech and LegalTech, earning several awards 
-              from startup, FinTech, and LegalTech competitions.
-            </p>
-            
-            <p style="margin-bottom: 1rem;">
-                            For more details, please refer to his homepage:
-                <a href="http://nlpfin.github.io/" target="_blank">http://nlpfin.github.io/
-                </a>
-            </p>
-            
-          <div style="background-color: var(--muted); padding: 1.5rem; border-radius: 0.5rem; margin-top: 0.5rem;">
-            <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Education</h3>
-            <ul style="list-style: none; padding: 0; display: grid; gap: 0.75rem;">
-              <li><strong>Ph.D.</strong>, NLP Lab, Dept. of Computer Science and Information Engineering, National Taiwan University</li>
-              <li><strong>M.S.</strong>, Dept. of Quantitative Finance, National Tsing Hua University</li>
-              <li><strong>B.S.</strong>, Major in Dept. of Economics, Minor in Dept. of CSIE, National Taipei University</li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
-      <div class="section-divider">
-        <h2 class="section-header-small">Group Members</h2>
-      </div>
-      
-     <div class="grid-3">
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YH</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Yu-Shang Huang</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University - NII Visiting Researcher</p>
-          <div class="topic-tag">Adversarial Audit Simulation</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">CH</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Chun-Yu Hsu</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Academia Sinica - NII Visiting Researcher</p>
-          <div class="topic-tag">Neutrality-by-Design</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YC</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Yu-Yu Chang</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Chung Cheng University, Taiwan (AIST, Intern)</p>
-          <div class="topic-tag">Presidential Debate Analysis</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">HH</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Huan-Wen Ho</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Chung Cheng University, Taiwan (AIST, Intern)</p>
-          <div class="topic-tag">Presidential Debate Analysis</div>
-        </div>
-
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">BZ</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Bai-Li Zheng</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <div class="topic-tag">ESG Commitment Tracing</div>
-        </div>   
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">GY</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Guan-Bo Yang</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <div class="topic-tag">Financial Compliance</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">VD</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Vibhan Dutta</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Jadavpur University, India</p>
-          <div class="topic-tag">Cross-Temporal Decision-Making</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">SG</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Somdev Ganguli</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Jadavpur University, India</p>
-          <div class="topic-tag">Diverse Viewpoint Generation</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YC</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Yi-Ting Chiu</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Tsing Hua University, Taiwan</p>
-          <div class="topic-tag">LLM-mediated communication</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">JL</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Ji-Yuan Lo</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University, Taiwan</p>
-          <div class="topic-tag">Decision Simulation</div>
-        </div>
-
-      </div>
-
-      <div class="section-divider">
-        <h2 class="section-header-small">Ongoing Collaboration</h2>
-      </div>
-
-      <div class="grid-3">
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">IG</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Iryna Gurevych</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Technische Universität Darmstadt, Germany</p>
-          <div class="topic-tag">Quality Assurance in Scholarly Communication</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YL</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Yongjae Lee</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">The Ulsan National Institute of Science and Technology</p>
-          <div class="topic-tag">Personalized Financial Education</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">MD</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Min-Yuh Day</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">National Taipei University, Taiwan</p>
-          <div class="topic-tag">Chinese ESG Factor Analysis</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YS</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Yohei Seki</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">University of Tsukuba, Japan</p>
-          <div class="topic-tag">Cross-Lingual ESG Scoring</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">JK</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Dr. Juyeon Kang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">3DS Outscale, France</p>
-          <div class="topic-tag">Cross-Lingual ESG Scoring</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">MW</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Ming-Hung Wang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">National Chung Cheng University, Taiwan</p>
-          <div class="topic-tag">Presidential Debate Analysis</div>
-        </div>
-        
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">DW</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Dittaya Wanvarie</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Chulalongkorn University, Thailand</p>
-          <div class="topic-tag">Multilingual ESG Compliance</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">AK</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Atsushi Keyaki</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Hitotsubashi University, Japan</p>
-          <div class="topic-tag">Multilingual ESG Compliance</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">CK</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Chun-Wei Kang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">National Yang Ming Chiao Tung University</p>
-          <div class="topic-tag">Prompt Recommendation</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YH</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">You-Mei Huang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">National Yang Ming Chiao Tung University</p>
-          <div class="topic-tag">Agent Recommendation</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">SN</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Sudip Kumar Naskar</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Jadavpur University, India</p>
-          <div class="topic-tag">Multilingual ESG Compliance</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">SW</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Shih-Hung Wu</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">Chaoyang University of Technology, Taiwan</p>
-          <div class="topic-tag">Cross-Temporal Argument Verification</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">NK</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Noriko Kando</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">NII, Japan</p>
-          <div class="topic-tag">Eye-tracking for Decision Reasoning</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">HL</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Huy M. Le</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground);">MBZUAI, United Arab Emirates</p>
-          <div class="topic-tag">Clinical Conversation Simulation</div>
-        </div>
-      </div>
-
-      <div class="section-divider">
-        <h2 class="section-header-small">Former Members and Collaborators</h2>
-      </div>
-
-      <div class="grid-3">
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">TL</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Tzu-Mi Lin</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Yang Ming Chiao Tung University, Taiwan (AIST, Intern)</p>
-          <blockquote>
-            Tzu-Mi Lin, Wataru Hirota, Tatsuya Ishigaki, Lung-Hao Lee, Chung-Chi Chen. 2026. Why Expert Alignment Is Hard: Evidence from Subjective Evaluation. arXiv. <a href="https://arxiv.org/abs/2605.04972">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">SA</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Sophia Ananiadou</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Manchester University, UK</p>
-          <div class="topic-tag">Multi-Agent Interactions</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YH</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Yufang Hou</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">IT:U - Interdisciplinary Transformation University Austria</p>
-          <div class="topic-tag">Turning Evidence into Actionable Insights</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">FI</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Prof. Filip Ilievski</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Vrije Universiteit Amsterdam</p>
-          <div class="topic-tag">Assess Text Creativity</div>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">TT</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Takehiro Takayanagi</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">The University of Tokyo - AIST RA</p>
-          <div style="font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">Outstanding Paper Award (ANLP, Japan)</div>
-          <blockquote>
-            Can GPT-4 Sway Experts' Decisions? NAACL'25. <a href="https://aclanthology.org/2025.findings-naacl.22.pdf">pdf</a><br>
-            Personalized Dynamic Recommender System for Investors. SIGIR'23 <a href="https://nlpfin.github.io/papers/SIGIR23.pdf">pdf</a>
-          </blockquote>
-        </div>
-        
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">TL</div>
-          <h3 class="font-outfit" style="font-size: 1.25rem; font-weight: bold;">Tzu-En Liu</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <div class="topic-tag">Financial Compliance</div>
-        </div>
-  
-      
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">TP</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Tsung-Hsuan Pan</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University, Taiwan</p>
-          <blockquote>
-            Enhancing Society-Undermining Disinformation Detection through Fine-Grained Sentiment Analysis Pre-Finetuning. <i>Findings of EACL 2024</i>. <a href="https://aclanthology.org/2024.findings-eacl.92/">pdf</a><br>
-            Diagnosing Model Editing via Knowledge Spectrum <a href="https://arxiv.org/abs/2509.17482">pdf</a><br>
-            Why Has the Least Side Effect on Model Editing <a href="https://arxiv.org/abs/2409.18679">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YS</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yung-Yu Shih</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University, Taiwan</p>
-          <div style="font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">Outstanding Award in the 18th TSC Thesis Award</div>
-          <blockquote>
-            Company-Specific Knowledge Matters: Retrieval-Augmented Generation for Earnings Call Answer Rehearsal. In <i>CIKM'25</i>. <a href="">pdf</a><br>
-            Rehearsing Answers to Probable Questions with Perspective-Taking <a href="https://arxiv.org/abs/2409.18678">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">KC</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ke-Ching Chang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Yang Ming Chiao Tung University</p>
-          <blockquote>
-            Paraphrase-Aligned Machine Translation <a href="https://arxiv.org/abs/2412.05916">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">BC</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Bo-Wei Chen</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Yang Ming Chiao Tung University</p>
-          <blockquote>
-            Confidence-Driven Multi-Scale Model Selection for Cost-Effective NLU. <i>Findings of EACL 2026</i>. <a href="">pdf</a><br>
-            Refining Financial Consumer Complaints through Multi-Scale Model Interaction <a href="https://arxiv.org/abs/2504.09903">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">GD</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Giulia D'Agostino</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Università della Svizzera Italiana - AIST Intern</p>
-          <blockquote>
-            Modeling Professionalism in Expert Questioning through Linguistic Differentiation <a href="https://arxiv.org/pdf/2507.20249">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YH</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yu-Shang Huang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University - AIST Intern</p>
-          <div style="font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">NSTC Graduate Students Study Abroad Program (Chien-Li-Ma Scholarship)</div>
-          <blockquote>
-            Decision-oriented Text Evaluation <a href="https://arxiv.org/abs/2507.01923">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YT</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yu-Min Tseng</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University, Taiwan</p>
-          <div style="font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">Hon Hai Technology Award</div>
-          <blockquote>
-            Evaluating Large Language Models as Expert Annotators <i>COLM'25</i>. <a href="https://arxiv.org/abs/2410.03254">pdf</a><br>
-            DynamicESG: A Dataset for Dynamically Unearthing ESG Ratings from News Articles. <i>CIKM'23</i>. <a href="papers/DynamicESG.pdf">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">HL</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Hsiu-Hung Lee</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Yang Ming Chiao Tung University</p>
-          <blockquote>
-            RAG-Enhanced Evidence Recommendation in Financial Legal Resolutions. <i>WWW'25</i>.
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">CL</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Chin-Yi Lin</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-            Argument-Based Sentiment Analysis on Forward-Looking Statements. <i>ACL 2024</i>. <a href="papers/ACL24-Argument.pdf">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YJ</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yi-Ning Juan</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-            Co-Trained Retriever-Generator Framework for Question Generation in Earnings Calls. <i>WWW'25</i>. <a href="https://arxiv.org/abs/2409.18677">pdf</a><br>
-            Generating Multiple Questions from Presentation Transcripts: A Pilot Study on Earnings Conference Calls.  <i>INLG'23</i>. <a href="https://aclanthology.org/2023.inlg-main.35/">pdf</a><br>
-            CustodiAI: A System for Predicting Child Custody Outcomes. <i>IJCNLP-AACL'23</i>. <a href="https://aclanthology.org/2023.ijcnlp-demo.2/">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">TG</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Tomas Goldsack</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">University of Sheffield - AIST Intern</p>
-          <blockquote>
-            From Facts to Insights: A Study on the Generation and Evaluation of Analytical Reports for Deciphering Earnings Calls. <i>COLING-2025</i>. <a href="https://arxiv.org/abs/2410.01039">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">SY</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Sin-Han Yang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-            Entity-Aware Dual Co-Attention Network for Fake News Detection. <i>EACL 2023</i>. <a href="https://aclanthology.org/2023.findings-eacl.7/">pdf</a>
-          </blockquote>
-        </div>
-        
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">WC</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Wei-Lin Chen</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University - AIST Intern</p>
-          <blockquote>
-            Fidelity-Enriched Contrastive Search: Reconciling the Faithfulness-Diversity Trade-Off in Text Generation. <i>EMNLP'23</i>. <a href="https://arxiv.org/pdf/2310.14981.pdf">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">CC</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Chr-Jr Chiu</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-            Pre-Finetuning with Impact Duration Awareness for Stock Movement Prediction. <i>WWW'25</i>. <a href="https://arxiv.org/abs/2409.17419">pdf</a><br>
-            Learning Strategies for Robust Argument Mining: An Analysis of Variations in Language and Domain. <i>LREC-COLING'24</i>. <a href="https://aclanthology.org/2024.lrec-main.898/">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">MS</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ming-Xuan Shi</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-            Enhancing Volatility Forecasting in Financial Markets: A General Numeral Attachment Dataset for Understanding Earnings Calls. <i>IJCNLP-AACL'23</i>. <a href="">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">AL</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ai-Ni Li</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-            Financial Statement Adequacy
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YL</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yi-Ting Liu</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-             Dynamic Graph Transformer for Implicit Tag Recognition. <i>EACL'21</i>. <a href="papers/Implicit_Tag_Recognition_EACL_2021.pdf">pdf</a><br>
-             FinSense: An Assistant System for Financial Journalists and Investors. <i>WSDM'21</i>. <a href="papers/FinSense_WSDM_Demo_2021.pdf">pdf</a>
-          </blockquote>
-        </div>
-        
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">TH</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ting-Wei Hsu</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-             Semantics-Preserved Data Augmentation for Aspect-Based Sentiment Analysis. <i>EMNLP'21</i>. <a href="papers/EMNLP2021.pdf">pdf</a><br>
-             Risk-aware Regularization for Opinion-based Portfolio Selection. <i>ICWSM'21</i>. <a href="papers/Opinion_based_Portfolio_Selection___ICWSM_2021_____.pdf">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">JH</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">JianTao Huang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-             NumHG: A Dataset for Number-Focused Headline Generation. <i>LREC-COLING'24</i>. <a href="https://arxiv.org/abs/2309.01455">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">TT</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Tsun-Hsien Tang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-             Retrieving Implicit Information for Stock Movement Prediction. <i>SIGIR'21</i>. <a href="papers/Retrieving_Implicit_Information_for_Stock_Movement_Prediction___SIGIR_2021.pdf">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">PK</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Pei-Wei Kao</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-             NTUNLPL at FinCausal 2020, Task 2: Improving Causality Detection Using Viterbi Decoder. <a href="https://www.aclweb.org/anthology/2020.fnp-1.11.pdf">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">JC</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Jui Chu</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-             Learning to Generate Correct Numeric Values in News Headlines. <i>WWW'20</i>. <a href="papers/HeadlineGeneration.pdf">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">HY</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Hsiu-Hsuan Yeh</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">National Taiwan University</p>
-          <blockquote>
-             Automation of Text-Based Economic Indicator Construction: A Pilot Exploration on Economic Policy Uncertainty Index. <i>CIKM'24</i>. <a href="">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">RD</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Ramon Ruiz Dolz</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Universitat Politècnica de València</p>
-          <blockquote>
-             Learning Strategies for Robust Argument Mining: An Analysis of Variations in Language and Domain. <i>LREC-COLING'24</i>. <a href="https://aclanthology.org/2024.lrec-main.898/">pdf</a>
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">YJ</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Yuchen Eleanor Jiang</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">ETH Zürich - AIST Intern</p>
-          <blockquote>
-             Financial Q&A
-          </blockquote>
-        </div>
-
-        <div class="card" style="padding: 1.5rem;">
-          <div class="avatar-placeholder">SG</div>
-          <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: bold;">Sohom Ghosh</h3>
-          <p style="font-size: 0.8rem; color: var(--muted-foreground); margin-bottom: 0.5rem;">Jadavpur University</p>
-          <blockquote>
-             Generator-Guided Crowd Reaction Assessment. <i>WWW'24</i>. <a href="https://arxiv.org/abs/2403.09702">pdf</a><br>
-             The Mask One At a Time Framework for Detecting the Relationship between Financial Entities. <i>FIRE'23</i>. <a href="">pdf</a>
-          </blockquote>
-        </div>
-
-      </div>
-      
-      <div class="mt-16">
-        <div class="card text-center" style="padding: 3rem; background: linear-gradient(135deg, hsla(30, 90%, 55%, 0.1), hsla(45, 95%, 65%, 0.1)); border: 1px solid hsla(30, 90%, 55%, 0.2);">
-          <h2 class="font-outfit" style="font-size: 1.875rem; font-weight: bold; margin-bottom: 1rem;">
-            Join Our Team
-          </h2>
-          <p style="color: var(--muted-foreground); margin-bottom: 2rem; max-width: 42rem; margin-left: auto; margin-right: auto; line-height: 1.625;">
-            We're always looking for passionate researchers, collaborators, and partners who share our vision of creating a harmonious human-agent society.
-          </p>
-          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-        </div>
-      </div>
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-eyebrow">People</span>
+      <h1>The <span class="hero-title-gradient" style="display:inline;">Allies</span> Behind the Lab</h1>
+      <p>An international team of researchers, students, and collaborators from 12+ countries, united by one question: how do humans and agents thrive together?</p>
     </div>
-  </section>
-  
+  </header>
+
+  <main>
+    <section class="section" aria-labelledby="pi-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Principal Investigator</span>
+          <h2 class="section-title" id="pi-title">Leading the <span class="accent">Mission</span></h2>
+        </div>
+        <div class="card card-hover pi-card reveal">
+          <img src="images/chung-chi-chen.jpg" alt="Dr. Chung-Chi Chen" class="pi-photo" style="object-fit: cover; padding: 0;">
+          <div>
+            <h3>Dr. Chung-Chi Chen</h3>
+            <p class="pi-role">Assistant Professor, National Institute of Informatics, Japan</p>
+            <p>
+              His recent research investigates how large language models and agents mediate communication,
+              reshape human decision-making, and influence society — with particular interests in LLM-mediated
+              communication, the social impact of agents, human-agent collaboration in high-stakes settings,
+              and the detection and verification of forward-looking exaggeration and misinformation.
+            </p>
+            <p>
+              His earlier work centered on NLP and information retrieval for high-stakes domains including
+              finance, law, and social science: forward-looking argument mining, financial text analysis,
+              legal technology, expert decision support, and evaluation frameworks for language technologies
+              used in consequential contexts.
+            </p>
+            <p>
+              He is the founder of ACL SIG-FinTech, organizer of the FinNLP/FinWeb workshop series (IJCAI, WWW,
+              EMNLP, IJCNLP-AACL), leader of the FinNum and FinArg shared task series at NTCIR, and recipient of the
+              SIGIR Early Career Researcher Award (Excellence in Community Engagement).
+            </p>
+            <p><strong>Education:</strong> Ph.D., NLP Lab, CSIE, National Taiwan University · M.S., Quantitative Finance, National Tsing Hua University · B.S., Economics (minor CSIE), National Taipei University</p>
+            <a href="https://nlpfin.github.io/" target="_blank" rel="noopener" class="learn-link">Full profile &amp; publications at nlpfin.github.io <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" aria-labelledby="members-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Group Members</span>
+          <h2 class="section-title" id="members-title">Current <span class="accent">Members</span></h2>
+        </div>
+        <div class="grid-3">
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">YH</div>
+            <h4>Yu-Shang Huang</h4>
+            <p class="person-affil">National Taiwan University · NII Visiting Researcher</p>
+            <span class="person-topic">Adversarial Audit Simulation</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">CH</div>
+            <h4>Chun-Yu Hsu</h4>
+            <p class="person-affil">Academia Sinica · NII Visiting Researcher</p>
+            <span class="person-topic">Neutrality-by-Design</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">YC</div>
+            <h4>Yu-Yu Chang</h4>
+            <p class="person-affil">National Chung Cheng University, Taiwan (AIST Intern)</p>
+            <span class="person-topic">Presidential Debate Analysis</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">HH</div>
+            <h4>Huan-Wen Ho</h4>
+            <p class="person-affil">National Chung Cheng University, Taiwan (AIST Intern)</p>
+            <span class="person-topic">Presidential Debate Analysis</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">BZ</div>
+            <h4>Bai-Li Zheng</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <span class="person-topic">ESG Commitment Tracing</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">GY</div>
+            <h4>Guan-Bo Yang</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <span class="person-topic">Financial Compliance</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">VD</div>
+            <h4>Vibhan Dutta</h4>
+            <p class="person-affil">Jadavpur University, India</p>
+            <span class="person-topic">Cross-Temporal Decision-Making</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">SG</div>
+            <h4>Somdev Ganguli</h4>
+            <p class="person-affil">Jadavpur University, India</p>
+            <span class="person-topic">Diverse Viewpoint Generation</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">YC</div>
+            <h4>Yi-Ting Chiu</h4>
+            <p class="person-affil">National Tsing Hua University, Taiwan</p>
+            <span class="person-topic">LLM-mediated Communication</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar">JL</div>
+            <h4>Ji-Yuan Lo</h4>
+            <p class="person-affil">National Taiwan University, Taiwan</p>
+            <span class="person-topic">Decision Simulation</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="collab-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Network</span>
+          <h2 class="section-title" id="collab-title">Ongoing <span class="accent">Collaborations</span></h2>
+          <p class="section-description">Research partnerships spanning Europe, Asia, and the Middle East.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">IG</div>
+            <h4>Prof. Iryna Gurevych</h4>
+            <p class="person-affil">Technische Universität Darmstadt, Germany</p>
+            <span class="person-topic">Quality Assurance in Scholarly Communication</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YL</div>
+            <h4>Prof. Yongjae Lee</h4>
+            <p class="person-affil">UNIST, South Korea</p>
+            <span class="person-topic">Personalized Financial Education</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">MD</div>
+            <h4>Prof. Min-Yuh Day</h4>
+            <p class="person-affil">National Taipei University, Taiwan</p>
+            <span class="person-topic">Chinese ESG Factor Analysis</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YS</div>
+            <h4>Prof. Yohei Seki</h4>
+            <p class="person-affil">University of Tsukuba, Japan</p>
+            <span class="person-topic">Cross-Lingual ESG Scoring</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">JK</div>
+            <h4>Dr. Juyeon Kang</h4>
+            <p class="person-affil">3DS Outscale, France</p>
+            <span class="person-topic">Cross-Lingual ESG Scoring</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">MW</div>
+            <h4>Prof. Ming-Hung Wang</h4>
+            <p class="person-affil">National Chung Cheng University, Taiwan</p>
+            <span class="person-topic">Presidential Debate Analysis</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">DW</div>
+            <h4>Prof. Dittaya Wanvarie</h4>
+            <p class="person-affil">Chulalongkorn University, Thailand</p>
+            <span class="person-topic">Multilingual ESG Compliance</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">AK</div>
+            <h4>Prof. Atsushi Keyaki</h4>
+            <p class="person-affil">Hitotsubashi University, Japan</p>
+            <span class="person-topic">Multilingual ESG Compliance</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">CK</div>
+            <h4>Chun-Wei Kang</h4>
+            <p class="person-affil">National Yang Ming Chiao Tung University</p>
+            <span class="person-topic">Prompt Recommendation</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YH</div>
+            <h4>You-Mei Huang</h4>
+            <p class="person-affil">National Yang Ming Chiao Tung University</p>
+            <span class="person-topic">Agent Recommendation</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">SN</div>
+            <h4>Prof. Sudip Kumar Naskar</h4>
+            <p class="person-affil">Jadavpur University, India</p>
+            <span class="person-topic">Multilingual ESG Compliance</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">SW</div>
+            <h4>Prof. Shih-Hung Wu</h4>
+            <p class="person-affil">Chaoyang University of Technology, Taiwan</p>
+            <span class="person-topic">Cross-Temporal Argument Verification</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">NK</div>
+            <h4>Prof. Noriko Kando</h4>
+            <p class="person-affil">NII, Japan</p>
+            <span class="person-topic">Eye-tracking for Decision Reasoning</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">HL</div>
+            <h4>Huy M. Le</h4>
+            <p class="person-affil">MBZUAI, United Arab Emirates</p>
+            <span class="person-topic">Clinical Conversation Simulation</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" aria-labelledby="alumni-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Alumni</span>
+          <h2 class="section-title" id="alumni-title">Former Members &amp; <span class="accent">Collaborators</span></h2>
+          <p class="section-description">Their award-winning work at ACL, EMNLP, SIGIR, WWW, and beyond speaks for itself.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">TL</div>
+            <h4>Tzu-Mi Lin</h4>
+            <p class="person-affil">National Yang Ming Chiao Tung University, Taiwan (AIST Intern)</p>
+            <p class="person-note"><a href="https://arxiv.org/abs/2605.04972" target="_blank" rel="noopener">Why Expert Alignment Is Hard: Evidence from Subjective Evaluation (arXiv)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">SA</div>
+            <h4>Prof. Sophia Ananiadou</h4>
+            <p class="person-affil">Manchester University, UK</p>
+            <span class="person-topic">Multi-Agent Interactions</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YH</div>
+            <h4>Prof. Yufang Hou</h4>
+            <p class="person-affil">IT:U Austria</p>
+            <span class="person-topic">Turning Evidence into Actionable Insights</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">FI</div>
+            <h4>Prof. Filip Ilievski</h4>
+            <p class="person-affil">Vrije Universiteit Amsterdam</p>
+            <span class="person-topic">Assess Text Creativity</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">AJ</div>
+            <h4>Prof. Alípio M. Jorge</h4>
+            <p class="person-affil">INESC TEC, Portugal</p>
+            <span class="person-topic">Diagnostic Simulation</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">TT</div>
+            <h4>Takehiro Takayanagi</h4>
+            <p class="person-affil">The University of Tokyo · AIST RA</p>
+            <p class="person-note">🏆 Outstanding Paper Award (ANLP, Japan)</p><p class="person-note"><a href="https://aclanthology.org/2025.findings-naacl.22.pdf" target="_blank" rel="noopener">Can GPT-4 Sway Experts&#x27; Decisions? (NAACL&#x27;25)</a> · <a href="https://nlpfin.github.io/papers/SIGIR23.pdf" target="_blank" rel="noopener">Personalized Dynamic Recommender System for Investors (SIGIR&#x27;23)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">TL</div>
+            <h4>Tzu-En Liu</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <span class="person-topic">Financial Compliance</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">TP</div>
+            <h4>Tsung-Hsuan Pan</h4>
+            <p class="person-affil">National Taiwan University, Taiwan</p>
+            <p class="person-note"><a href="https://aclanthology.org/2024.findings-eacl.92/" target="_blank" rel="noopener">Society-Undermining Disinformation Detection (Findings of EACL 2024)</a> · <a href="https://arxiv.org/abs/2509.17482" target="_blank" rel="noopener">Diagnosing Model Editing via Knowledge Spectrum</a> · <a href="https://arxiv.org/abs/2409.18679" target="_blank" rel="noopener">Why Has the Least Side Effect on Model Editing</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YS</div>
+            <h4>Yung-Yu Shih</h4>
+            <p class="person-affil">National Taiwan University, Taiwan</p>
+            <p class="person-note">🏆 Outstanding Award, 18th TSC Thesis Award</p><p class="person-note">RAG for Earnings Call Answer Rehearsal (CIKM&#x27;25) · <a href="https://arxiv.org/abs/2409.18678" target="_blank" rel="noopener">Rehearsing Answers to Probable Questions with Perspective-Taking</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">KC</div>
+            <h4>Ke-Ching Chang</h4>
+            <p class="person-affil">National Yang Ming Chiao Tung University</p>
+            <p class="person-note"><a href="https://arxiv.org/abs/2412.05916" target="_blank" rel="noopener">Paraphrase-Aligned Machine Translation</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">BC</div>
+            <h4>Bo-Wei Chen</h4>
+            <p class="person-affil">National Yang Ming Chiao Tung University</p>
+            <p class="person-note">Confidence-Driven Multi-Scale Model Selection (Findings of EACL 2026) · <a href="https://arxiv.org/abs/2504.09903" target="_blank" rel="noopener">Refining Financial Consumer Complaints</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">GD</div>
+            <h4>Giulia D&#x27;Agostino</h4>
+            <p class="person-affil">Università della Svizzera Italiana · AIST Intern</p>
+            <p class="person-note"><a href="https://arxiv.org/pdf/2507.20249" target="_blank" rel="noopener">Modeling Professionalism in Expert Questioning</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YH</div>
+            <h4>Yu-Shang Huang</h4>
+            <p class="person-affil">National Taiwan University · AIST Intern</p>
+            <p class="person-note">🏆 NSTC Study Abroad Program (Chien-Li-Ma Scholarship)</p><p class="person-note"><a href="https://arxiv.org/abs/2507.01923" target="_blank" rel="noopener">Decision-oriented Text Evaluation</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YT</div>
+            <h4>Yu-Min Tseng</h4>
+            <p class="person-affil">National Taiwan University, Taiwan</p>
+            <p class="person-note">🏆 Hon Hai Technology Award</p><p class="person-note"><a href="https://arxiv.org/abs/2410.03254" target="_blank" rel="noopener">Evaluating LLMs as Expert Annotators (COLM&#x27;25)</a> · <a href="https://nlpfin.github.io/papers/DynamicESG.pdf" target="_blank" rel="noopener">DynamicESG (CIKM&#x27;23)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">HL</div>
+            <h4>Hsiu-Hung Lee</h4>
+            <p class="person-affil">National Yang Ming Chiao Tung University</p>
+            <p class="person-note">RAG-Enhanced Evidence Recommendation in Financial Legal Resolutions (WWW&#x27;25)</p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">CL</div>
+            <h4>Chin-Yi Lin</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://nlpfin.github.io/papers/ACL24-Argument.pdf" target="_blank" rel="noopener">Argument-Based Sentiment Analysis on Forward-Looking Statements (ACL 2024)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YJ</div>
+            <h4>Yi-Ning Juan</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://arxiv.org/abs/2409.18677" target="_blank" rel="noopener">Co-Trained Retriever-Generator for Question Generation (WWW&#x27;25)</a> · <a href="https://aclanthology.org/2023.inlg-main.35/" target="_blank" rel="noopener">Generating Multiple Questions from Presentation Transcripts (INLG&#x27;23)</a> · <a href="https://aclanthology.org/2023.ijcnlp-demo.2/" target="_blank" rel="noopener">CustodiAI (IJCNLP-AACL&#x27;23)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">TG</div>
+            <h4>Tomas Goldsack</h4>
+            <p class="person-affil">University of Sheffield · AIST Intern</p>
+            <p class="person-note"><a href="https://arxiv.org/abs/2410.01039" target="_blank" rel="noopener">From Facts to Insights: Analytical Reports for Earnings Calls (COLING 2025)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">SY</div>
+            <h4>Sin-Han Yang</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://aclanthology.org/2023.findings-eacl.7/" target="_blank" rel="noopener">Entity-Aware Dual Co-Attention Network for Fake News Detection (EACL 2023)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">WC</div>
+            <h4>Wei-Lin Chen</h4>
+            <p class="person-affil">National Taiwan University · AIST Intern</p>
+            <p class="person-note"><a href="https://arxiv.org/pdf/2310.14981.pdf" target="_blank" rel="noopener">Fidelity-Enriched Contrastive Search (EMNLP&#x27;23)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">CC</div>
+            <h4>Chr-Jr Chiu</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://arxiv.org/abs/2409.17419" target="_blank" rel="noopener">Pre-Finetuning with Impact Duration Awareness (WWW&#x27;25)</a> · <a href="https://aclanthology.org/2024.lrec-main.898/" target="_blank" rel="noopener">Learning Strategies for Robust Argument Mining (LREC-COLING&#x27;24)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">MS</div>
+            <h4>Ming-Xuan Shi</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note">General Numeral Attachment Dataset for Earnings Calls (IJCNLP-AACL&#x27;23)</p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">AL</div>
+            <h4>Ai-Ni Li</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <span class="person-topic">Financial Statement Adequacy</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YL</div>
+            <h4>Yi-Ting Liu</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://nlpfin.github.io/papers/Implicit_Tag_Recognition_EACL_2021.pdf" target="_blank" rel="noopener">Dynamic Graph Transformer for Implicit Tag Recognition (EACL&#x27;21)</a> · <a href="https://nlpfin.github.io/papers/FinSense_WSDM_Demo_2021.pdf" target="_blank" rel="noopener">FinSense (WSDM&#x27;21)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">TH</div>
+            <h4>Ting-Wei Hsu</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://nlpfin.github.io/papers/EMNLP2021.pdf" target="_blank" rel="noopener">Semantics-Preserved Data Augmentation for ABSA (EMNLP&#x27;21)</a> · <a href="https://nlpfin.github.io/papers/Opinion_based_Portfolio_Selection___ICWSM_2021_____.pdf" target="_blank" rel="noopener">Risk-aware Regularization for Opinion-based Portfolio Selection (ICWSM&#x27;21)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">JH</div>
+            <h4>JianTao Huang</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://arxiv.org/abs/2309.01455" target="_blank" rel="noopener">NumHG: Number-Focused Headline Generation (LREC-COLING&#x27;24)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">TT</div>
+            <h4>Tsun-Hsien Tang</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://nlpfin.github.io/papers/Retrieving_Implicit_Information_for_Stock_Movement_Prediction___SIGIR_2021.pdf" target="_blank" rel="noopener">Retrieving Implicit Information for Stock Movement Prediction (SIGIR&#x27;21)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">PK</div>
+            <h4>Pei-Wei Kao</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://www.aclweb.org/anthology/2020.fnp-1.11.pdf" target="_blank" rel="noopener">NTUNLPL at FinCausal 2020</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">JC</div>
+            <h4>Jui Chu</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note"><a href="https://nlpfin.github.io/papers/HeadlineGeneration.pdf" target="_blank" rel="noopener">Learning to Generate Correct Numeric Values in News Headlines (WWW&#x27;20)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">HY</div>
+            <h4>Hsiu-Hsuan Yeh</h4>
+            <p class="person-affil">National Taiwan University</p>
+            <p class="person-note">Text-Based Economic Indicator Construction (CIKM&#x27;24)</p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">RD</div>
+            <h4>Ramon Ruiz Dolz</h4>
+            <p class="person-affil">Universitat Politècnica de València</p>
+            <p class="person-note"><a href="https://aclanthology.org/2024.lrec-main.898/" target="_blank" rel="noopener">Learning Strategies for Robust Argument Mining (LREC-COLING&#x27;24)</a></p>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">YJ</div>
+            <h4>Yuchen Eleanor Jiang</h4>
+            <p class="person-affil">ETH Zürich · AIST Intern</p>
+            <span class="person-topic">Financial Q&amp;A</span>
+          </article>
+          <article class="card card-hover person-card reveal">
+            <div class="avatar alt">SG</div>
+            <h4>Sohom Ghosh</h4>
+            <p class="person-affil">Jadavpur University</p>
+            <p class="person-note"><a href="https://arxiv.org/abs/2403.09702" target="_blank" rel="noopener">Generator-Guided Crowd Reaction Assessment (WWW&#x27;24)</a> · The Mask One At a Time Framework (FIRE&#x27;23)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 62rem;">
+        <div class="cta-panel reveal">
+          <h2>Your Name Could Be Here</h2>
+          <p>Join a team whose members publish at top venues and win national awards. We welcome PhD students, research interns, and postdoctoral fellows.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-primary">See Open Positions <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-grid">
         <div class="footer-section">
           <h3>Human-Agent Ally Lab</h3>
           <p>
-            Preparing for the human-agent society through innovative research in
-            human-agent teaming and societal transformation.
+            Preparing for the human-agent society through research in agent design,
+            human-agent teaming, and societal transformation.
+            National Institute of Informatics, Tokyo, Japan.
           </p>
         </div>
-        
         <div class="footer-section">
-          <h3>Quick Links</h3>
+          <h3>Explore</h3>
           <ul class="footer-links">
             <li><a href="research.html">Research Areas</a></li>
             <li><a href="people.html">Our Team</a></li>
             <li><a href="publications.html">Publications</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Recruitment</a></li>
           </ul>
         </div>
-        
         <div class="footer-section">
-          <h3>Connect With Us</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground);">
-            Email: chen@nii.ac.jp
-          </p>
+          <h3>Connect</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:chen@nii.ac.jp">chen@nii.ac.jp</a></li>
+            <li><a href="https://nlpfin.github.io/" target="_blank" rel="noopener">PI Homepage</a></li>
+          </ul>
         </div>
       </div>
-      
       <div class="footer-bottom">
         <p>&copy; <span id="footer-year"></span> Human-Agent Ally Lab. All rights reserved.</p>
       </div>
     </div>
   </footer>
-  
+
   <script src="js/script.js"></script>
 </body>
 </html>

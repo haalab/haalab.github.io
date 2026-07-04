@@ -3,33 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events | Human-Agent Ally Lab</title>
+  <title>Events | HAA Lab — Workshops, Tutorials & Shared Tasks</title>
+  <meta name="description" content="HAA Lab events: FinNLP workshops at EMNLP, NTCIR shared tasks (FinArg, RegCom), tutorials at LREC and IJCNLP-AACL, and invited talks on human-agent collaboration and financial NLP.">
+  <meta name="author" content="Human-Agent Ally Lab">
+  <link rel="canonical" href="https://haalab.github.io/events.html">
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <meta property="og:site_name" content="Human-Agent Ally Lab">
+  <meta property="og:title" content="Events | HAA Lab">
+  <meta property="og:description" content="Workshops, tutorials, shared tasks, and talks organized by the Human-Agent Ally Lab.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://haalab.github.io/events.html">
+  <meta property="og:image" content="https://haalab.github.io/images/logo_with_haalab.png">
+  <meta name="twitter:card" content="summary">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "The 11th Workshop on Financial Technology and NLP (FinNLP)",
+    "startDate": "2026-10-28",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": { "@type": "Place", "name": "EMNLP 2026", "address": "Budapest, Hungary" },
+    "organizer": { "@type": "ResearchOrganization", "name": "Human-Agent Ally Lab", "url": "https://haalab.github.io/" },
+    "description": "The annual ACL SIG-FinTech workshop on NLP, machine learning, and LLMs for finance, economics, and law."
+  }
+  </script>
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
     <div class="container nav-container">
-        <a href="index.html" class="nav-logo">
-          <img src="images/logo.png" alt="HAA Lab Logo" class="nav-logo-img">
-          
-          <div class="nav-logo-text">
-            <div class="nav-title">HAA Lab</div>
-            <div class="nav-subtitle">Human-Agent Ally</div>
-          </div>
-        </a>
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="HAA Lab logo" class="nav-logo-img">
+        <div class="nav-logo-text">
+          <div class="nav-title">HAA Lab</div>
+          <div class="nav-subtitle">Human-Agent Ally</div>
+        </div>
+      </a>
       <div class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="research.html" class="nav-link">Research</a>
         <a href="people.html" class="nav-link">People</a>
         <a href="publications.html" class="nav-link">Publications</a>
         <a href="events.html" class="nav-link">Events</a>
-        <a href="contact.html" class="nav-link">Recruitment</a>
+        <a href="contact.html" class="nav-link nav-cta">Join Us</a>
       </div>
       <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
-        <svg><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+        <svg viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
       </button>
     </div>
     <div class="mobile-menu" id="mobile-menu">
@@ -39,633 +65,395 @@
         <a href="people.html" class="nav-link">People</a>
         <a href="publications.html" class="nav-link">Publications</a>
         <a href="events.html" class="nav-link">Events</a>
-        <a href="contact.html" class="nav-link">Recruitment</a>
+        <a href="contact.html" class="nav-link">Join Us</a>
       </div>
     </div>
   </nav>
-  
-  <section class="page-section">
-    <div class="container" style="max-width: 80rem;">
-      <div class="section-header">
-        <h1 class="section-title font-outfit">Events</h1>
-        <p class="section-description">Join us for seminars, workshops, and collaborative discussions about the future of human-agent collaboration</p>
-      </div>
-      
-<div class="space-y-6" id="upcoming-events-list">
-        
-        <div class="card event-card">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge">
-                <div class="event-date-day">28</div>
-                <div class="event-date-month">OCT</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: var(--muted-foreground); margin-top: 0.25rem;">2026</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: hsla(12, 85%, 55%, 0.1); color: #dc2626;">Workshop</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">The 11th Workshop on Financial Technology and Natural Language Processing</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 EMNLP-2026, Budapest, Hungary</span>
-                  <span>📅 October 28, 2026 (EMNLP: October 24-29)</span>
-                </div>
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  The annual ACL SIG-FinTech workshop on NLP, machine learning, and LLMs for finance, economics, and law, featuring papers, demos, and collocated FinEval shared tasks. Accepted papers will be published in the ACL Anthology.
-                </p>
-                <div style="background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem; font-size: 0.875rem; border: 1px solid #e5e7eb;">
-                  <strong style="color: #1f2937; display: block; margin-bottom: 0.5rem;">📅 Important Dates:</strong>
-                  <ul style="list-style: none; padding: 0; margin: 0; color: #4b5563; display: flex; flex-direction: column; gap: 0.35rem;">
-                    <li><span style="font-weight: 500; color: #374151; min-width: 150px; display: inline-block;">Jul 01, 2026:</span> Submission System Opens</li>
-                    <li><span style="font-weight: 500; color: #374151; min-width: 150px; display: inline-block;">Aug 11, 2026:</span> Direct Paper Submission Deadline</li>
-                    <li><span style="font-weight: 500; color: #374151; min-width: 150px; display: inline-block;">Aug 27, 2026:</span> ARR Commitment Deadline</li>
-                    <li><span style="font-weight: 500; color: #374151; min-width: 150px; display: inline-block;">Sep 01, 2026:</span> Author Notification</li>
-                    <li><span style="font-weight: 500; color: #374151; min-width: 150px; display: inline-block;">Sep 10, 2026:</span> Camera-Ready Deadline</li>
-                    <li><span style="font-weight: 500; color: #374151; min-width: 150px; display: inline-block;">Time Zone:</span> Anywhere on Earth (AoE)</li>
-                  </ul>
-                </div>
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://sigfintech.github.io/finnlp.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none;">View Workshop Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="card event-card">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge">
-                <div class="event-date-day">08</div>
-                <div class="event-date-month">DEC</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: var(--muted-foreground); margin-top: 0.25rem;">2026</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: hsla(220, 90%, 55%, 0.1); color: #2563eb;">Shared Task</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">NTCIR-19 RegCom</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 NII, Tokyo, Japan</span>
-                  <span>📅 Cycle: 2025 - 2026</span>
-                </div>
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  Multinational, Multilingual, Multi-Industry Regulatory Compliance Checking.
-                </p>
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://sites.google.com/view/ntcir19regcom/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none;">View Task Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-                    
-            <div class="card event-card">
-              <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-                  <div class="event-date-badge">
-                    <div class="event-date-day">08</div>
-                    <div class="event-date-month">DEC</div>
-                    <div style="font-size: 0.75rem; font-weight: 600; color: var(--muted-foreground); margin-top: 0.25rem;">2026</div>
-                  </div>
-                  
-                  <div style="flex: 1;">
-                    <span class="event-type-badge" style="background-color: hsla(220, 90%, 55%, 0.1); color: #2563eb;">Shared Task</span>
-                    
-                    <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">NTCIR-19 FinArg-3</h3>
-                    
-                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                      <span>📍 NII, Tokyo, Japan</span>
-                      <span>📅 Cycle: 2025 - 2026</span>
-                    </div>
-                    
-                    <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                        FinArg-3: Argument Quality Assessment of Financial Forward-Looking Statements
-                    </p>
-                    
-                    <div style="background-color: #f9fafb; padding: 1rem; border-radius: 0.5rem; font-size: 0.875rem; border: 1px solid #e5e7eb;">
-                      <strong style="color: #1f2937; display: block; margin-bottom: 0.5rem;">📅 Upcoming Schedule Highlights:</strong>
-                      <ul style="list-style: none; padding: 0; margin: 0; color: #4b5563; display: flex; flex-direction: column; gap: 0.35rem;">
-                         <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Feb 01, 2026:</span> Release Training/Dev Set (Analyst Report)</li>
-                         <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Jul 10, 2026:</span> Task Registration Due</li>
-                         <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Sep 01, 2026:</span> Participants' Papers Submission</li>
-                         <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Dec 08, 2026:</span> NTCIR-19 Conference</li>
-                      </ul>
-                    </div>
-    
-                    <div style="margin-top: 1.25rem;">
-                      <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/finarg3/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none;">View Task Details</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-        <div class="card event-card">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge">
-                <div class="event-date-day">TBD</div>
-                <div class="event-date-month">Oct-Nov</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: var(--muted-foreground); margin-top: 0.25rem;">2027</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: hsla(160, 80%, 40%, 0.1); color: #059669;">INLG 2027 Challenge</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">GenChal - Live Commentary</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 INLG Conference (TBD)</span>
-                  <span>📅 Cycle: 2025 - 2027</span>
-                </div>
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  <strong>Planning and Generation Task:</strong> The first multi-domain dataset for studying Live Commentary (Debates, Finance, Social Media).
-                </p>
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://sites.google.com/view/genchal2026" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none;">View Challenge Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="mt-16">
-        <h2 class="font-outfit" style="font-size: 1.875rem; font-weight: bold; margin-bottom: 2rem;">Past Events</h2>
-        
-        <div class="space-y-6" id="past-events-list">
-
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">29</div>
-                <div class="event-date-month">JUL</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2026</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Conference Session</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">HCII 2026: Agentic AI & Scenario Planning</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 Montreal, Canada (Hybrid)</span>
-                  <span>📅 July 29-31, 2026</span>
-                </div>
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  <strong>Special Session on AI in HCI.</strong> Focuses on challenges and opportunities concerning human-agent collaboration that supports interactive co-creation with agentic AI for scenario planning.
-                </p>
-                <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; font-size: 0.875rem; border: 1px solid #e5e7eb;">
-                  <strong style="color: #1f2937; display: block; margin-bottom: 0.5rem;">📅 Key Dates:</strong>
-                  <ul style="list-style: none; padding: 0; margin: 0; color: #4b5563; display: flex; flex-direction: column; gap: 0.35rem;">
-                     <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Dec 18, 2025:</span> Abstract Submission</li>
-                     <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Jan 30, 2026:</span> Camera-ready Paper</li>
-                     <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Feb 13, 2026:</span> Registration Deadline</li>
-                  </ul>
-                </div>
-                <div style="margin-top: 1.25rem;">
-                   <a href="https://nlpfin.github.io/sites/HCII2026.html" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Archive</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">16</div>
-                <div class="event-date-month">MAY</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2026</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Tutorial</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">From Shared Tasks to Benchmark Datasets</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 Palma de Mallorca, Spain</span>
-                  <span>📅 LREC 2026 (May 16)</span>
-                </div>
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  <strong>Lessons from NTCIR’s 26-Year Journey.</strong> A half-day tutorial introducing the history of NTCIR, challenges of collecting multilingual benchmark datasets, and best practices for evaluation campaigns.
-                </p>
-                <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; font-size: 0.875rem; border: 1px solid #e5e7eb;">
-                  <div style="color: #4b5563;">
-                    <strong>Presenters:</strong> Noriko Kando, Makoto P. Kato, Chung-Chi Chen
-                  </div>
-                </div>
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://nlpfin.github.io/sites/LREC2026.html" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Archive</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">26</div>
-                <div class="event-date-month">APR</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2026</div>
-              </div>
-              
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">ICLR Workshop</span>
-                
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">Catch, Adapt, and Operate: Monitoring ML Models Under Drift</h3>
-                
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 Rio de Janeiro, Brazil</span>
-                  <span>📅 April 26 or 27, 2026</span>
-                </div>
-                
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  <strong>Topics:</strong> Sensing the Drift, Responding to Drift, and Operating at Scale.<br>
-                  We invite contributions on drift detection, adaptation, fairness, and governance.
-                </p>
-                
-                <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; font-size: 0.875rem; border: 1px solid #e5e7eb;">
-                  <strong style="color: #1f2937; display: block; margin-bottom: 0.5rem;">📅 Key Dates:</strong>
-                  <ul style="list-style: none; padding: 0; margin: 0; color: #4b5563; display: flex; flex-direction: column; gap: 0.35rem;">
-                    <li><span style="font-weight: 500; color: #374151; min-width: 100px; display: inline-block;">Feb 10, 2026:</span> Paper Submission Deadline</li>
-                    <li><span style="font-weight: 500; color: #374151; min-width: 100px; display: inline-block;">Mar 01, 2026:</span> Author Notification</li>
-                    <li><span style="font-weight: 500; color: #374151; min-width: 100px; display: inline-block;">Apr 26/27, 2026:</span> Workshop Day</li>
-                  </ul>
-                </div>
-                
-                <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                  <a href="https://sites.google.com/view/iclr-2026-workshop-cao/home" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Archive</a>
-                  <a href="mailto:caoiclr2026@gmail.com" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">Contact Organizers</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">02</div>
-                <div class="event-date-month">APR</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2026</div>
-              </div>
-              
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">ECIR Workshop</span>
-                
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">IRAI 2026: IR for Accountability & Integrity</h3>
-                
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 Delft, The Netherlands</span>
-                  <span>⏰ Half-Day Workshop</span>
-        </div>
-        
-        <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-          The First Workshop on Information Retrieval for Accountability and Integrity. Exploring how IR can evaluate forward-looking statements, verify commitments, and foster evidence-based accountability.
-        </p>
-        
-        <div style="background-color: #ffffff; padding: 1rem; border-radius: 0.5rem; font-size: 0.875rem; border: 1px solid #e5e7eb;">
-          <strong style="color: #1f2937; display: block; margin-bottom: 0.5rem;">📅 Key Dates:</strong>
-          <ul style="list-style: none; padding: 0; margin: 0; color: #4b5563; display: flex; flex-direction: column; gap: 0.35rem;">
-            <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Feb 01, 2026:</span> Paper Submission</li>
-            <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Feb 21, 2026:</span> Notification</li>
-            <li><span style="font-weight: 500; color: #374151; min-width: 90px; display: inline-block;">Apr 02, 2026:</span> Workshop Date</li>
-          </ul>
-        </div>
-        
-        <div style="margin-top: 1.25rem;">
-          <a href="https://nlpfin.github.io/sites/ECIR2026.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Archive</a>
-        </div>
-      </div>
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-eyebrow">Events</span>
+      <h1>Where the Community <span class="hero-title-gradient" style="display:inline;">Comes Together</span></h1>
+      <p>Workshops, tutorials, shared tasks, and talks we organize at the world's leading AI, NLP, and IR conferences.</p>
     </div>
-  </div>
-</div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">23</div>
-                <div class="event-date-month">DEC</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2025</div>
-              </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: 1.5rem;" aria-labelledby="upcoming-title">
+      <div class="container" style="max-width: 56rem;">
+        <div class="section-header reveal" style="text-align: left; margin-bottom: 2rem;">
+          <span class="section-eyebrow">Upcoming</span>
+          <h2 class="section-title" id="upcoming-title" style="font-size: 1.9rem;">Upcoming <span class="accent">Events</span></h2>
+        </div>
+          <div class="event-item reveal">
+            <div class="event-date">
+              <div class="day">28</div>
+              <div class="mon">OCT</div>
+              <div class="yr">2026</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Workshop</span>
+              <h3>The 11th Workshop on Financial Technology and NLP (FinNLP)</h3>
+              <p class="event-meta">📍 EMNLP-2026, Budapest, Hungary · 📅 October 28, 2026</p>
+              <p>The annual ACL SIG-FinTech workshop on NLP, machine learning, and LLMs for finance, economics, and law — papers, demos, and collocated FinEval shared tasks. Accepted papers are published in the ACL Anthology.</p>
+              <ul class="event-dates-list"><li>Jul 01, 2026: Submission system opens</li><li>Aug 11, 2026: Direct paper submission deadline</li><li>Aug 27, 2026: ARR commitment deadline</li><li>Sep 01, 2026: Author notification</li><li>Sep 10, 2026: Camera-ready deadline (AoE)</li></ul>
+              <div class="event-links"><a class="learn-link" href="https://sigfintech.github.io/finnlp.html" target="_blank" rel="noopener">View Workshop Details <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date">
+              <div class="day">08</div>
+              <div class="mon">DEC</div>
+              <div class="yr">2026</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Shared Task</span>
+              <h3>NTCIR-19 RegCom</h3>
+              <p class="event-meta">📍 NII, Tokyo, Japan · 📅 Cycle: 2025–2026</p>
+              <p>Multinational, multilingual, multi-industry regulatory compliance checking.</p>
               
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Tutorial</span>
-                
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">Human–Agent Teaming for Higher‑Order Thinking Augmentation</h3>
-                
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 IJCNLP‑AACL-2025, Mumbai, India</span>
-                  <span>🗣️ Speaker: Chung‑Chi Chen</span>
-                </div>
-                
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  This tutorial surveys emerging research on how humans and AI agents can collaboratively enhance higher-order thinking—reasoning, judgment, and decision-making beyond task automation.
-                </p>
-                
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://nlpfin.github.io/sites/aacl2025.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Archive</a>
-                </div>
-              </div>
-            </div>
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/view/ntcir19regcom/" target="_blank" rel="noopener">View Task Details <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
           </div>
-        </div>
-
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">09</div>
-                <div class="event-date-month">NOV</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2025</div>
-              </div>
+          <div class="event-item reveal">
+            <div class="event-date">
+              <div class="day">08</div>
+              <div class="mon">DEC</div>
+              <div class="yr">2026</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Shared Task</span>
+              <h3>NTCIR-19 FinArg-3</h3>
+              <p class="event-meta">📍 NII, Tokyo, Japan · 📅 Cycle: 2025–2026</p>
+              <p>Argument quality assessment of financial forward-looking statements.</p>
+              <ul class="event-dates-list"><li>Feb 01, 2026: Training/dev set release (analyst reports)</li><li>Jul 10, 2026: Task registration due</li><li>Sep 01, 2026: Participants&#x27; paper submission</li><li>Dec 08, 2026: NTCIR-19 Conference</li></ul>
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/nlg.csie.ntu.edu.tw/finarg3/" target="_blank" rel="noopener">View Task Details <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date">
+              <div class="day">TBD</div>
+              <div class="mon">Oct–Nov</div>
+              <div class="yr">2027</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">INLG Challenge</span>
+              <h3>GenChal — Live Commentary Planning &amp; Generation</h3>
+              <p class="event-meta">📍 INLG 2027 (TBD) · 📅 Cycle: 2025–2027</p>
+              <p>The first multi-domain dataset for studying live commentary across debates, finance, and social media.</p>
               
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Workshop</span>
-                
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">The 10th Workshop on Financial Technology and NLP</h3>
-                
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 EMNLP-2025, Suzhou, China (Room A202)</span>
-                </div>
-                
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  The 10th edition of FinNLP, bringing together researchers to discuss the intersection of financial technology and natural language processing.
-                </p>
-                
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://sigfintech.github.io/finnlp.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Website</a>
-                </div>
-              </div>
-            </div>
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/view/genchal2026" target="_blank" rel="noopener">View Challenge Details <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
           </div>
-        </div>
-
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">-</div>
-                <div class="event-date-month">JUL</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2025</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Tutorial</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">Information Retrieval in Finance: Industry and Academic Perspectives on Innovation</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 SIGIR-2025</span>
-                </div>
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://sites.google.com/view/irfin/home" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Site</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">-</div>
-                <div class="event-date-month">OCT</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2024</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Tutorial</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">Agent AI for Finance: From Financial Argument Mining to Agent-Based Modeling</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 ECAI-2024</span>
-                </div>
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://sites.google.com/view/finagent/home" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Site</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">-</div>
-                <div class="event-date-month">TALK</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2025</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Invited Talk</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">Human-Centric Evaluation for Financial Decision-Making</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 ICAIF-2025 Workshop on Explainable AI in Finance</span>
-                </div>
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://sites.google.com/view/2025-workshop-explainable-ai/speakers-and-panelists?authuser=0" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">-</div>
-                <div class="event-date-month">TALK</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2025</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Invited Talk</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">LLMs for Complex Insight Generation: Possibilities and Challenges</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 ICLR-2025 Advances in Financial AI Workshop</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">-</div>
-                <div class="event-date-month">TALK</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2023</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Invited Talk</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">Fine-Grained Financial Opinion Mining</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 Bloomberg CTO Data Science Speaker Series (Princeton)</span>
-                </div>
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://twitter.com/TechAtBloomberg/status/1651232176267055105" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Tweet</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">-</div>
-                <div class="event-date-month">TALK</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2022</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Invited Talk</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">NLP in FinTech Applications: Past, Present and Future</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 AKBC-2022 Workshop on Knowledge Graphs in Finance and Economics</span>
-                </div>
-                <div style="margin-top: 1.25rem;">
-                  <a href="https://arxiv.org/pdf/2211.06431.pdf" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View PDF</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">10</div>
-                <div class="event-date-month">EDITIONS</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2019-2025</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Workshop Series</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">FinNLP: Financial Technology and NLP</h3>
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  A premier workshop series (1st-10th) held in conjunction with major conferences including IJCAI, EMNLP, and COLING, focusing on the intersection of finance and AI.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
-                  <a href="https://sigfintech.github.io/finnlp.html" target="_blank" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">Latest Website</a>
-                  <a href="https://aclanthology.org/volumes/2024.finnlp-1/" target="_blank" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">Proceedings Archive</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">TASK</div>
-                <div class="event-date-month">SERIES</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2019-2025</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Shared Tasks</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">Financial Argument & Numeral Understanding (FinArg / FinNum)</h3>
-                <p style="color: var(--muted-foreground); line-height: 1.625; margin-bottom: 1rem;">
-                  Organizing benchmark evaluation tasks in NTCIR for fine-grained analysis of financial tweets, social media discussion threads, and argumentative relations.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                  <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/ntcir-18-finarg-2/finarg-2" target="_blank" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">FinArg-2 (2025)</a>
-                  <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/finnum3/" target="_blank" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">FinNum-3 (2022)</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">-</div>
-                <div class="event-date-month">OCT</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2025</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Workshop</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">Advances in Financial AI (CIKM-2025)</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 Innovations, Risk, and Responsibility in the Era of LLMs</span>
-                </div>
-                <a href="https://advancesinfinancialai.com/" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Website</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">-</div>
-                <div class="event-date-month">JUL</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2024</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Workshop</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">Agent AI for Scenario Planning (AgentScen @ IJCAI)</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 Cycle: 2024, 2025</span>
-                </div>
-                <a href="https://sites.google.com/view/agentscen/" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View Website</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card event-card" style="opacity: 0.9; background-color: #f9fafb;">
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <div class="event-date-badge" style="background-color: #e5e7eb; color: #374151;">
-                <div class="event-date-day">-</div>
-                <div class="event-date-month">YEARLY</div>
-                <div style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-top: 0.25rem;">2021-2023</div>
-              </div>
-              <div style="flex: 1;">
-                <span class="event-type-badge" style="background-color: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb;">Workshop Series</span>
-                <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin: 0.75rem 0;">FinWeb: Financial Technology on the Web</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 1rem;">
-                  <span>📍 In conjunction with The Web Conference (WWW)</span>
-                </div>
-                <a href="https://sites.google.com/nlg.csie.ntu.edu.tw/finweb-2023/home" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.875rem; display: inline-block; text-decoration: none; border: 1px solid #d1d5db; color: #374151;">View 2023 Edition</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
 
       </div>
-      
-      <div class="mt-16">
-        <div class="card text-center" style="padding: 3rem; background: linear-gradient(135deg, hsla(30, 90%, 55%, 0.1), hsla(45, 95%, 65%, 0.1)); border: 1px solid hsla(30, 90%, 55%, 0.2);">
-          <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Stay Updated</h3>
-          <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">Subscribe to our newsletter to receive updates about upcoming events.</p>
-          <a href="contact.html" class="btn btn-primary">Subscribe Now</a>
+    </section>
+
+    <section class="section section-muted" aria-labelledby="past-title">
+      <div class="container" style="max-width: 56rem;">
+        <div class="section-header reveal" style="text-align: left; margin-bottom: 2rem;">
+          <span class="section-eyebrow">Archive</span>
+          <h2 class="section-title" id="past-title" style="font-size: 1.9rem;">Past Events &amp; <span class="accent">Series</span></h2>
+        </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">29</div>
+              <div class="mon">JUL</div>
+              <div class="yr">2026</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Conference Session</span>
+              <h3>HCII 2026: Agentic AI &amp; Scenario Planning</h3>
+              <p class="event-meta">📍 Montreal, Canada (Hybrid) · 📅 July 29–31, 2026</p>
+              <p>Special Session on AI in HCI: human-agent collaboration supporting interactive co-creation with agentic AI for scenario planning.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://nlpfin.github.io/sites/HCII2026.html" target="_blank" rel="noopener">View Archive <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">16</div>
+              <div class="mon">MAY</div>
+              <div class="yr">2026</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Tutorial</span>
+              <h3>From Shared Tasks to Benchmark Datasets</h3>
+              <p class="event-meta">📍 LREC 2026, Palma de Mallorca, Spain</p>
+              <p>Lessons from NTCIR&#x27;s 26-year journey: collecting multilingual benchmark datasets and best practices for evaluation campaigns. Presenters: Noriko Kando, Makoto P. Kato, Chung-Chi Chen.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://nlpfin.github.io/sites/LREC2026.html" target="_blank" rel="noopener">View Archive <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">26</div>
+              <div class="mon">APR</div>
+              <div class="yr">2026</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">ICLR Workshop</span>
+              <h3>Catch, Adapt, and Operate: Monitoring ML Models Under Drift</h3>
+              <p class="event-meta">📍 Rio de Janeiro, Brazil</p>
+              <p>Sensing the drift, responding to drift, and operating at scale — drift detection, adaptation, fairness, and governance.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/view/iclr-2026-workshop-cao/home" target="_blank" rel="noopener">View Archive <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">02</div>
+              <div class="mon">APR</div>
+              <div class="yr">2026</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">ECIR Workshop</span>
+              <h3>IRAI 2026: IR for Accountability &amp; Integrity</h3>
+              <p class="event-meta">📍 Delft, The Netherlands · Half-day workshop</p>
+              <p>The first workshop on information retrieval for accountability and integrity: evaluating forward-looking statements, verifying commitments, and fostering evidence-based accountability.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://nlpfin.github.io/sites/ECIR2026.html" target="_blank" rel="noopener">View Archive <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">23</div>
+              <div class="mon">DEC</div>
+              <div class="yr">2025</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Tutorial</span>
+              <h3>Human-Agent Teaming for Higher-Order Thinking Augmentation</h3>
+              <p class="event-meta">📍 IJCNLP-AACL 2025, Mumbai, India · Speaker: Chung-Chi Chen</p>
+              <p>How humans and AI agents can collaboratively enhance higher-order thinking — reasoning, judgment, and decision-making beyond task automation.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://nlpfin.github.io/sites/aacl2025.html" target="_blank" rel="noopener">View Archive <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">09</div>
+              <div class="mon">NOV</div>
+              <div class="yr">2025</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Workshop</span>
+              <h3>The 10th Workshop on Financial Technology and NLP</h3>
+              <p class="event-meta">📍 EMNLP-2025, Suzhou, China</p>
+              <p>The 10th edition of FinNLP, bringing together researchers at the intersection of financial technology and NLP.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://sigfintech.github.io/finnlp.html" target="_blank" rel="noopener">View Website <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">—</div>
+              <div class="mon">JUL</div>
+              <div class="yr">2025</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Tutorial</span>
+              <h3>Information Retrieval in Finance</h3>
+              <p class="event-meta">📍 SIGIR-2025</p>
+              <p>Industry and academic perspectives on innovation in financial IR.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/view/irfin/home" target="_blank" rel="noopener">View Site <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">—</div>
+              <div class="mon">OCT</div>
+              <div class="yr">2025</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Workshop</span>
+              <h3>Advances in Financial AI</h3>
+              <p class="event-meta">📍 CIKM-2025</p>
+              <p>Innovations, risk, and responsibility in the era of LLMs.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://advancesinfinancialai.com/" target="_blank" rel="noopener">View Website <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">—</div>
+              <div class="mon">TALK</div>
+              <div class="yr">2025</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Invited Talk</span>
+              <h3>Human-Centric Evaluation for Financial Decision-Making</h3>
+              <p class="event-meta">📍 ICAIF-2025 Workshop on Explainable AI in Finance</p>
+              
+              
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/view/2025-workshop-explainable-ai/speakers-and-panelists?authuser=0" target="_blank" rel="noopener">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">—</div>
+              <div class="mon">TALK</div>
+              <div class="yr">2025</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Invited Talk</span>
+              <h3>LLMs for Complex Insight Generation: Possibilities and Challenges</h3>
+              <p class="event-meta">📍 ICLR-2025 Advances in Financial AI Workshop</p>
+              
+              
+              
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">—</div>
+              <div class="mon">OCT</div>
+              <div class="yr">2024</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Tutorial</span>
+              <h3>Agent AI for Finance</h3>
+              <p class="event-meta">📍 ECAI-2024</p>
+              <p>From financial argument mining to agent-based modeling.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/view/finagent/home" target="_blank" rel="noopener">View Site <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">—</div>
+              <div class="mon">JUL</div>
+              <div class="yr">2024</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Workshop</span>
+              <h3>Agent AI for Scenario Planning (AgentScen)</h3>
+              <p class="event-meta">📍 IJCAI · Cycle: 2024, 2025</p>
+              
+              
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/view/agentscen/" target="_blank" rel="noopener">View Website <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">—</div>
+              <div class="mon">TALK</div>
+              <div class="yr">2023</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Invited Talk</span>
+              <h3>Fine-Grained Financial Opinion Mining</h3>
+              <p class="event-meta">📍 Bloomberg CTO Data Science Speaker Series (Princeton)</p>
+              
+              
+              <div class="event-links"><a class="learn-link" href="https://twitter.com/TechAtBloomberg/status/1651232176267055105" target="_blank" rel="noopener">View Tweet <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">—</div>
+              <div class="mon">TALK</div>
+              <div class="yr">2022</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Invited Talk</span>
+              <h3>NLP in FinTech Applications: Past, Present and Future</h3>
+              <p class="event-meta">📍 AKBC-2022 Workshop on Knowledge Graphs in Finance and Economics</p>
+              
+              
+              <div class="event-links"><a class="learn-link" href="https://arxiv.org/pdf/2211.06431.pdf" target="_blank" rel="noopener">View PDF <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">10</div>
+              <div class="mon">EDITIONS</div>
+              <div class="yr">2019–25</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Workshop Series</span>
+              <h3>FinNLP: Financial Technology and NLP</h3>
+              <p class="event-meta">In conjunction with IJCAI, EMNLP, COLING, and more</p>
+              <p>A premier workshop series (1st–10th) focusing on the intersection of finance and AI.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://sigfintech.github.io/finnlp.html" target="_blank" rel="noopener">Latest Website <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a class="learn-link" href="https://aclanthology.org/volumes/2024.finnlp-1/" target="_blank" rel="noopener">Proceedings Archive <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">TASK</div>
+              <div class="mon">SERIES</div>
+              <div class="yr">2019–25</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Shared Tasks</span>
+              <h3>FinArg / FinNum Series at NTCIR</h3>
+              <p class="event-meta">Financial argument &amp; numeral understanding</p>
+              <p>Benchmark evaluation tasks for fine-grained analysis of financial tweets, social media discussion threads, and argumentative relations.</p>
+              
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/nlg.csie.ntu.edu.tw/ntcir-18-finarg-2/finarg-2" target="_blank" rel="noopener">FinArg-2 (2025) <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a class="learn-link" href="https://sites.google.com/nlg.csie.ntu.edu.tw/finnum3/" target="_blank" rel="noopener">FinNum-3 (2022) <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+          <div class="event-item reveal">
+            <div class="event-date past">
+              <div class="day">—</div>
+              <div class="mon">YEARLY</div>
+              <div class="yr">2021–23</div>
+            </div>
+            <article class="card card-hover event-card">
+              <span class="event-type">Workshop Series</span>
+              <h3>FinWeb: Financial Technology on the Web</h3>
+              <p class="event-meta">📍 In conjunction with The Web Conference (WWW)</p>
+              
+              
+              <div class="event-links"><a class="learn-link" href="https://sites.google.com/nlg.csie.ntu.edu.tw/finweb-2023/home" target="_blank" rel="noopener">View 2023 Edition <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+            </article>
+          </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 62rem;">
+        <div class="cta-panel reveal">
+          <h2>Organize With Us</h2>
+          <p>Interested in co-organizing a workshop, shared task, or tutorial — or presenting at one of ours? Let's talk.</p>
+          <div class="cta-actions">
+            <a href="mailto:chen@nii.ac.jp" class="btn btn-primary">Contact the Lab <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-grid">
         <div class="footer-section">
           <h3>Human-Agent Ally Lab</h3>
-          <p>Preparing for the human-agent society through innovative research in human-agent teaming and societal transformation.</p>
+          <p>
+            Preparing for the human-agent society through research in agent design,
+            human-agent teaming, and societal transformation.
+            National Institute of Informatics, Tokyo, Japan.
+          </p>
         </div>
         <div class="footer-section">
-          <h3>Quick Links</h3>
+          <h3>Explore</h3>
           <ul class="footer-links">
             <li><a href="research.html">Research Areas</a></li>
             <li><a href="people.html">Our Team</a></li>
             <li><a href="publications.html">Publications</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Recruitment</a></li>
           </ul>
         </div>
         <div class="footer-section">
-          <h3>Connect With Us</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground);">
-            Email: chen@nii.ac.jp
-          </p>
+          <h3>Connect</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:chen@nii.ac.jp">chen@nii.ac.jp</a></li>
+            <li><a href="https://nlpfin.github.io/" target="_blank" rel="noopener">PI Homepage</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">
@@ -673,7 +461,7 @@
       </div>
     </div>
   </footer>
-  
+
   <script src="js/script.js"></script>
 </body>
 </html>

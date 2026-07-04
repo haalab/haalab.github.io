@@ -1,0 +1,27 @@
+# Human-Agent Ally Lab (HAA Lab)
+
+> Research laboratory at the National Institute of Informatics (NII), Tokyo, Japan,
+> led by Dr. Chung-Chi Chen. We research human-agent teaming, LLM-based agent design,
+> and the societal impact of intelligent agents — "preparing for the human-agent society."
+
+Key facts:
+- PI: Dr. Chung-Chi Chen, Assistant Professor at NII; founder of ACL SIG-FinTech;
+  SIGIR Early Career Researcher Award recipient. Homepage: https://nlpfin.github.io/
+- Three research pillars: (1) Agent Design & Agentic Frameworks (IR for agents,
+  LLM-based architectures, performance & efficiency); (2) Human-Agent Teaming
+  (higher-order thinking augmentation, high-stakes decision-making, high-fidelity
+  interaction); (3) Human-Agent Society (societal transformation, impact analysis,
+  governance & policy design).
+- 90+ publications at venues including ACL, EMNLP, SIGIR, WWW, CIKM, LREC, NAACL, COLM.
+- Organizes the FinNLP workshop series (10+ editions), NTCIR shared tasks
+  (FinNum, FinArg, RegCom), and SemEval tasks (NumEval, PromiseEval).
+- Recruiting PhD students (via SOKENDAI), research interns (via NII MOU program),
+  and postdoctoral fellows. Working language: English. Contact: chen@nii.ac.jp
+
+## Pages
+- [Home](https://haalab.github.io/): Lab overview and mission
+- [Research](https://haalab.github.io/research.html): The three research pillars
+- [People](https://haalab.github.io/people.html): PI, members, collaborators, alumni
+- [Publications](https://haalab.github.io/publications.html): Searchable publication list
+- [Events](https://haalab.github.io/events.html): Workshops, tutorials, shared tasks
+- [Join Us](https://haalab.github.io/contact.html): Open positions and application FAQ

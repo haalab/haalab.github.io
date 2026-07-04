@@ -3,41 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research | Human-Agent Ally Lab</title>
-  <meta name="description" content="Explore our research in human-agent teaming and human-agent society.">
-  
+  <title>Research | HAA Lab — Agent Design, Human-Agent Teaming & Society</title>
+  <meta name="description" content="HAA Lab research areas: LLM-based agent architectures, information retrieval for agents, higher-order thinking augmentation, high-stakes decision-making, and the societal impact of intelligent agents.">
+  <meta name="author" content="Human-Agent Ally Lab">
+  <link rel="canonical" href="https://haalab.github.io/research.html">
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <meta property="og:site_name" content="Human-Agent Ally Lab">
+  <meta property="og:title" content="Research | HAA Lab">
+  <meta property="og:description" content="Agent design, human-agent teaming, and human-agent society: the three research pillars of the HAA Lab.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://haalab.github.io/research.html">
+  <meta property="og:image" content="https://haalab.github.io/images/logo_with_haalab.png">
+  <meta name="twitter:card" content="summary">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://haalab.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://haalab.github.io/research.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" aria-label="Main navigation">
     <div class="container nav-container">
-        <a href="index.html" class="nav-logo">
-          <img src="images/logo.png" alt="HAA Lab Logo" class="nav-logo-img">
-          
-          <div class="nav-logo-text">
-            <div class="nav-title">HAA Lab</div>
-            <div class="nav-subtitle">Human-Agent Ally</div>
-          </div>
-        </a>
-      
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="HAA Lab logo" class="nav-logo-img">
+        <div class="nav-logo-text">
+          <div class="nav-title">HAA Lab</div>
+          <div class="nav-subtitle">Human-Agent Ally</div>
+        </div>
+      </a>
       <div class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="research.html" class="nav-link">Research</a>
         <a href="people.html" class="nav-link">People</a>
         <a href="publications.html" class="nav-link">Publications</a>
         <a href="events.html" class="nav-link">Events</a>
-        <a href="contact.html" class="nav-link">Recruitment</a>
+        <a href="contact.html" class="nav-link nav-cta">Join Us</a>
       </div>
-      
       <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
-        <svg><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+        <svg viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
       </button>
     </div>
-    
     <div class="mobile-menu" id="mobile-menu">
       <div class="container mobile-menu-links">
         <a href="index.html" class="nav-link">Home</a>
@@ -45,222 +62,163 @@
         <a href="people.html" class="nav-link">People</a>
         <a href="publications.html" class="nav-link">Publications</a>
         <a href="events.html" class="nav-link">Events</a>
-        <a href="contact.html" class="nav-link">Recruitment</a>
+        <a href="contact.html" class="nav-link">Join Us</a>
       </div>
     </div>
   </nav>
-  
-  <section class="page-section">
-    <div class="container" style="max-width: 72rem;">
-      <div class="section-header">
-        <h1 class="section-title font-outfit">Our Research</h1>
-        <!--
-        <p class="section-description">
-          Pioneering the future of human-agent collaboration through innovative research
-          that bridges technology and society
-        </p>
-        -->
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-eyebrow">Research</span>
+      <h1>What does a <span class="hero-title-gradient" style="display:inline;">human-agent society</span> need?</h1>
+      <p>
+        Our research spans the full stack of that question — from how agents are built,
+        to how they team up with people in consequential decisions, to how societies
+        adapt when agents become everyday allies.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" aria-label="Research pillars">
+      <div class="container">
+        <div class="grid-3">
+          <article class="card card-hover research-pillar reveal">
+            <span class="pillar-badge">Pillar 01</span>
+            <h3>Agent Design &amp; Agentic Frameworks</h3>
+            <div class="topic">
+              <h4>Information Retrieval for Agents</h4>
+              <p>How IR techniques enhance agent capabilities, focusing on retrieval-augmented generation and knowledge grounding.</p>
+            </div>
+            <div class="topic">
+              <h4>LLM-based Agent Architectures</h4>
+              <p>Designing and optimizing agentic frameworks powered by large language models for improved reasoning and task execution.</p>
+            </div>
+            <div class="topic">
+              <h4>Performance &amp; Efficiency</h4>
+              <p>Benchmarking and enhancing IR-LLM integrated systems in real-world agent applications.</p>
+            </div>
+          </article>
+
+          <article class="card card-hover research-pillar reveal reveal-d1">
+            <span class="pillar-badge">Pillar 02</span>
+            <h3>Human-Agent Teaming</h3>
+            <div class="topic">
+              <h4>Higher-Order Thinking Augmentation</h4>
+              <p>Enhancing human cognitive capabilities through agent collaboration — complex problem-solving and creative thinking.</p>
+            </div>
+            <div class="topic">
+              <h4>High-Stakes Decision-Making</h4>
+              <p>Frameworks for human-agent collaboration in critical scenarios where decisions have significant consequences.</p>
+            </div>
+            <div class="topic">
+              <h4>High-Fidelity Interaction</h4>
+              <p>Seamless, intuitive interfaces that enable natural and effective communication between humans and agents.</p>
+            </div>
+          </article>
+
+          <article class="card card-hover research-pillar reveal reveal-d2">
+            <span class="pillar-badge">Pillar 03</span>
+            <h3>Human-Agent Society</h3>
+            <div class="topic">
+              <h4>Societal Transformation</h4>
+              <p>How the integration of agents reshapes social structures, norms, and relationships.</p>
+            </div>
+            <div class="topic">
+              <h4>Impact Analysis</h4>
+              <p>The economic, cultural, and ethical implications of widespread agent adoption in everyday life.</p>
+            </div>
+            <div class="topic">
+              <h4>Governance &amp; Policy Design</h4>
+              <p>Governance, policy, and regulatory approaches for responsible agent deployment at societal scale.</p>
+            </div>
+          </article>
+        </div>
       </div>
-      
-      <div class="space-y-6" style="margin-top: 4rem;">
-        <div class="card" style="padding: 2rem; border: 2px solid var(--border); margin-bottom: 4rem;">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-            <div style="width: 64px; height: 64px; border-radius: 1rem; background: linear-gradient(135deg, var(--accent), var(--secondary)); display: flex; align-items: center; justify-content: center; color: white;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-            </div>
-            <h2 class="font-outfit" style="font-size: 2rem; font-weight: bold;">
-              Agent Design / Agentic Framework Design
-            </h2>
-          </div>
-          
-          <div class="grid-3">
-            <div style="padding: 1.5rem; border-radius: 0.75rem; background-color: hsla(40, 30%, 95%, 0.5); border: 1px solid var(--border); transition: all 0.3s;">
-              <div style="width: 48px; height: 48px; border-radius: 0.5rem; background-color: hsla(45, 95%, 65%, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
-              </div>
-              <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">
-                Information Retrieval for Agents
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.625;">
-                Investigating how IR techniques can enhance agent capabilities, focusing on retrieval-augmented generation and knowledge grounding.
-              </p>
-            </div>
-            
-            <div style="padding: 1.5rem; border-radius: 0.75rem; background-color: hsla(40, 30%, 95%, 0.5); border: 1px solid var(--border); transition: all 0.3s;">
-              <div style="width: 48px; height: 48px; border-radius: 0.5rem; background-color: hsla(45, 95%, 65%, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-              </div>
-              <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">
-                LLM-based Agent Architectures
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.625;">
-                Designing and optimizing agentic frameworks powered by large language models for improved reasoning and task execution.
-              </p>
-            </div>
-            
-            <div style="padding: 1.5rem; border-radius: 0.75rem; background-color: hsla(40, 30%, 95%, 0.5); border: 1px solid var(--border); transition: all 0.3s;">
-              <div style="width: 48px; height: 48px; border-radius: 0.5rem; background-color: hsla(45, 95%, 65%, 0.2); display: flex; align-items: center; justify-content: center; color: var(--accent); margin-bottom: 1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20v-4"></path></svg>
-              </div>
-              <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">
-                Performance & Efficiency
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.625;">
-                Benchmarking and enhancing the performance of IR-LLM integrated systems in real-world agent applications.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card" style="padding: 2rem; border: 2px solid var(--border); margin-bottom: 4rem;">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-            <div style="width: 64px; height: 64px; border-radius: 1rem; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
-            <h2 class="font-outfit" style="font-size: 2rem; font-weight: bold;">
-              Human-Agent Teaming
-            </h2>
-          </div>
-          
-          <div class="grid-3">
-            <div style="padding: 1.5rem; border-radius: 0.75rem; background-color: hsla(40, 30%, 95%, 0.5); border: 1px solid var(--border); transition: all 0.3s;">
-              <div style="width: 48px; height: 48px; border-radius: 0.5rem; background-color: hsla(30, 90%, 55%, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"></line><line x1="10" y1="22" x2="14" y2="22"></line><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
-              </div>
-              <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">
-                Higher-Order Thinking Augmentation
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.625;">
-                Enhancing human cognitive capabilities through intelligent agent collaboration, focusing on complex problem-solving and creative thinking.
-              </p>
-            </div>
-            
-            <div style="padding: 1.5rem; border-radius: 0.75rem; background-color: hsla(40, 30%, 95%, 0.5); border: 1px solid var(--border); transition: all 0.3s;">
-              <div style="width: 48px; height: 48px; border-radius: 0.5rem; background-color: hsla(30, 90%, 55%, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
-              </div>
-              <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">
-                High-Stakes Decision-Making
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.625;">
-                Developing frameworks for human-agent collaboration in critical scenarios where decisions have significant consequences.
-              </p>
-            </div>
-            
-            <div style="padding: 1.5rem; border-radius: 0.75rem; background-color: hsla(40, 30%, 95%, 0.5); border: 1px solid var(--border); transition: all 0.3s;">
-              <div style="width: 48px; height: 48px; border-radius: 0.5rem; background-color: hsla(30, 90%, 55%, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-              </div>
-              <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">
-                High-Fidelity Interaction
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.625;">
-                Creating seamless, intuitive interfaces that enable natural and effective communication between humans and agents.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card" style="padding: 2rem; border: 2px solid var(--border);">
-          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-            <div style="width: 64px; height: 64px; border-radius: 1rem; background: linear-gradient(135deg, var(--secondary), var(--primary)); display: flex; align-items: center; justify-content: center; color: white;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            </div>
-            <h2 class="font-outfit" style="font-size: 2rem; font-weight: bold;">
-              Human-Agent Society
-            </h2>
-          </div>
-          
-          <div class="grid-3">
-            <div style="padding: 1.5rem; border-radius: 0.75rem; background-color: hsla(40, 30%, 95%, 0.5); border: 1px solid var(--border); transition: all 0.3s;">
-              <div style="width: 48px; height: 48px; border-radius: 0.5rem; background-color: hsla(210, 80%, 60%, 0.1); display: flex; align-items: center; justify-content: center; color: var(--secondary); margin-bottom: 1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-              </div>
-              <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">
-                Societal Transformation
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.625;">
-                Investigating how the integration of agents into human society reshapes social structures, norms, and relationships.
-              </p>
-            </div>
-            
-            <div style="padding: 1.5rem; border-radius: 0.75rem; background-color: hsla(40, 30%, 95%, 0.5); border: 1px solid var(--border); transition: all 0.3s;">
-              <div style="width: 48px; height: 48px; border-radius: 0.5rem; background-color: hsla(210, 80%, 60%, 0.1); display: flex; align-items: center; justify-content: center; color: var(--secondary); margin-bottom: 1rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-              </div>
-              <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">
-                Impact Analysis
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.625;">
-                Analyzing the economic, cultural, and ethical implications of widespread agent adoption in everyday life.
-              </p>
-            </div>
+    </section>
 
-            <div style="padding: 1.5rem; border-radius: 0.75rem; background-color: hsla(40, 30%, 95%, 0.5); border: 1px solid var(--border); transition: all 0.3s;">
-              <div style="width: 48px; height: 48px; border-radius: 0.5rem; background-color: hsla(210, 80%, 60%, 0.1); display: flex; align-items: center; justify-content: center; color: var(--secondary); margin-bottom: 1rem;">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="10" y2="22"/><line x1="18" x2="18" y1="10" y2="22"/><line x1="10" x2="10" y1="10" y2="22"/><line x1="14" x2="14" y1="10" y2="22"/><path d="M12 2L2 7h20L12 2z"/></svg>
-              </div>
-              <h3 class="font-outfit" style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">
-                Governance & Policy Design
-              </h3>
-              <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.625;">
-                Developing governance, policy, and regulatory approaches for responsible agent deployment at societal scale.
-              </p>
-            </div>
-
+    <section class="section section-muted" aria-labelledby="approach-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Our Approach</span>
+          <h2 class="section-title" id="approach-title">From Benchmarks to <span class="accent">Real-World Impact</span></h2>
+          <p class="section-description">
+            We ground our research in high-stakes domains — finance, law, policy, and scholarly
+            communication — where getting human-agent collaboration right matters most.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="card card-hover value-card reveal">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg></div>
+            <h4>Build Benchmarks</h4>
+            <p>We create the datasets and shared tasks the community evaluates against — FinNum, FinArg, NumEval, PromiseEval, RegCom, and more at NTCIR and SemEval.</p>
+          </div>
+          <div class="card card-hover value-card reveal reveal-d1">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+            <h4>Publish at Top Venues</h4>
+            <p>Our work appears at ACL, EMNLP, SIGIR, WWW, and NAACL — spanning NLP, IR, and web research communities.</p>
+          </div>
+          <div class="card card-hover value-card reveal reveal-d2">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+            <h4>Partner with Industry</h4>
+            <p>Joint projects on business ideation, live commentary generation, and human-centered AI with industrial partners.</p>
           </div>
         </div>
       </div>
-      
-      <div class="mt-16">
-        <div class="card text-center" style="padding: 2rem; background: linear-gradient(135deg, hsla(30, 90%, 55%, 0.1), hsla(45, 95%, 65%, 0.1)); border: 1px solid hsla(30, 90%, 55%, 0.2);">
-          <h3 class="font-outfit" style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">
-            Interested in Collaboration?
-          </h3>
-          <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; max-width: 42rem; margin-left: auto; margin-right: auto;">
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 62rem;">
+        <div class="cta-panel reveal">
+          <h2>Interested in Collaboration?</h2>
+          <p>
             We're always looking for passionate researchers and partners who share our vision
             of creating a better human-agent society.
           </p>
-          <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-primary">Get in Touch <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            <a href="publications.html" class="btn btn-outline">Browse Publications</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-grid">
         <div class="footer-section">
           <h3>Human-Agent Ally Lab</h3>
           <p>
-            Preparing for the human-agent society through innovative research in
-            human-agent teaming and societal transformation.
+            Preparing for the human-agent society through research in agent design,
+            human-agent teaming, and societal transformation.
+            National Institute of Informatics, Tokyo, Japan.
           </p>
         </div>
-        
         <div class="footer-section">
-          <h3>Quick Links</h3>
+          <h3>Explore</h3>
           <ul class="footer-links">
             <li><a href="research.html">Research Areas</a></li>
             <li><a href="people.html">Our Team</a></li>
             <li><a href="publications.html">Publications</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Recruitment</a></li>
           </ul>
         </div>
-        
         <div class="footer-section">
-          <h3>Connect With Us</h3>
-          <p style="font-size: 0.875rem; color: var(--muted-foreground);">
-            Email: chen@nii.ac.jp
-          </p>
+          <h3>Connect</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:chen@nii.ac.jp">chen@nii.ac.jp</a></li>
+            <li><a href="https://nlpfin.github.io/" target="_blank" rel="noopener">PI Homepage</a></li>
+          </ul>
         </div>
       </div>
-      
       <div class="footer-bottom">
         <p>&copy; <span id="footer-year"></span> Human-Agent Ally Lab. All rights reserved.</p>
       </div>
     </div>
   </footer>
-  
+
   <script src="js/script.js"></script>
 </body>
 </html>
