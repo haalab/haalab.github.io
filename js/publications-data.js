@@ -104,7 +104,7 @@ const PUBLICATIONS = [
  },
  {
   "t": "ML-Promise: A Multilingual Dataset for Corporate Promise Verification",
-  "a": "Yohei Seki, Hakusen Shu, Anaïs Lhuissier, Hanwool Lee, Juyeon Kang, Min-Yuh Day, andChung-Chi Chen. 2025.",
+  "a": "Yohei Seki, Hakusen Shu, Anaïs Lhuissier, Hanwool Lee, Juyeon Kang, Min-Yuh Day, and Chung-Chi Chen. 2025.",
   "v": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP'25).",
   "y": "2025",
   "s": "Conference",
@@ -224,7 +224,7 @@ const PUBLICATIONS = [
  },
  {
   "t": "From Facts to Insights: A Study on the Generation and Evaluation of Analytical Reports for Deciphering Earnings Calls",
-  "a": "Tomas Goldsack, Yang Wang, Chenghua Lin, andChung-Chi Chen. 2025.",
+  "a": "Tomas Goldsack, Yang Wang, Chenghua Lin, and Chung-Chi Chen. 2025.",
   "v": "Proceedings of the 31st International Conference on Computational Linguistics (COLING-2025).",
   "y": "2025",
   "s": "Conference",
@@ -269,7 +269,7 @@ const PUBLICATIONS = [
  },
  {
   "t": "Automation of Text-Based Economic Indicator Construction: A Pilot Exploration on Economic Policy Uncertainty Index",
-  "a": "Hsiu-Hsuan Yeh, Yu-Lieh Huang, Ziho Park, andChung-Chi Chen. 2024.",
+  "a": "Hsiu-Hsuan Yeh, Yu-Lieh Huang, Ziho Park, and Chung-Chi Chen. 2024.",
   "v": "Proceedings of The 33rd ACM International Conference on Information and Knowledge Management (CIKM'24). (Acceptance Rate: 26.76%, 141/527)",
   "y": "2024",
   "s": "Conference",
@@ -923,7 +923,7 @@ const PUBLICATIONS = [
  },
  {
   "t": "Economic Policy Uncertainty Index for Taiwan",
-  "a": "Yu-Lieh Huang, Jin-Huei Yeh, andChung-Chi Chen. 2019.",
+  "a": "Yu-Lieh Huang, Jin-Huei Yeh, and Chung-Chi Chen. 2019.",
   "v": "Taiwan Economic Review.",
   "y": "2019",
   "s": "Journal",
