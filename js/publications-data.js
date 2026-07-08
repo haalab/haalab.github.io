@@ -934,6 +934,21 @@ const PUBLICATIONS = [
   "l": {
    "pdf": "http://www.econ.ntu.edu.tw/ter/new/data/new/forthcoming/108-001.pdf"
   },
+ "n": ""
+ },
+ {
+  "t": "AgoraSim: A Hybrid Agent-Based Modeling Framework",
+  "a": "Chung-Chi Chen. 2026.",
+  "v": "arXiv.",
+  "y": "2026",
+  "s": "Preprint",
+  "g": [
+   "LLM-based Agent Architectures",
+   "Societal Transformation Analysis"
+  ],
+  "l": {
+   "pdf": "https://arxiv.org/abs/2607.05999"
+  },
   "n": ""
  },
  {
