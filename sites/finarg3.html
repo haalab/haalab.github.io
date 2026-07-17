@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinArg-3 Leaderboard</title>
+  <style>
+    :root {
+      --bg: #070912;
+      --bg2: #101624;
+      --panel: rgba(255,255,255,.075);
+      --panel2: rgba(255,255,255,.115);
+      --line: rgba(255,255,255,.16);
+      --ink: #f7fbff;
+      --muted: #9ba8bd;
+      --blue: #5b8cff;
+      --cyan: #21d4fd;
+      --green: #4ade80;
+      --amber: #f59e0b;
+      --red: #fb7185;
+      --gold: #ffe08a;
+      --shadow: 0 24px 80px rgba(0,0,0,.36);
+      --radius: 8px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, rgba(33,212,253,.14), transparent 28%),
+        linear-gradient(315deg, rgba(245,158,11,.12), transparent 30%),
+        radial-gradient(circle at 50% -10%, rgba(91,140,255,.22), transparent 34%),
+        var(--bg);
+      line-height: 1.45;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.7), transparent 78%);
+    }
+    a { color: inherit; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7,9,18,.82);
+      backdrop-filter: blur(18px);
+    }
+    .topbar {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 16px clamp(18px, 4vw, 46px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--cyan), var(--blue) 50%, var(--amber));
+      color: #06101b;
+      box-shadow: 0 0 34px rgba(33,212,253,.28);
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .subline {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a, .ghost-button {
+      text-decoration: none;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    main {
+      position: relative;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 34px clamp(18px, 4vw, 46px) 68px;
+    }
+    .hero {
+      display: block;
+    }
+    .podium-card, .board, .matrix {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.105), rgba(255,255,255,.055));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .podium {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .podium-card {
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .podium-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: var(--accent);
+      box-shadow: 0 0 34px var(--accent);
+    }
+    .task {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .champ {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: end;
+      margin-top: 14px;
+    }
+    .champ-name {
+      font-size: clamp(21px, 2.4vw, 34px);
+      font-weight: 950;
+      overflow-wrap: anywhere;
+    }
+    .score {
+      text-align: right;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: .92;
+      font-weight: 950;
+      font-variant-numeric: tabular-nums;
+    }
+    .metric {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .track {
+      margin-top: 16px;
+      height: 9px;
+      background: rgba(255,255,255,.13);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .track span {
+      display: block;
+      height: 100%;
+      width: var(--w);
+      background: var(--accent);
+      border-radius: inherit;
+    }
+    section { margin-top: 26px; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 40px);
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    .section-head .meta {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .board {
+      overflow: hidden;
+    }
+    .board-head {
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .board h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 9px;
+      color: var(--muted);
+      background: rgba(255,255,255,.06);
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .rank-list {
+      display: grid;
+      gap: 1px;
+      padding: 0;
+    }
+    .rank-row {
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr) 72px;
+      gap: 10px;
+      align-items: center;
+      padding: 11px 14px;
+      background: rgba(255,255,255,.04);
+    }
+    .rank-row.top {
+      background: linear-gradient(90deg, rgba(255,224,138,.18), rgba(255,255,255,.045));
+    }
+    .rank-row.baseline {
+      background: rgba(255,255,255,.025);
+      box-shadow: inset 3px 0 0 rgba(155,168,189,.55);
+    }
+    .rank-no {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      background: rgba(255,255,255,.12);
+      font-weight: 950;
+      font-size: 12px;
+    }
+    .rank-run {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-size: 13px;
+      font-weight: 850;
+    }
+    .rank-team {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 2px;
+      font-weight: 800;
+    }
+    .rank-score {
+      text-align: right;
+      font-weight: 950;
+      font-variant-numeric: tabular-nums;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.075);
+      box-shadow: var(--shadow);
+    }
+    .search {
+      flex: 1 1 280px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .search input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      color: var(--ink);
+      background: transparent;
+      font: inherit;
+      font-weight: 650;
+    }
+    .tabs {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+    button {
+      cursor: pointer;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.08);
+      border-radius: 999px;
+      padding: 9px 12px;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    button.active {
+      color: #06101b;
+      background: linear-gradient(135deg, var(--cyan), var(--gold));
+      border-color: transparent;
+    }
+    .table-wrap {
+      margin-top: 12px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+    }
+    .task-table-block {
+      margin-top: 18px;
+    }
+    .task-table-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 10px;
+    }
+    .task-table-title h3 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+    table {
+      width: 100%;
+      min-width: 960px;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      padding: 12px 12px;
+      color: var(--muted);
+      background: rgba(0,0,0,.32);
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-size: 11px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    td {
+      padding: 12px;
+      border-top: 1px solid rgba(255,255,255,.09);
+      vertical-align: top;
+    }
+    tbody tr:hover {
+      background: rgba(33,212,253,.07);
+    }
+    tr.baseline-row {
+      background: rgba(255,255,255,.025);
+    }
+    tr.baseline-row td:first-child {
+      box-shadow: inset 3px 0 0 rgba(155,168,189,.55);
+    }
+    .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      font-weight: 850;
+    }
+    .task-badge, .warn {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 5px 8px;
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .task-badge {
+      color: #08111d;
+      background: var(--badge);
+    }
+    .warn {
+      color: #ffdfad;
+      background: rgba(245,158,11,.16);
+      border: 1px solid rgba(245,158,11,.24);
+      margin: 2px 2px 0 0;
+    }
+    .dup {
+      color: #ffc2cf;
+      background: rgba(251,113,133,.14);
+      border-color: rgba(251,113,133,.28);
+    }
+    .source {
+      max-width: 480px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+      font-size: 11px;
+    }
+    .matrix {
+      overflow-x: auto;
+    }
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr) .8fr;
+      min-width: 760px;
+    }
+    .cell {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      padding: 12px 14px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .cell.head {
+      color: var(--muted);
+      background: rgba(0,0,0,.3);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-size: 11px;
+      font-weight: 950;
+    }
+    .yes {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      color: #06101b;
+      background: var(--green);
+      font-weight: 950;
+    }
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; }
+      .podium { grid-template-columns: 1fr; }
+      .task-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      header { position: static; }
+      .topbar, .section-head { align-items: flex-start; flex-direction: column; }
+      .champ { grid-template-columns: 1fr; }
+      .score { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">F3</div>
+        <div>
+          <h1>FinArg-3 Leaderboard</h1>
+        </div>
+      </div>
+      <nav>
+        <a href="#champions">Champions</a>
+        <a href="#boards">Boards</a>
+        <a href="#runs">Task Tables</a>
+        <a href="#teams">Teams</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="champions">
+      <div class="podium" id="podium"></div>
+    </section>
+
+    <section id="boards">
+      <div class="section-head">
+        <h2>Task Boards</h2>
+        <div class="meta">Primary metric: Earnings Micro F1 · Analyst Macro F1 · Social Accuracy</div>
+      </div>
+      <div class="task-grid" id="taskBoards"></div>
+    </section>
+
+    <section id="runs">
+      <div class="section-head">
+        <h2>Task Leaderboards</h2>
+        <div class="meta">Separate ranking table for each subtask</div>
+      </div>
+      <div id="taskTables"></div>
+    </section>
+
+    <section id="teams">
+      <div class="section-head">
+        <h2>Team Coverage</h2>
+        <div class="meta">8 teams · 2 all-task teams</div>
+      </div>
+      <div class="matrix"><div class="matrix-grid" id="teamMatrix"></div></div>
+    </section>
+  </main>
+
+  <script>
+    const DATA = {"rows": [{"subtask": "Earnings Call", "participant_run": "IMNTPU Run1", "source_file": "earnings_call_predictions.csv", "team": "IMNTPU", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Micro F1", "official_metric_value": 0.5990813648293963, "accuracy_display": "0.5991", "micro_f1_display": "0.5991", "macro_f1_display": "0.4117", "weighted_f1_display": "0.6267", "official_metric_display": "0.5991", "rank": 6}, {"subtask": "Earnings Call", "participant_run": "IMNTPU Run2", "source_file": "earnings_call_predictions.csv", "team": "IMNTPU", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Micro F1", "official_metric_value": 0.6292650918635171, "accuracy_display": "0.6293", "micro_f1_display": "0.6293", "macro_f1_display": "0.4038", "weighted_f1_display": "0.6359", "official_metric_display": "0.6293", "rank": 4}, {"subtask": "Earnings Call", "participant_run": "IMNTPU Run3", "source_file": "earnings_call_predictions.csv", "team": "IMNTPU", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Micro F1", "official_metric_value": 0.6259842519685039, "accuracy_display": "0.6260", "micro_f1_display": "0.6260", "macro_f1_display": "0.4042", "weighted_f1_display": "0.6331", "official_metric_display": "0.6260", "rank": 5}, {"subtask": "Earnings Call", "participant_run": "MouMouRUC", "source_file": "FinArg3_EarningsCall_submission.csv", "team": "MouMouRUC", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Micro F1", "official_metric_value": 0.7203166226912928, "accuracy_display": "0.7165", "micro_f1_display": "0.7203", "macro_f1_display": "0.4995", "weighted_f1_display": "0.7268", "official_metric_display": "0.7203", "rank": 1}, {"subtask": "Earnings Call", "participant_run": "UTaipe", "source_file": "earnings_call_predictions.csv", "team": "UTaipe", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Micro F1", "official_metric_value": 0.6535433070866141, "accuracy_display": "0.6535", "micro_f1_display": "0.6535", "macro_f1_display": "0.4249", "weighted_f1_display": "0.6676", "official_metric_display": "0.6535", "rank": 3}, {"subtask": "Earnings Call", "participant_run": "majority", "source_file": "baseline: majority per dimension", "team": "Baseline", "is_duplicate_zip": false, "is_baseline": true, "official_metric_name": "Micro F1", "official_metric_value": 0.6666666666666666, "accuracy_display": "0.6667", "micro_f1_display": "0.6667", "macro_f1_display": "0.2857", "weighted_f1_display": "0.5476", "official_metric_display": "0.6667", "rank": 2}, {"subtask": "Analyst Report", "participant_run": "TMAK Run1", "source_file": "TMAK_FinArg3_AnalystReport_Run1.xlsx", "team": "TMAK", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Macro F1", "official_metric_value": 0.20711710001897896, "accuracy_display": "0.6060", "micro_f1_display": "0.6060", "macro_f1_display": "0.2071", "weighted_f1_display": "0.4720", "official_metric_display": "0.2071", "rank": 5}, {"subtask": "Analyst Report", "participant_run": "SMUCTDSG Run1", "source_file": "SMUCTDSG_SubTask2_submission1.xlsx", "team": "SMUCTDSG", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Macro F1", "official_metric_value": 0.2567129342239217, "accuracy_display": "0.4967", "micro_f1_display": "0.4967", "macro_f1_display": "0.2567", "weighted_f1_display": "0.4708", "official_metric_display": "0.2567", "rank": 3}, {"subtask": "Analyst Report", "participant_run": "SMUCTDSG Run2", "source_file": "SMUCTDSG_SubTask2_submission2.xlsx", "team": "SMUCTDSG", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Macro F1", "official_metric_value": 0.20802744972869452, "accuracy_display": "0.6093", "micro_f1_display": "0.6093", "macro_f1_display": "0.2080", "weighted_f1_display": "0.4723", "official_metric_display": "0.2080", "rank": 4}, {"subtask": "Analyst Report", "participant_run": "UTaipe", "source_file": "Test.xlsx", "team": "UTaipe", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Macro F1", "official_metric_value": 0.36177890011223346, "accuracy_display": "0.5927", "micro_f1_display": "0.5927", "macro_f1_display": "0.3618", "weighted_f1_display": "0.5566", "official_metric_display": "0.3618", "rank": 1}, {"subtask": "Analyst Report", "participant_run": "MouMouRUC", "source_file": "FinArg3_AnalystReport_submission.xlsx", "team": "MouMouRUC", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Macro F1", "official_metric_value": 0.2960835384071899, "accuracy_display": "0.3642", "micro_f1_display": "0.3642", "macro_f1_display": "0.2961", "weighted_f1_display": "0.3669", "official_metric_display": "0.2961", "rank": 2}, {"subtask": "Analyst Report", "participant_run": "majority", "source_file": "baseline: majority label (Partially True)", "team": "Baseline", "is_duplicate_zip": false, "is_baseline": true, "official_metric_name": "Macro F1", "official_metric_value": 0.18930041152263374, "accuracy_display": "0.6093", "micro_f1_display": "0.6093", "macro_f1_display": "0.1893", "weighted_f1_display": "0.4613", "official_metric_display": "0.1893", "rank": 6}, {"subtask": "Social Media", "participant_run": "MouMouRUC", "source_file": "FinArg3_SocialMedia_submission.json", "team": "MouMouRUC", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.5287356321839081, "accuracy_display": "0.5287", "micro_f1_display": "0.5287", "macro_f1_display": "0.5247", "weighted_f1_display": "0.5272", "official_metric_display": "0.5287", "rank": 2}, {"subtask": "Social Media", "participant_run": "TMUNLP prediction_1", "source_file": "prediction_1.json", "team": "TMUNLP", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.5402298850574713, "accuracy_display": "0.5402", "micro_f1_display": "0.5402", "macro_f1_display": "0.5397", "weighted_f1_display": "0.5388", "official_metric_display": "0.5402", "rank": 1}, {"subtask": "Social Media", "participant_run": "TMUNLP prediction_2", "source_file": "prediction_2.json", "team": "TMUNLP", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.5287356321839081, "accuracy_display": "0.5287", "micro_f1_display": "0.5287", "macro_f1_display": "0.5285", "weighted_f1_display": "0.5291", "official_metric_display": "0.5287", "rank": 3}, {"subtask": "Social Media", "participant_run": "TMUNLP prediction_3", "source_file": "prediction_3.json", "team": "TMUNLP", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.4942528735632184, "accuracy_display": "0.4943", "micro_f1_display": "0.4943", "macro_f1_display": "0.4860", "weighted_f1_display": "0.4823", "official_metric_display": "0.4943", "rank": 10}, {"subtask": "Social Media", "participant_run": "UTaipe", "source_file": "social_media_predictions.json", "team": "UTaipe", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.5172413793103449, "accuracy_display": "0.5172", "micro_f1_display": "0.5172", "macro_f1_display": "0.5167", "weighted_f1_display": "0.5157", "official_metric_display": "0.5172", "rank": 7}, {"subtask": "Social Media", "participant_run": "SCUNLP run1_final", "source_file": "run1.json", "team": "SCUNLP", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.45977011494252873, "accuracy_display": "0.4598", "micro_f1_display": "0.4598", "macro_f1_display": "0.4595", "weighted_f1_display": "0.4588", "official_metric_display": "0.4598", "rank": 12}, {"subtask": "Social Media", "participant_run": "BAIBAICHUCHU run1_majority_vote", "source_file": "Social_Media_Pairwise_Test_predictions.json", "team": "BAIBAICHUCHU", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.5172413793103449, "accuracy_display": "0.5172", "micro_f1_display": "0.5172", "macro_f1_display": "0.5094", "weighted_f1_display": "0.5058", "official_metric_display": "0.5172", "rank": 5}, {"subtask": "Social Media", "participant_run": "SCUNLP run2_final", "source_file": "run2.json", "team": "SCUNLP", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.4942528735632184, "accuracy_display": "0.4943", "micro_f1_display": "0.4943", "macro_f1_display": "0.4937", "weighted_f1_display": "0.4926", "official_metric_display": "0.4943", "rank": 9}, {"subtask": "Social Media", "participant_run": "BAIBAICHUCHU run2_local_blend", "source_file": "Social_Media_Pairwise_Test_predictions.json", "team": "BAIBAICHUCHU", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.5057471264367817, "accuracy_display": "0.5057", "micro_f1_display": "0.5057", "macro_f1_display": "0.4991", "weighted_f1_display": "0.4958", "official_metric_display": "0.5057", "rank": 8}, {"subtask": "Social Media", "participant_run": "BAIBAICHUCHU run3_attr_majority", "source_file": "Social_Media_Pairwise_Test_predictions.json", "team": "BAIBAICHUCHU", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.5172413793103449, "accuracy_display": "0.5172", "micro_f1_display": "0.5172", "macro_f1_display": "0.5141", "weighted_f1_display": "0.5118", "official_metric_display": "0.5172", "rank": 6}, {"subtask": "Social Media", "participant_run": "SCUNLP run3_final", "source_file": "run3.json", "team": "SCUNLP", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.4827586206896552, "accuracy_display": "0.4828", "micro_f1_display": "0.4828", "macro_f1_display": "0.4825", "weighted_f1_display": "0.4818", "official_metric_display": "0.4828", "rank": 11}, {"subtask": "Social Media", "participant_run": "majority", "source_file": "baseline: majority prediction (Post 1)", "team": "Baseline", "is_duplicate_zip": false, "is_baseline": true, "official_metric_name": "Accuracy", "official_metric_value": 0.5287356321839081, "accuracy_display": "0.5287", "micro_f1_display": "0.5287", "macro_f1_display": "0.3459", "weighted_f1_display": "0.3657", "official_metric_display": "0.5287", "rank": 4}], "stats": {"total_rows": 24, "non_duplicate_rows": 24, "teams": ["BAIBAICHUCHU", "IMNTPU", "MouMouRUC", "SCUNLP", "SMUCTDSG", "TMAK", "TMUNLP", "UTaipe"], "team_tasks": {"BAIBAICHUCHU": ["Social Media"], "IMNTPU": ["Earnings Call"], "MouMouRUC": ["Earnings Call", "Analyst Report", "Social Media"], "SCUNLP": ["Social Media"], "SMUCTDSG": ["Analyst Report"], "TMAK": ["Analyst Report"], "TMUNLP": ["Social Media"], "UTaipe": ["Earnings Call", "Analyst Report", "Social Media"]}, "total_teams": 8, "task_counts": {"Earnings Call": 3, "Analyst Report": 4, "Social Media": 5}, "coverage_counts": {"1": 6, "2": 0, "3": 2}, "multi_task_teams": 2, "all_task_teams": 2, "gold_total": 770, "gold_rows": [{"subtask": "Earnings Call", "status": "available", "items": "381", "source": "The-FinArgQuality-dataset-Quality-of-managers-arguments-in-Eearnings-Conference-Calls-main/testing_data_with_answer filtered by ECC_test_data"}, {"subtask": "Analyst Report", "status": "available", "items": "302", "source": "FinArg-3 - 分析師/標記資料.xlsx"}, {"subtask": "Social Media", "status": "available", "items": "87", "source": "Dataset/social media/Test with GT/ERAI_Dataset_pairwise_test.json"}], "best_by_task": {"Earnings Call": {"subtask": "Earnings Call", "participant_run": "MouMouRUC", "source_file": "FinArg3_EarningsCall_submission.csv", "team": "MouMouRUC", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Micro F1", "official_metric_value": 0.7203166226912928, "accuracy_display": "0.7165", "micro_f1_display": "0.7203", "macro_f1_display": "0.4995", "weighted_f1_display": "0.7268", "official_metric_display": "0.7203", "rank": 1}, "Analyst Report": {"subtask": "Analyst Report", "participant_run": "UTaipe", "source_file": "Test.xlsx", "team": "UTaipe", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Macro F1", "official_metric_value": 0.36177890011223346, "accuracy_display": "0.5927", "micro_f1_display": "0.5927", "macro_f1_display": "0.3618", "weighted_f1_display": "0.5566", "official_metric_display": "0.3618", "rank": 1}, "Social Media": {"subtask": "Social Media", "participant_run": "TMUNLP prediction_1", "source_file": "prediction_1.json", "team": "TMUNLP", "is_duplicate_zip": false, "is_baseline": false, "official_metric_name": "Accuracy", "official_metric_value": 0.5402298850574713, "accuracy_display": "0.5402", "micro_f1_display": "0.5402", "macro_f1_display": "0.5397", "weighted_f1_display": "0.5388", "official_metric_display": "0.5402", "rank": 1}}, "task_meta": {"Earnings Call": {"short": "Earnings", "metric": "Micro F1", "metric_key": "micro_f1", "description": "Argument-quality scoring across specificity, strength, persuasiveness, and objectivity.", "color": "#4F7CFF"}, "Analyst Report": {"short": "Analyst", "metric": "Macro F1", "metric_key": "macro_f1", "description": "Forecast-scenario verification across four truth labels.", "color": "#2EA87A"}, "Social Media": {"short": "Social", "metric": "Accuracy", "metric_key": "accuracy", "description": "Binary choice of the post with higher MPP; F1 shown as diagnostics.", "color": "#D9862B"}}, "task_order": ["Earnings Call", "Analyst Report", "Social Media"], "generated_at": "2026-07-17 16:26"}};
+    const rows = DATA.rows;
+    const stats = DATA.stats;
+
+    const taskColors = {
+      "Earnings Call": "#5b8cff",
+      "Analyst Report": "#4ade80",
+      "Social Media": "#f59e0b"
+    };
+    const esc = (s) => String(s ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
+    const pct = (v) => `${Math.max(0, Math.min(100, Number(v) * 100)).toFixed(1)}%`;
+    const taskRows = (task) => rows.filter(r => r.subtask === task && !r.is_duplicate_zip).sort((a,b) =>
+      b.official_metric_value - a.official_metric_value ||
+      Number(a.is_baseline) - Number(b.is_baseline) ||
+      a.participant_run.toLowerCase().localeCompare(b.participant_run.toLowerCase())
+    );
+
+    function renderPodium() {
+      document.getElementById("podium").innerHTML = stats.task_order.map(task => {
+        const row = stats.best_by_task[task];
+        return `<article class="podium-card" style="--accent:${taskColors[task]}">
+          <div class="task"><span>${esc(task)}</span><span>${esc(row.official_metric_name)}</span></div>
+          <div class="champ">
+            <div class="champ-name">${esc(row.participant_run)}</div>
+            <div class="score">${row.official_metric_display}<span class="metric">${esc(row.team)}</span></div>
+          </div>
+          <div class="track"><span style="--w:${pct(row.official_metric_value)}"></span></div>
+        </article>`;
+      }).join("");
+    }
+
+    function renderBoards() {
+      document.getElementById("taskBoards").innerHTML = stats.task_order.map(task => {
+        const list = taskRows(task);
+        return `<article class="board" style="--accent:${taskColors[task]}">
+          <div class="board-head"><h3>${esc(task)}</h3><span class="chip">${stats.task_counts[task]} teams</span></div>
+          <div class="rank-list">
+            ${list.map((row, i) => `<div class="rank-row ${i === 0 ? "top" : ""} ${row.is_baseline ? "baseline" : ""}">
+              <div class="rank-no">${i + 1}</div>
+              <div><div class="rank-run">${esc(row.participant_run)}</div><div class="rank-team">${esc(row.team)}</div></div>
+              <div class="rank-score">${row.official_metric_display}</div>
+            </div>`).join("")}
+          </div>
+        </article>`;
+      }).join("");
+    }
+
+    function tableRow(row) {
+      return `<tr class="${row.is_baseline ? "baseline-row" : ""}">
+        <td><b>${row.rank}</b></td>
+        <td><b>${esc(row.participant_run)}</b><div class="rank-team">${esc(row.team)}</div></td>
+        <td class="num">${row.official_metric_display}<div class="rank-team">${esc(row.official_metric_name)}</div></td>
+        <td class="num">${row.accuracy_display}</td>
+        <td class="num">${row.micro_f1_display}</td>
+        <td class="num">${row.macro_f1_display}</td>
+        <td class="num">${row.weighted_f1_display}</td>
+        <td><div class="source">${esc(row.source_file)}</div></td>
+      </tr>`;
+    }
+
+    function renderTaskTables() {
+      document.getElementById("taskTables").innerHTML = stats.task_order.map(task => {
+        const items = taskRows(task);
+        const rowsHtml = items.map(tableRow).join("");
+        return `<div class="task-table-block">
+          <div class="task-table-title">
+            <h3>${esc(task)}</h3>
+            <span class="chip">${esc(stats.task_meta[task].metric)} · ${items.length} official runs</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Run</th>
+                  <th>Official</th>
+                  <th>Accuracy</th>
+                  <th>Micro F1</th>
+                  <th>Macro F1</th>
+                  <th>Weighted F1</th>
+                  <th>Source</th>
+                </tr>
+              </thead>
+              <tbody>${rowsHtml}</tbody>
+            </table>
+          </div>
+        </div>`;
+      }).join("");
+    }
+
+    function renderMatrix() {
+      const headers = ["Team", "Earnings", "Analyst", "Social", "Coverage"];
+      const body = Object.entries(stats.team_tasks).map(([team, tasks]) => [
+        `<div class="cell"><b>${esc(team)}</b></div>`,
+        ...stats.task_order.map(task => `<div class="cell">${tasks.includes(task) ? '<span class="yes">Y</span>' : ''}</div>`),
+        `<div class="cell">${tasks.length} / 3</div>`
+      ].join("")).join("");
+      document.getElementById("teamMatrix").innerHTML = headers.map(h => `<div class="cell head">${esc(h)}</div>`).join("") + body;
+    }
+
+    renderPodium();
+    renderBoards();
+    renderTaskTables();
+    renderMatrix();
+  </script>
+</body>
+</html>
