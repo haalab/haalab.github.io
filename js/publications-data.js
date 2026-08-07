@@ -29,6 +29,32 @@ const PUBLICATIONS = [
    "Open Access": "https://link.springer.com/book/10.1007/978-981-16-2881-8",
    "EMNLP-2021 Tutorial": "https://sites.google.com/nlg.csie.ntu.edu.tw/financial-opinion-mining/home"
   },
+ "n": ""
+ },
+ {
+  "t": "Can Frontier LLMs Capture $40 Billion in Supply Chain Value?",
+  "a": "Chung-Chi Chen, Ichiro Kobayashi, Yusuke Miyao, and Hiroya Takamura. 2026.",
+  "v": "Proceedings of The 35th ACM International Conference on Information and Knowledge Management (CIKM'26).",
+  "y": "2026",
+  "s": "Conference",
+  "g": [
+   "High-Stakes Decision-Making",
+   "Societal Transformation Analysis"
+  ],
+  "l": {},
+  "n": ""
+ },
+ {
+  "t": "RV-FLS: A Resource for Retrospective Verification of Forward-Looking Statements",
+  "a": "Zhi-Hong Lin, Shih-Hung Wu, and Chung-Chi Chen. 2026.",
+  "v": "Proceedings of The 35th ACM International Conference on Information and Knowledge Management (CIKM'26).",
+  "y": "2026",
+  "s": "Conference",
+  "g": [
+   "Governance & Policy Design",
+   "Information Retrieval for Agents"
+  ],
+  "l": {},
   "n": ""
  },
  {
