@@ -32,6 +32,45 @@ const PUBLICATIONS = [
  "n": ""
  },
  {
+  "t": "Faithful to the Frame: Source-Framing Propagation in LLM-Agent Decision Workflows",
+  "a": "Yi-Ting Chiu, and Chung-Chi Chen. 2026.",
+  "v": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP'26).",
+  "y": "2026",
+  "s": "Conference",
+  "g": [
+   "LLM-based Agent Architectures",
+   "High-Stakes Decision-Making"
+  ],
+  "l": {},
+  "n": ""
+ },
+ {
+  "t": "MM-Compliance: A Multilingual Multimodal Dataset for Sustainability Compliance Auditing",
+  "a": "Rui He, Jianhua Yang, Tomoki Kera, Atsushi Keyaki, Anaïs Lhuissier, Juyeon Kang, Min-Yuh Day, Guan-Bo Yang, Hsin-Hsi Chen, Dittaya Wanvarie, Yongjae Lee, Suhwan Park, Yuriko Nakao, Chung-Chi Chen, and Yohei Seki. 2026.",
+  "v": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP'26).",
+  "y": "2026",
+  "s": "Conference",
+  "g": [
+   "Economic & Cultural Impact",
+   "Governance & Policy Design"
+  ],
+  "l": {},
+  "n": "* Co-advised this work; shared last authorship"
+ },
+ {
+  "t": "PersonaEdit: Representative Sample Selection for Personalized Model Editing",
+  "a": "You-Mei Huang, Chung-Chi Chen, and An-Zi Yen. 2026.",
+  "v": "Findings of the Association for Computational Linguistics: EMNLP 2026.",
+  "y": "2026",
+  "s": "Conference",
+  "g": [
+   "LLM-based Agent Architectures",
+   "Performance & Efficiency"
+  ],
+  "l": {},
+  "n": ""
+ },
+ {
   "t": "Can Frontier LLMs Capture $40 Billion in Supply Chain Value?",
   "a": "Chung-Chi Chen, Ichiro Kobayashi, Yusuke Miyao, and Hiroya Takamura. 2026.",
   "v": "Proceedings of The 35th ACM International Conference on Information and Knowledge Management (CIKM'26).",
