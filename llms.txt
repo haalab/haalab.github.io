@@ -12,7 +12,7 @@ Key facts:
   (higher-order thinking augmentation, high-stakes decision-making, high-fidelity
   interaction); (3) Human-Agent Society (societal transformation, impact analysis,
   governance & policy design).
-- 90+ publications at venues including ACL, EMNLP, SIGIR, WWW, CIKM, LREC, NAACL, COLM.
+- 100+ publications at venues including ACL, EMNLP, SIGIR, WWW, CIKM, LREC, NAACL, COLM.
 - Organizes the FinNLP workshop series (10+ editions), NTCIR shared tasks
   (FinNum, FinArg, RegCom), and SemEval tasks (NumEval, PromiseEval).
 - Recruiting PhD students (via SOKENDAI), research interns (via NII MOU program),
