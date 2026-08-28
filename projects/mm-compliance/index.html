@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MM-Compliance — Multilingual Multimodal Sustainability Compliance Auditing</title>
+  <meta name="description" content="MM-Compliance is a SASB-aligned multilingual multimodal benchmark for sustainability compliance auditing across six languages, with page-level evidence and disclosure-completeness annotations.">
+  <meta name="author" content="Human-Agent Ally Lab">
+  <link rel="canonical" href="https://haalab.github.io/projects/mm-compliance/">
+  <link rel="icon" type="image/png" href="../../images/logo_completed_rmbg.png">
+  <meta property="og:site_name" content="Human-Agent Ally Lab Projects">
+  <meta property="og:title" content="MM-Compliance">
+  <meta property="og:description" content="A six-language, SASB-aligned multimodal benchmark with page-level evidence and disclosure-completeness annotations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://haalab.github.io/projects/mm-compliance/">
+  <meta property="og:image" content="https://haalab.github.io/images/logo_with_haalab.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/project-base.css">
+  <link rel="stylesheet" href="project.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "MM-Compliance: A Multilingual Multimodal Dataset for Sustainability Compliance Auditing",
+    "datePublished": "2026",
+    "isPartOf": { "@type": "PublicationEvent", "name": "EMNLP 2026" },
+    "publisher": { "@type": "Organization", "name": "Association for Computational Linguistics" },
+    "url": "https://haalab.github.io/projects/mm-compliance/"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="lab-bar">
+    <div class="project-shell lab-bar__inner">
+      <a class="lab-brand" href="../../index.html" aria-label="Human-Agent Ally Lab home">
+        <img src="../../images/logo_completed_rmbg.png" alt="">
+        <span class="lab-brand__name">HAA Lab <small>Human-Agent Ally</small></span>
+      </a>
+      <span class="lab-project-mark">A HAA Lab Project</span>
+    </div>
+  </div>
+
+  <nav class="project-nav" aria-label="Project navigation">
+    <div class="project-shell project-nav__inner">
+      <a class="project-wordmark" href="#top">MM-Compliance</a>
+      <div class="project-nav__links">
+        <a href="#overview">Overview</a>
+        <a href="#resources">Resources</a>
+        <a class="nav-pill" href="https://regcom.nlpfin.com/" target="_blank" rel="noopener">NTCIR-19 RegCom ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero" id="top">
+      <div class="project-shell hero__grid">
+        <div>
+          <p class="eyebrow">EMNLP 2026</p>
+          <h1>MM-<span>Compliance</span></h1>
+          <p class="hero__lede">A SASB-aligned multilingual multimodal benchmark for sustainability compliance auditing, with page-level evidence and disclosure-completeness annotations.</p>
+          <ul class="hero__meta" aria-label="Research themes">
+            <li>6 Languages</li>
+            <li>7,174 PDF Pages</li>
+            <li>366 Metric Types</li>
+            <li>SASB-aligned</li>
+          </ul>
+          <div class="hero__actions">
+            <a class="button button--primary" href="https://drive.google.com/drive/folders/1c92DxJCDDRCghxMmnR7IzHwdxtEuqqaG?usp=sharing" target="_blank" rel="noopener">Access the dataset <span aria-hidden="true">↗</span></a>
+            <span class="button button--disabled" aria-label="Code will be released soon">Code <small>Coming soon</small></span>
+          </div>
+        </div>
+
+        <div class="audit-visual" aria-label="Abstract illustration of multilingual documents being reviewed for compliance">
+          <div class="audit-sheet audit-sheet--back" aria-hidden="true"></div>
+          <div class="audit-sheet audit-sheet--front" aria-hidden="true">
+            <div class="audit-sheet__top"><span class="audit-sheet__label">Evidence record</span><span class="audit-sheet__lang">多言語 / ML</span></div>
+            <div class="audit-sheet__image"></div>
+            <div class="audit-sheet__line"></div>
+            <div class="audit-sheet__line"></div>
+            <div class="audit-sheet__line"></div>
+            <div class="audit-sheet__result"><span>Sustainability claim</span><b>Review</b></div>
+          </div>
+          <div class="visual-note">Six languages. Page-level evidence. Completeness labels.</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section section--white" id="overview" aria-labelledby="overview-title">
+      <div class="project-shell">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Why MM-Compliance</p>
+            <h2 class="section-title" id="overview-title">Compliance evidence does not live in one language—or one modality.</h2>
+          </div>
+          <p class="section-intro">MM-Compliance aligns industry-specific SASB metrics with real disclosure pages from corporate ESG and sustainability reports. Its completeness annotations distinguish fully compliant evidence from partial or superficial mentions.</p>
+        </div>
+
+        <div class="dimension-grid">
+          <article class="dimension">
+            <span class="dimension__number">01 / LANGUAGE</span>
+            <span class="dimension__stat">6</span>
+            <h3>Languages</h3>
+            <p>English, French, Japanese, Chinese, Korean, and Thai—covering linguistic and regional reporting variation.</p>
+          </article>
+          <article class="dimension">
+            <span class="dimension__number">02 / DOCUMENTS</span>
+            <span class="dimension__stat">7,174</span>
+            <h3>PDF pages</h3>
+            <p>Original page layouts preserve text, tables, charts, infographics, and other visual structures important to ESG auditing.</p>
+          </article>
+          <article class="dimension">
+            <span class="dimension__number">03 / FRAMEWORK</span>
+            <span class="dimension__stat">366</span>
+            <h3>SASB metric types</h3>
+            <p>Page-level evidence is aligned with industry-specific metrics and labeled for complete versus incomplete disclosure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section benchmark-section" id="benchmark" aria-labelledby="benchmark-title">
+      <div class="project-shell">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Evaluation benchmark</p>
+            <h2 class="section-title" id="benchmark-title">From finding the page to verifying the disclosure.</h2>
+          </div>
+          <p class="section-intro">The benchmark separates two stages of a practical auditing workflow: locating relevant evidence in a long report, then deciding whether the evidence fully satisfies a reporting requirement.</p>
+        </div>
+
+        <div class="benchmark-grid">
+          <article class="task-card">
+            <span class="task-card__number">Task 01</span>
+            <h3>Page-level Compliance Judgment</h3>
+            <p>Given a SASB metric and one report page, predict <em>yes</em>, <em>yes but not complete</em>, or <em>no</em>.</p>
+          </article>
+          <article class="task-card">
+            <span class="task-card__number">Task 02</span>
+            <h3>Metric-to-Page Evidence Retrieval</h3>
+            <p>Given a metric description and a multi-page ESG report, rank the pages that contain the supporting evidence.</p>
+          </article>
+        </div>
+
+        <div class="finding">
+          <span class="finding__label">Key finding</span>
+          <p>Current models can often shortlist relevant evidence pages—reaching an average Hit@20 of 0.882—but still struggle to distinguish partial disclosures from complete compliance. Requirement-aware completeness verification remains the central bottleneck.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ink" id="resources" aria-labelledby="resources-title">
+      <div class="project-shell">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Open research resources</p>
+            <h2 class="section-title" id="resources-title">Use the dataset. Follow the research.</h2>
+          </div>
+          <p class="section-intro">The dataset is available now. Code and the final paper link will be added here as soon as they are released.</p>
+        </div>
+
+        <div class="resource-grid">
+          <article class="resource-card resource-card--active">
+            <div class="resource-card__top"><span class="resource-card__type">Data</span><span class="status">Available</span></div>
+            <h3>Dataset</h3>
+            <p>Access the public MM-Compliance files from Google Drive.</p>
+            <a href="https://drive.google.com/drive/folders/1c92DxJCDDRCghxMmnR7IzHwdxtEuqqaG?usp=sharing" target="_blank" rel="noopener"><span>Open dataset</span><span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="resource-card">
+            <div class="resource-card__top"><span class="resource-card__type">Implementation</span><span class="status">Planned</span></div>
+            <h3>Code</h3>
+            <p>The official repository will be linked here when it is ready.</p>
+            <span class="resource-card__pending">GitHub link coming soon</span>
+          </article>
+          <article class="resource-card">
+            <div class="resource-card__top"><span class="resource-card__type">Publication</span><span class="status">EMNLP ’26</span></div>
+            <h3>Paper</h3>
+            <p>Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing.</p>
+            <span class="resource-card__pending">Paper link coming soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="regcom-title">
+      <div class="project-shell">
+        <div class="regcom-panel">
+          <div class="regcom-panel__content">
+            <p class="section-kicker">From dataset to shared task</p>
+            <h2 id="regcom-title">Powering RegCom at NTCIR-19</h2>
+            <p>MM-Compliance provides the dataset for RegCom, our NTCIR-19 shared task on regulatory compliance. RegCom brings this benchmark to the research community for shared evaluation.</p>
+            <a class="button" href="https://regcom.nlpfin.com/" target="_blank" rel="noopener">Visit the RegCom website <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="regcom-stamp" aria-label="NTCIR-19 RegCom">
+            <div><span>NTCIR-19</span><strong>RegCom</strong><span>Shared task</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="publication" aria-labelledby="publication-title">
+      <div class="project-shell publication-grid">
+        <div>
+          <p class="section-kicker">Publication</p>
+          <h2 class="section-title" id="publication-title">MM-Compliance: A Multilingual Multimodal Dataset for Sustainability Compliance Auditing</h2>
+          <p class="authors">Rui He, Jianhua Yang, Tomoki Kera, Atsushi Keyaki, Anaïs Lhuissier, Juyeon Kang, Min-Yuh Day, Guan-Bo Yang, Hsin-Hsi Chen, Dittaya Wanvarie, Yongjae Lee, Suhwan Park, Yuriko Nakao, Chung-Chi Chen, and Yohei Seki.</p>
+          <p class="venue">Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP ’26).</p>
+        </div>
+        <aside class="citation-card" aria-label="BibTeX citation">
+          <div class="citation-card__top"><strong>Cite this work</strong><button class="copy-button" type="button" data-copy-citation>Copy BibTeX</button></div>
+          <pre id="bibtex">@inproceedings{he2026mmcompliance,
+  title     = {MM-Compliance: A Multilingual Multimodal Dataset for Sustainability Compliance Auditing},
+  author    = {He, Rui and Yang, Jianhua and Kera, Tomoki and Keyaki, Atsushi and Lhuissier, Anaïs and Kang, Juyeon and Day, Min-Yuh and Yang, Guan-Bo and Chen, Hsin-Hsi and Wanvarie, Dittaya and Lee, Yongjae and Park, Suhwan and Nakao, Yuriko and Chen, Chung-Chi and Seki, Yohei},
+  booktitle = {Proceedings of EMNLP},
+  year      = {2026}
+}</pre>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <div class="project-shell">
+      <div class="project-footer__grid">
+        <div>
+          <a class="lab-brand" href="../../index.html" aria-label="Human-Agent Ally Lab home">
+            <img src="../../images/logo_completed_rmbg.png" alt="">
+            <span class="lab-brand__name">HAA Lab <small>Human-Agent Ally</small></span>
+          </a>
+          <p class="project-footer__copy">Preparing for the human-agent society through research in agent design, human-agent teaming, and societal transformation. National Institute of Informatics, Tokyo, Japan.</p>
+        </div>
+        <div class="project-footer__links">
+          <strong>Explore</strong>
+          <a href="../../index.html">HAA Lab website</a>
+          <a href="../../publications.html">Publications</a>
+          <a href="../../people.html">Our team</a>
+          <a href="../../contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="project-footer__bottom">© <span data-current-year>2026</span> Human-Agent Ally Lab. MM-Compliance is a HAA Lab project.</div>
+    </div>
+  </footer>
+
+  <script src="../shared/project.js"></script>
+</body>
+</html>

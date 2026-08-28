@@ -1,0 +1,25 @@
+/* Project-owned layer. Change these tokens and all main-content styles freely. */
+:root {
+  --project-accent: #5065a8;
+  --project-accent-strong: #23315f;
+  --project-highlight: #e6e9ff;
+  --project-ink: #1c2340;
+  --project-muted: #626a82;
+  --project-paper: #f7f7fb;
+  --project-surface: #ffffff;
+  --project-line: #dfe1eb;
+}
+
+.template-hero { padding: clamp(5rem, 11vw, 9rem) 0; }
+.template-kicker { margin: 0 0 1rem; color: var(--project-accent); font-size: .72rem; font-weight: 850; letter-spacing: .15em; text-transform: uppercase; }
+.template-hero h1 { max-width: 11ch; margin: 0; font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 7.5rem); letter-spacing: -.075em; line-height: .9; }
+.template-hero h1 span { color: var(--project-accent); }
+.template-lede { max-width: 42rem; margin: 1.5rem 0 2rem; color: var(--project-muted); font-size: 1.1rem; }
+.template-button { display: inline-block; padding: .8rem 1rem; border-radius: .55rem; color: #fff; background: var(--project-accent-strong); font-weight: 800; text-decoration: none; }
+.template-section { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--project-surface); }
+.template-section--tint { background: var(--project-highlight); }
+.template-section h2 { max-width: 16ch; margin: 0; font-family: var(--font-display); font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -.055em; line-height: 1.05; }
+.template-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }
+.template-grid > p { color: var(--project-muted); }
+
+@media (max-width: 700px) { .template-grid { grid-template-columns: 1fr; gap: 1.5rem; } }

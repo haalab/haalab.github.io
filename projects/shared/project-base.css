@@ -1,0 +1,191 @@
+/* HAA Lab project-page foundation
+   Keep this file project-neutral. Individual projects own their palette,
+   typography accents, and narrative layout in a local project.css file. */
+
+:root {
+  --lab-cream: #faf6ee;
+  --lab-ink: #35200f;
+  --lab-ink-soft: #6f5136;
+  --lab-line: #e7dcc6;
+  --lab-orange: #d96f1e;
+  --lab-gold: #f0a63c;
+  --project-accent: #397d5b;
+  --project-accent-strong: #174c36;
+  --project-highlight: #d9f99d;
+  --project-ink: #14261d;
+  --project-muted: #53645b;
+  --project-paper: #f8faf4;
+  --project-surface: #ffffff;
+  --project-line: #d8dfd5;
+  --project-radius: 1.25rem;
+  --font-display: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--project-ink);
+  background: var(--project-paper);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: .75rem;
+  left: .75rem;
+  padding: .7rem 1rem;
+  border-radius: .5rem;
+  color: #fff;
+  background: var(--project-accent-strong);
+  transform: translateY(-160%);
+}
+.skip-link:focus { transform: translateY(0); }
+
+.project-shell {
+  width: min(1180px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.lab-bar {
+  position: relative;
+  z-index: 100;
+  color: var(--lab-ink);
+  background: var(--lab-cream);
+  border-bottom: 1px solid var(--lab-line);
+}
+.lab-bar__inner {
+  min-height: 4.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.lab-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .72rem;
+  text-decoration: none;
+}
+.lab-brand img { width: 2.7rem; height: 2.7rem; object-fit: contain; }
+.lab-brand__name {
+  display: grid;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.05;
+}
+.lab-brand__name small {
+  margin-top: .28rem;
+  color: var(--lab-ink-soft);
+  font-family: var(--font-body);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.lab-project-mark {
+  color: var(--lab-ink-soft);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.project-nav {
+  position: sticky;
+  z-index: 90;
+  top: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--project-line), transparent 20%);
+  background: rgba(248, 250, 244, .92);
+  background: color-mix(in srgb, var(--project-paper), transparent 8%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.project-nav__inner {
+  min-height: 3.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+.project-wordmark {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 850;
+  letter-spacing: -.025em;
+  text-decoration: none;
+}
+.project-nav__links { display: flex; align-items: center; gap: 1.45rem; }
+.project-nav__links a {
+  color: var(--project-muted);
+  font-size: .82rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+.project-nav__links a:hover { color: var(--project-accent-strong); }
+.project-nav__links .nav-pill {
+  padding: .48rem .82rem;
+  border: 1px solid var(--project-line);
+  border-radius: 999px;
+  color: var(--project-accent-strong);
+  background: var(--project-surface);
+}
+
+.project-footer {
+  padding: 3.5rem 0 2rem;
+  color: var(--lab-cream);
+  background: var(--lab-ink);
+}
+.project-footer__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(12rem, .7fr);
+  gap: 3rem;
+  align-items: start;
+}
+.project-footer .lab-brand { color: #fff; }
+.project-footer .lab-brand__name small { color: #dbc8ab; }
+.project-footer__copy {
+  max-width: 38rem;
+  margin: 1.1rem 0 0;
+  color: #dbc8ab;
+  font-size: .9rem;
+}
+.project-footer__links { display: grid; gap: .55rem; }
+.project-footer__links strong {
+  margin-bottom: .25rem;
+  color: var(--lab-gold);
+  font-size: .7rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.project-footer__links a { color: #fff7ea; font-size: .9rem; text-decoration: none; }
+.project-footer__links a:hover { color: var(--lab-gold); }
+.project-footer__bottom {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,.15);
+  color: #bba98d;
+  font-size: .76rem;
+}
+
+@media (max-width: 720px) {
+  .project-shell { width: min(100% - 1.5rem, 1180px); }
+  .lab-project-mark { display: none; }
+  .project-nav { overflow-x: auto; }
+  .project-nav__inner { min-width: max-content; }
+  .project-nav__links { gap: 1rem; }
+  .project-footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
