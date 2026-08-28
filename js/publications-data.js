@@ -54,7 +54,9 @@ const PUBLICATIONS = [
    "Economic & Cultural Impact",
    "Governance & Policy Design"
   ],
-  "l": {},
+  "l": {
+   "Project Page": "projects/mm-compliance/index.html"
+  },
   "n": "* Co-advised this work; shared last authorship"
  },
  {
