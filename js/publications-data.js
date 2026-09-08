@@ -32,6 +32,19 @@ const PUBLICATIONS = [
  "n": ""
  },
  {
+  "t": "Linguistic Cues in Political Debates: Lexical Choices and Evaluative Framing in GPT-Generated Commentary",
+  "a": "Yu-Yu Chang, Chung-Chi Chen, and Ming-Hung Wang. 2026.",
+  "v": "Findings of the Association for Computational Linguistics: AACL-IJCNLP 2026.",
+  "y": "2026",
+  "s": "Conference",
+  "g": [
+   "High-Fidelity Interaction Design",
+   "Societal Transformation Analysis"
+  ],
+  "l": {},
+  "n": "* Co-advised this work; shared last authorship"
+ },
+ {
   "t": "Faithful to the Frame: Source-Framing Propagation in LLM-Agent Decision Workflows",
   "a": "Yi-Ting Chiu, and Chung-Chi Chen. 2026.",
   "v": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP'26).",
