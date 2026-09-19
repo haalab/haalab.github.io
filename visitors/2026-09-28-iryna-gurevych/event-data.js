@@ -11,8 +11,8 @@ window.HAA_EVENT = {
 
   speaker: {
     name: "Iryna Gurevych",
-    role: "Professor of Ubiquitous Knowledge Processing",
-    affiliation: "Department of Computer Science · TU Darmstadt",
+    role: "Professor · Ubiquitous Knowledge Processing Lab",
+    affiliation: "Department of Computer Science · Technical University of Darmstadt",
     photo: "iryna-gurevych.png",
     photoAlt: "Portrait of Professor Iryna Gurevych",
     website: "https://psych.ukp-lab.de/",
