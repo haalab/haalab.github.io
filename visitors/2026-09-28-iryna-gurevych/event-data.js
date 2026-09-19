@@ -10,9 +10,9 @@ window.HAA_EVENT = {
   topicLine: "Mental Health NLP · Clinical AI · Responsible Evaluation",
 
   speaker: {
-    name: "Iryna Gurevych",
-    role: "Professor · Ubiquitous Knowledge Processing Lab",
-    affiliation: "Department of Computer Science · Technical University of Darmstadt",
+    name: "Prof. Iryna Gurevych",
+    role: "Ubiquitous Knowledge Processing Lab (UKP Lab)",
+    affiliation: "Department of Computer Science · Technical University of Darmstadt, Germany",
     photo: "iryna-gurevych.png",
     photoAlt: "Portrait of Professor Iryna Gurevych",
     website: "https://psych.ukp-lab.de/",
@@ -28,10 +28,10 @@ window.HAA_EVENT = {
 
   /* Keep posterSummary around 55–90 words for the best A4 balance. */
   posterSummary:
-    "More than a billion people live with a mental health condition while access to care remains limited. This talk shows how clinically grounded NLP can structure therapy transcripts, use synthetic data to ease privacy constraints, and evaluate systems around what clinicians actually value. It closes with a vision for personalized, privacy-aware tools that support clinicians rather than replace them.",
+    "More than a billion people live with a mental health condition, yet care remains scarce and often a poor fit for the person receiving it, so people increasingly turn to unsupervised chatbots to fill the gap. Because language is the richest signal we have into someone's psychological state, natural language processing is the key to doing this better. In this talk, I argue that NLP can genuinely help, but solving it takes clinical grounding, real data, and responsible evaluation, not just larger models. Drawing on work from my group, I show how large language models can turn therapy transcripts into treatment-relevant structure, how clinically grounded synthetic data eases the field's privacy bottleneck, and why evaluation must reflect what clinicians actually care about, not just what's easy to benchmark. I close with an invitation to build mental health AI that is personalized, privacy-aware, and responsibly evaluated: tools that support clinicians, not replace them.",
 
   posterBio:
-    "Iryna Gurevych is Professor at TU Darmstadt and a leading NLP researcher. A past ACL President and ACL/ELLIS Fellow, she received the Royal Society's 2025 Milner Award for major contributions to natural language processing and artificial intelligence.",
+    "Iryna Gurevych is Professor in the Department of Computer Science at the Technical University of Darmstadt in Germany, where she leads the Ubiquitous Knowledge Processing Lab (UKP Lab). She is also an adjunct professor at MBZUAI in Abu Dhabi, UAE, and an affiliated professor at INSAIT in Sofia, Bulgaria. She is widely known for fundamental contributions to natural language processing and machine learning. Professor Gurevych is a past president of the Association for Computational Linguistics (ACL), the leading professional society in NLP. Her many accolades include being a Fellow of the ACL, an ELLIS Fellow, and the recipient of an ERC Advanced Grant. Most recently, she received the 2025 Milner Award of the British Royal Society for major contributions to NLP and artificial intelligence that combine deep understanding of human language and cognitive faculty with the latest paradigms in machine learning.",
 
   host: "Hosted by HAA Lab · Human-Agent Ally Lab",
   organizer: "National Institute of Informatics, Tokyo",
