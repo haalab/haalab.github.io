@@ -32,6 +32,21 @@ const PUBLICATIONS = [
  "n": ""
  },
  {
+  "t": "Self-Guided Planning and Repair Framework for Code Generation (Student Abstract)",
+  "a": "Chun-Wei Kang, Chung-Chi Chen, and An-Zi Yen. 2026.",
+  "v": "Proceedings of the AAAI Conference on Artificial Intelligence, 40(48), 41236–41238.",
+  "y": "2026",
+  "s": "Conference",
+  "g": [
+   "LLM-based Agent Architectures",
+   "Performance & Efficiency"
+  ],
+  "l": {
+   "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/42226"
+  },
+  "n": ""
+ },
+ {
   "t": "Linguistic Cues in Political Debates: Lexical Choices and Evaluative Framing in GPT-Generated Commentary",
   "a": "Yu-Yu Chang, Chung-Chi Chen, and Ming-Hung Wang. 2026.",
   "v": "Findings of the Association for Computational Linguistics: AACL-IJCNLP 2026.",
@@ -1015,6 +1030,21 @@ const PUBLICATIONS = [
    "pdf": "http://www.econ.ntu.edu.tw/ter/new/data/new/forthcoming/108-001.pdf"
   },
  "n": ""
+ },
+ {
+  "t": "Upstream Influence, Downstream Re-Anchoring in LLM Agent Chains",
+  "a": "Chun-Yu Hsu, Lun-Wei Ku, and Chung-Chi Chen. 2026.",
+  "v": "arXiv.",
+  "y": "2026",
+  "s": "Preprint",
+  "g": [
+   "LLM-based Agent Architectures",
+   "High-Stakes Decision-Making"
+  ],
+  "l": {
+   "pdf": "https://arxiv.org/abs/2610.17723"
+  },
+  "n": ""
  },
  {
   "t": "AgoraSim: A Hybrid Agent-Based Modeling Framework",
