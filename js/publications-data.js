@@ -1081,7 +1081,7 @@ const PUBLICATIONS = [
   "a": "Chun-Wei Kang, Chung-Chi Chen, and An-Zi Yen. 2026.",
   "v": "Proceedings of the AAAI Conference on Artificial Intelligence, 40(48), 41236–41238.",
   "y": "2026",
-  "s": "Conference",
+  "s": "Workshop",
   "g": [
    "LLM-based Agent Architectures",
    "Performance & Efficiency"
