@@ -189,6 +189,10 @@ body.site-lab {
 .site-lab .value-card h3, .site-lab .value-card h4 { font-size: 1.25rem; font-weight: 500; line-height: 1.25; letter-spacing: -.025em; margin-bottom: 1rem; }
 .site-lab .value-card p { font-size: .9rem; line-height: 1.75; }
 
+/* Keep the pinned publication search small until its controls are needed. */
+.site-lab .pub-toolbar .filter-row[hidden] { display: none; }
+.site-lab .pub-toolbar.is-compact { margin-bottom: calc(3rem + var(--pub-filter-space, 0px)); }
+
 /* A directory of actual people, with names taking precedence over badges. */
 .site-lab[data-page="people"] .pi-card {
   display: grid;
