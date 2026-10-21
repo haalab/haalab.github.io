@@ -7,20 +7,20 @@
   <meta name="description" content="The Human-Agent Ally Lab (HAA Lab) at the National Institute of Informatics, Japan, researches human-agent teaming, LLM-based agent design, and the societal impact of AI agents. Led by Dr. Chung-Chi Chen.">
   <meta name="keywords" content="Human-Agent Ally Lab, HAA Lab, human-agent teaming, LLM agents, agent design, human-agent society, NII, Chung-Chi Chen, AI research lab Japan">
   <meta name="author" content="Human-Agent Ally Lab">
-  <link rel="canonical" href="https://haalab.github.io/">
-  <link rel="icon" type="image/png" href="images/logo_completed_rmbg.png">
-  <link rel="apple-touch-icon" href="images/logo_completed_rmbg.png">
+  <link rel="canonical" href="https://haalab.org/">
+  <link rel="icon" type="image/svg+xml" href="images/haa-lab-logo.svg">
+  <link rel="apple-touch-icon" href="images/haa-lab-touch.png">
 
   <meta property="og:site_name" content="Human-Agent Ally Lab">
   <meta property="og:title" content="HAA Lab | Human-Agent Ally Lab">
   <meta property="og:description" content="Preparing for the human-agent society: research on human-agent teaming, agent design, and societal transformation at NII, Japan.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://haalab.github.io/">
-  <meta property="og:image" content="https://haalab.github.io/images/logo_with_haalab.png">
+  <meta property="og:url" content="https://haalab.org/">
+  <meta property="og:image" content="https://haalab.org/images/haa-lab-social.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="HAA Lab | Human-Agent Ally Lab">
   <meta name="twitter:description" content="Research on human-agent teaming, agent design, and the human-agent society at NII, Japan.">
-  <meta name="twitter:image" content="https://haalab.github.io/images/logo_with_haalab.png">
+  <meta name="twitter:image" content="https://haalab.org/images/haa-lab-social.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,11 +31,11 @@
   {
     "@context": "https://schema.org",
     "@type": "ResearchOrganization",
-    "@id": "https://haalab.github.io/#org",
+    "@id": "https://haalab.org/#org",
     "name": "Human-Agent Ally Lab",
     "alternateName": "HAA Lab",
-    "url": "https://haalab.github.io/",
-    "logo": "https://haalab.github.io/images/logo_with_haalab.png",
+    "url": "https://haalab.org/",
+    "logo": "https://haalab.org/images/haa-lab-logo.svg",
     "email": "chen@nii.ac.jp",
     "description": "Research laboratory on human-agent teaming, LLM-based agent design, and the societal impact of intelligent agents, based at the National Institute of Informatics, Japan.",
     "parentOrganization": {
@@ -45,10 +45,10 @@
     },
     "founder": {
       "@type": "Person",
-      "@id": "https://nlpfin.github.io/#person",
+      "@id": "https://nlpfin.com/#person",
       "name": "Chung-Chi Chen",
       "jobTitle": "Assistant Professor",
-      "url": "https://nlpfin.github.io/",
+      "url": "https://nlpfin.com/",
       "sameAs": [
         "https://scholar.google.com.tw/citations?user=sJwWSg8AAAAJ",
         "https://www.linkedin.com/in/chung-chi-chen-a6b8a6138/",
@@ -71,16 +71,21 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Human-Agent Ally Lab",
-    "url": "https://haalab.github.io/",
-    "publisher": { "@id": "https://haalab.github.io/#org" }
+    "url": "https://haalab.org/",
+    "publisher": { "@id": "https://haalab.org/#org" }
   }
   </script>
+  <link rel="stylesheet" href="design/system.css">
+  <link rel="stylesheet" href="design/lab.css">
+  <link rel="stylesheet" href="design/brand-orange.css">
+  <link rel="stylesheet" href="design/notebook-refinements.css">
+  <script defer src="design/interaction.js"></script>
 </head>
-<body>
+<body class="haa-2026 site-lab" data-page="index" data-layout="core">
   <nav class="nav" aria-label="Main navigation">
     <div class="container nav-container">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo_completed_rmbg.png" alt="HAA Lab logo — human and agent hands forming a shield" class="nav-logo-img">
+        <img src="images/haa-lab-logo.svg" alt="HAA Lab logo — human and agent hands forming a shield" class="nav-logo-img">
         <div class="nav-logo-text">
           <div class="nav-title">HAA Lab</div>
           <div class="nav-subtitle">Human-Agent Ally</div>
@@ -110,15 +115,16 @@
     </div>
   </nav>
 
-  <header class="hero">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <header class="hero notebook-hero">
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-content">
-          <span class="hero-eyebrow"><span class="pulse-dot"></span>Preparing for the Human-Agent Society</span>
+        <div class="notebook-stack">
+        <div class="hero-content notebook-sheet">
+          <div class="notebook-meta" aria-hidden="true"><span>HAA / RESEARCH NOTES</span><span>↗</span></div>
+          <span class="hero-eyebrow">Preparing for the Human-Agent Society</span>
           <h1 class="hero-title">
             <span>Where Humans and</span>
-            <span class="hero-title-gradient">Agents Become Allies</span>
+            <span class="hero-title-gradient"><span class="notebook-highlight">Agents Become Allies</span></span>
           </h1>
           <p class="hero-description">
             The Human-Agent Ally Lab pioneers research that bridges humans and intelligent agents —
@@ -126,6 +132,7 @@
             for a future where humans and agents work, decide, and live together.
           </p>
           <p class="hero-note">
+            <svg class="notebook-note-mark" viewBox="0 0 16 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M13 2 Q4 0 5 12 L4 83 Q2 97 13 96"></path></svg>
             <strong>HAA (はぁ〜):</strong> our name embodies the sigh of relief and satisfaction —
             "Haa~, I'm so glad this exists!" — the feeling when human-agent collaboration truly works.
           </p>
@@ -136,10 +143,12 @@
             </a>
             <a href="contact.html" class="btn btn-outline">Join the Lab</a>
           </div>
+          <div class="notebook-foot" aria-hidden="true"><span>HUMAN–AGENT ALLY LAB</span><span>Preparing for the Human-Agent Society</span></div>
+        </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="emblem">
+        <div class="hero-visual">
+          <div class="emblem" aria-hidden="true">
             <div class="emblem-glow"></div>
             <div class="emblem-ring">
               <svg viewBox="0 0 100 100">
@@ -158,7 +167,7 @@
               </svg>
             </div>
             <div class="emblem-logo">
-              <img src="images/logo_completed_rmbg.png" alt="HAA Lab logo">
+              <img src="images/haa-lab-logo.svg" alt="HAA Lab logo">
             </div>
           </div>
         </div>
@@ -180,52 +189,43 @@
 
         <div class="grid-3">
           <article class="card card-hover research-pillar reveal">
-            <div class="icon-box">
-              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
             <h3>Agent Design &amp; Frameworks</h3>
             <p style="color: var(--ink-soft); margin-bottom: 1.3rem;">
               Building the foundations of intelligent agents: robust architectures,
               advanced information retrieval, and performance optimization.
             </p>
             <ul class="check-list">
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Information Retrieval for Agents</span></li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span>LLM-based Agent Architectures</span></li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Performance &amp; Efficiency</span></li>
+              <li><span>Information Retrieval for Agents</span></li>
+              <li><span>LLM-based Agent Architectures</span></li>
+              <li><span>Performance &amp; Efficiency</span></li>
             </ul>
             <a href="research.html" class="learn-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
           </article>
 
           <article class="card card-hover research-pillar reveal reveal-d1">
-            <div class="icon-box">
-              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
             <h3>Human-Agent Teaming</h3>
             <p style="color: var(--ink-soft); margin-bottom: 1.3rem;">
               Exploring how agents augment human cognition in complex problem-solving,
               high-stakes decision-making, and collaborative work.
             </p>
             <ul class="check-list">
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Higher-Order Thinking Augmentation</span></li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span>High-Stakes Decision-Making</span></li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span>High-Fidelity Interaction Design</span></li>
+              <li><span>Higher-Order Thinking Augmentation</span></li>
+              <li><span>High-Stakes Decision-Making</span></li>
+              <li><span>High-Fidelity Interaction Design</span></li>
             </ul>
             <a href="research.html" class="learn-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
           </article>
 
           <article class="card card-hover research-pillar reveal reveal-d2">
-            <div class="icon-box">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-            </div>
             <h3>Human-Agent Society</h3>
             <p style="color: var(--ink-soft); margin-bottom: 1.3rem;">
               Investigating how integrating intelligent agents transforms social structures,
               economies, and the norms we live by.
             </p>
             <ul class="check-list">
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Societal Transformation Analysis</span></li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Economic &amp; Cultural Impact</span></li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Governance &amp; Policy Design</span></li>
+              <li><span>Societal Transformation Analysis</span></li>
+              <li><span>Economic &amp; Cultural Impact</span></li>
+              <li><span>Governance &amp; Policy Design</span></li>
             </ul>
             <a href="research.html" class="learn-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
           </article>
@@ -241,17 +241,14 @@
         </div>
         <div class="grid-3">
           <div class="card card-hover value-card reveal">
-            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"></path><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"></path></svg></div>
             <h4>Award-Winning Team</h4>
             <p>Home of a SIGIR Early Career Researcher Award recipient and an ANLP Outstanding Paper Award (top 2%), with work published at ACL, EMNLP, SIGIR, and WWW.</p>
           </div>
           <div class="card card-hover value-card reveal reveal-d1">
-            <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></div>
             <h4>Global Network</h4>
             <p>Active collaborations across Japan, Taiwan, Germany, the UK, India, Korea, France, Thailand, and beyond — plus leadership of ACL SIG-FinTech and the NTCIR evaluation series.</p>
           </div>
           <div class="card card-hover value-card reveal reveal-d2">
-            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg></div>
             <h4>Community Builders</h4>
             <p>We founded and run the FinNLP workshop series, shared tasks at NTCIR and SemEval, and tutorials at AACL, EMNLP, ECAI, SIGIR, and LREC.</p>
           </div>
@@ -301,7 +298,7 @@
           <h3>Connect</h3>
           <ul class="footer-links">
             <li><a href="mailto:chen@nii.ac.jp">chen@nii.ac.jp</a></li>
-            <li><a href="https://nlpfin.github.io/" target="_blank" rel="noopener">PI Homepage</a></li>
+            <li><a href="https://nlpfin.com/index.html" target="_blank" rel="noopener">PI Homepage</a></li>
           </ul>
         </div>
       </div>
