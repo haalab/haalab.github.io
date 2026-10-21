@@ -10,6 +10,7 @@
     menuAccessibility();
     faqAccessibility();
     publicationFeedback();
+    publicationToolbar();
     const hero = document.querySelector('.profile-hero-field, .notebook-hero');
     if (hero) materialField(hero);
     if (!motion.matches) {
@@ -111,6 +112,65 @@
       const chip=event.target.closest('.chip');
       if(chip&&!motion.matches&&chip.animate) chip.animate([{transform:'scale(.96)'},{transform:'scale(1.02)'},{transform:'scale(1)'}],{duration:300,easing:'cubic-bezier(.2,.7,.2,1)'});
     }));
+  }
+
+  function publicationToolbar() {
+    const toolbar = document.querySelector('.site-lab .pub-toolbar');
+    const input = toolbar?.querySelector('input[type="search"]');
+    const rows = toolbar ? [...toolbar.querySelectorAll('.filter-row')] : [];
+    if (!input || !rows.length) return;
+
+    // A stable origin keeps the sticky threshold independent of the toolbar height.
+    const origin = document.createElement('div');
+    origin.setAttribute('aria-hidden', 'true');
+    toolbar.before(origin);
+    let hovering = false, compact = false, printing = false, frame = 0;
+
+    function update() {
+      frame = 0;
+      const style = getComputedStyle(toolbar);
+      const pinned = style.position === 'sticky' &&
+        origin.getBoundingClientRect().top < parseFloat(style.top);
+      const focused = toolbar.contains(document.activeElement);
+      const next = pinned && !hovering && !focused && !printing;
+      if (next === compact) return;
+
+      if (next) {
+        const height = toolbar.offsetHeight;
+        rows.forEach(row => { row.hidden = true; });
+        // Reserve the removed height so the publication being read stays in place.
+        toolbar.style.setProperty('--pub-filter-space', `${height - toolbar.offsetHeight}px`);
+      } else {
+        rows.forEach(row => { row.hidden = false; });
+        toolbar.style.removeProperty('--pub-filter-space');
+      }
+      compact = next;
+      toolbar.classList.toggle('is-compact', compact);
+    }
+
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    input.addEventListener('pointerenter', event => {
+      if (event.pointerType === 'mouse' || event.pointerType === 'pen') {
+        hovering = true;
+        update();
+      }
+    });
+    toolbar.addEventListener('pointerleave', () => { hovering = false; update(); });
+    toolbar.addEventListener('focusin', update);
+    toolbar.addEventListener('focusout', () => queueMicrotask(update));
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', () => {
+      // Re-measure the reserved height after responsive wrapping changes.
+      rows.forEach(row => { row.hidden = false; });
+      toolbar.classList.remove('is-compact');
+      toolbar.style.removeProperty('--pub-filter-space');
+      compact = false;
+      schedule();
+    }, { passive: true });
+    window.addEventListener('beforeprint', () => { printing = true; update(); });
+    window.addEventListener('afterprint', () => { printing = false; update(); });
+    if (document.fonts) document.fonts.ready.then(schedule);
+    update();
   }
 
   function faqAccessibility() {
