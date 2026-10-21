@@ -1,0 +1,164 @@
+/* The original shared research note: one page, one backing, and quiet annotations. */
+.haa-2026.site-lab .hero.notebook-hero {
+  min-height: 0;
+  padding: clamp(8.6rem, 10.5vw, 10rem) 0 clamp(4.8rem, 7vw, 6rem);
+}
+.haa-2026.site-lab .notebook-hero .hero-grid {
+  grid-template-columns: minmax(0, 1.62fr) minmax(17rem, 1fr);
+  gap: clamp(2.2rem, 4vw, 4.5rem);
+  align-items: center;
+}
+.haa-2026.site-lab .notebook-stack::before {
+  inset: 18px -11px -12px 11px;
+  border: 1px solid color-mix(in srgb, var(--primary) 23%, var(--line));
+  border-radius: 0;
+  background: color-mix(in srgb, var(--amber) 30%, var(--bg));
+  transform: rotate(-2deg);
+}
+.haa-2026.site-lab .notebook-stack::after { display: none; }
+.haa-2026.site-lab .notebook-sheet {
+  --note-margin: 1.15rem;
+  padding: 1.9rem 2.3rem 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0 0 3px 2px;
+  background: var(--surface);
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--ink) 2%, transparent), 0 23px 50px -24px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+.haa-2026.site-lab .notebook-sheet::before {
+  left: var(--note-margin);
+  top: 1.25rem;
+  bottom: 1.2rem;
+  width: 1px;
+  background: color-mix(in srgb, var(--primary) 15%, transparent);
+}
+.haa-2026.site-lab .notebook-sheet::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-bottom-left-radius: 2px;
+  background: linear-gradient(45deg, color-mix(in srgb, var(--amber) 38%, var(--surface)) 49%, var(--bg) 50%);
+  box-shadow: -1px 2px 2px color-mix(in srgb, var(--primary) 7%, transparent);
+  pointer-events: none;
+}
+.haa-2026.site-lab .notebook-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1.6rem;
+  padding: 0 0 .75rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: .62rem;
+  line-height: 1.5;
+  letter-spacing: .12em;
+}
+.haa-2026.site-lab .notebook-meta span:last-child {
+  padding-right: .15rem;
+  color: var(--primary-deep);
+  font: 400 1.4rem/1 Georgia, serif;
+}
+.haa-2026.site-lab .notebook-hero .hero-eyebrow { margin-bottom: 1.15rem; }
+.haa-2026.site-lab .notebook-hero .hero-title {
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.2rem, 3.65vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+}
+.haa-2026.site-lab .notebook-highlight::before {
+  bottom: .035em;
+  height: .34em;
+  background: color-mix(in srgb, var(--amber) 39%, transparent);
+}
+.haa-2026.site-lab .notebook-hero .hero-description {
+  margin-bottom: 1.25rem;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.haa-2026.site-lab .notebook-hero .hero-note {
+  position: relative;
+  margin-bottom: 1.6rem;
+  padding: .2rem 0 .2rem 1rem;
+  border: 0;
+  color: var(--ink-soft);
+  font-size: .84rem;
+  line-height: 1.8;
+}
+.haa-2026.site-lab .notebook-hero .hero-note strong { color: var(--ink); }
+.haa-2026.site-lab .notebook-note-mark {
+  position: absolute;
+  left: -.2rem;
+  top: -.05rem;
+  width: .85rem;
+  height: calc(100% + .1rem);
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 1.6px;
+  stroke-linecap: round;
+  overflow: visible;
+  pointer-events: none;
+}
+.haa-2026.site-lab .notebook-note-mark path {
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  animation: notebook-annotation 1.4s .45s var(--ease-out) both;
+}
+.haa-2026.site-lab .notebook-hero .hero-actions { align-items: center; gap: .7rem; }
+.haa-2026.site-lab .notebook-hero .hero-actions .btn {
+  min-height: 44px;
+  padding: .7rem 1.1rem;
+  border-radius: .35rem;
+  font-size: .85rem;
+  box-shadow: none;
+}
+.haa-2026.site-lab .notebook-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .3rem 1rem;
+  margin-top: 1.7rem;
+  padding-top: .9rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: .6rem;
+  line-height: 1.5;
+  letter-spacing: .07em;
+}
+.haa-2026.site-lab .notebook-foot span:last-child {
+  font: italic 400 .76rem/1.4 Georgia, serif;
+  letter-spacing: 0;
+}
+@keyframes notebook-annotation { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@media (min-width: 901px) and (max-width: 1100px) {
+  .haa-2026.site-lab .notebook-hero .hero-grid { grid-template-columns: minmax(0, 1.75fr) minmax(15rem, 1fr); gap: 2rem; }
+  .haa-2026.site-lab .notebook-sheet { padding-inline: 1.8rem; --note-margin: .8rem; }
+  .haa-2026.site-lab .notebook-hero .hero-title { font-size: 2.4rem; }
+}
+@media (max-width: 900px) {
+  .haa-2026.site-lab .hero.notebook-hero { padding: 7rem 0 4rem; }
+  .haa-2026.site-lab .notebook-hero .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 3rem; max-width: 42rem; margin-inline: auto; }
+  .haa-2026.site-lab .notebook-hero .hero-visual { order: -1; }
+  .haa-2026.site-lab .notebook-hero .emblem { width: min(12rem, 48vw); }
+  .haa-2026.site-lab .notebook-hero .hero-title { font-size: clamp(2rem, 5.7vw, 3rem); }
+}
+@media (max-width: 580px) {
+  .haa-2026.site-lab .notebook-hero .container { padding-inline: 1.2rem; }
+  .haa-2026.site-lab .notebook-sheet { --note-margin: .6rem; padding: 1.45rem 1.25rem 1.25rem; }
+  .haa-2026.site-lab .notebook-stack::before { inset: 13px -5px -9px 6px; transform: rotate(-1.4deg); }
+  .haa-2026.site-lab .notebook-meta { margin-bottom: 1.4rem; font-size: .55rem; }
+  .haa-2026.site-lab .notebook-hero .hero-eyebrow { font-size: .6rem; letter-spacing: .075em; }
+  .haa-2026.site-lab .notebook-hero .hero-title { font-size: clamp(1.75rem, 6.6vw, 2.4rem); }
+  .haa-2026.site-lab .notebook-hero .hero-description { font-size: .91rem; line-height: 1.8; }
+  .haa-2026.site-lab .notebook-hero .hero-note { font-size: .8rem; line-height: 1.8; }
+  .haa-2026.site-lab .notebook-hero .hero-actions { align-items: stretch; flex-direction: column; gap: .65rem; }
+  .haa-2026.site-lab .notebook-hero .hero-actions .btn { width: 100%; padding: .8rem 1rem; }
+  .haa-2026.site-lab .notebook-foot { margin-top: 1.35rem; font-size: .55rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .haa-2026.site-lab .notebook-note-mark path { animation: none; }
+}
