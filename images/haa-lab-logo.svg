@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="730" height="730" viewBox="0 0 730 730" role="img" aria-labelledby="haa-logo-title haa-logo-desc">
+  <title id="haa-logo-title">HAA Lab</title>
+  <desc id="haa-logo-desc">A golden human hand and a copper robotic hand form a protective shield. Luminous circuit connections across the robotic hand represent human and agent collaboration.</desc>
+  <defs>
+    <linearGradient id="haa-gold" x1="207" y1="74" x2="135" y2="408" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffcb43"/><stop offset=".34" stop-color="#ffab12"/><stop offset=".69" stop-color="#ed7b00"/><stop offset="1" stop-color="#dc5900"/>
+    </linearGradient>
+    <linearGradient id="haa-palm" x1="166" y1="129" x2="326" y2="487" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffc234"/><stop offset=".51" stop-color="#ff9f09"/><stop offset="1" stop-color="#f48000"/>
+    </linearGradient>
+    <linearGradient id="haa-finger-gold" x1="214" y1="306" x2="371" y2="527" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffcb46"/><stop offset=".55" stop-color="#ff9e10"/><stop offset="1" stop-color="#f57a00"/>
+    </linearGradient>
+    <linearGradient id="haa-top" x1="248" y1="50" x2="652" y2="311" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ef6c0c"/><stop offset=".49" stop-color="#ff941b"/><stop offset=".8" stop-color="#ffb239"/><stop offset="1" stop-color="#cc4615"/>
+    </linearGradient>
+    <linearGradient id="haa-top-under" x1="241" y1="62" x2="568" y2="134" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e55a0d"/><stop offset=".52" stop-color="#d94e08"/><stop offset="1" stop-color="#ff941a"/>
+    </linearGradient>
+    <linearGradient id="haa-lower-left" x1="87" y1="366" x2="382" y2="722" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffc42d"/><stop offset=".42" stop-color="#f9890b"/><stop offset="1" stop-color="#dd5708"/>
+    </linearGradient>
+    <linearGradient id="haa-metal" x1="432" y1="178" x2="584" y2="614" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e66d23"/><stop offset=".34" stop-color="#d87839"/><stop offset=".57" stop-color="#a84a32"/><stop offset=".81" stop-color="#773024"/><stop offset="1" stop-color="#a44216"/>
+    </linearGradient>
+    <linearGradient id="haa-finger-metal" x1="362" y1="143" x2="552" y2="303" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8c321d"/><stop offset=".3" stop-color="#b84718"/><stop offset=".7" stop-color="#f18a2e"/><stop offset="1" stop-color="#ef9e42"/>
+    </linearGradient>
+    <linearGradient id="haa-thumb" x1="361" y1="355" x2="512" y2="469" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e68a35"/><stop offset=".25" stop-color="#a84423"/><stop offset=".65" stop-color="#8d382b"/><stop offset="1" stop-color="#5e241f"/>
+    </linearGradient>
+    <linearGradient id="haa-edge" x1="549" y1="346" x2="634" y2="579" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffb445"/><stop offset=".4" stop-color="#ca5c2b"/><stop offset="1" stop-color="#853521"/>
+    </linearGradient>
+    <radialGradient id="haa-node"><stop stop-color="#ffffbe"/><stop offset=".55" stop-color="#ffff87"/><stop offset="1" stop-color="#fff33c"/></radialGradient>
+    <radialGradient id="haa-node-halo"><stop stop-color="#ffe938" stop-opacity=".45"/><stop offset="1" stop-color="#ffd531" stop-opacity="0"/></radialGradient>
+    <path id="haa-human-shape" d="M238 35C206 54 178 83 167 121C158 151 159 181 172 203C184 225 206 234 234 241C268 249 290 273 320 291C340 303 357 302 370 309C381 315 378 326 368 332C347 345 324 332 302 321C286 313 271 305 260 311C244 319 252 344 266 367C286 399 316 423 348 441C365 451 388 459 399 469C410 479 407 489 396 490C384 491 367 481 352 476C308 460 272 436 238 404C263 441 298 468 333 489C351 500 371 510 380 522C387 533 378 541 367 538C352 535 331 523 313 514C268 491 231 465 201 432C222 471 256 500 294 523C307 531 321 538 326 545C332 554 325 559 316 556C300 551 285 543 271 538C226 521 186 492 158 457C173 484 194 507 219 523C232 532 246 537 251 543C258 551 248 555 240 551C218 542 198 528 180 512C145 482 118 446 97 405C69 351 52 296 55 239C55 198 63 153 76 122C112 90 170 60 238 35Z"/>
+    <path id="haa-robot-shape" d="M361 716C414 694 452 675 484 645C511 619 524 588 527 553C531 522 526 496 507 481C494 470 477 466 459 456C433 443 416 425 402 410C388 396 374 389 361 376C350 366 353 355 365 352C379 348 397 359 414 369C432 379 449 396 463 398C481 400 480 384 471 365C452 327 424 289 391 262C372 247 347 233 333 219C322 208 325 195 337 192C349 188 366 201 381 210C420 231 450 254 478 281L491 294C466 257 434 225 398 199C384 189 371 181 362 169C352 156 354 144 364 141C374 137 389 146 404 154C438 171 467 189 489 212C504 227 517 245 532 262C518 235 499 211 478 190C462 175 445 164 428 149C418 141 414 131 420 126C427 121 440 128 452 135C485 152 509 173 530 197C544 214 557 232 570 246C558 222 545 202 529 184C515 170 501 159 497 147C492 137 501 131 510 135C527 143 542 157 554 170C590 208 616 253 634 301C653 353 659 407 647 459C635 514 608 563 572 604C527 653 453 693 361 716Z"/>
+    <clipPath id="haa-human-clip"><use href="#haa-human-shape"/></clipPath>
+    <clipPath id="haa-robot-clip"><use href="#haa-robot-shape"/></clipPath>
+  </defs>
+  <!-- The shield and the two hands are independent closed vector contours. -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M171 157C191 86 249 34 321 19C438-7 562 41 648 124C666 193 674 283 666 366L653 321C649 245 640 183 617 153C544 100 443 53 354 54C278 50 215 89 171 157Z" fill="url(#haa-top)"/>
+    <path d="M171 157C207 86 262 45 334 30C384 19 439 20 483 35C431 32 385 40 351 54C278 50 215 89 171 157Z" fill="url(#haa-top-under)"/>
+    <path d="M648 124C658 158 665 208 668 256C672 301 671 336 666 366L653 321C649 245 640 183 617 153Z" fill="#e97520" opacity=".7"/>
+    <path d="M171 157C191 86 249 34 321 19C438-7 562 41 648 124" fill="none" stroke="#ffb84a" stroke-width="1.4" opacity=".7"/>
+    <path d="M61 343C81 418 114 485 164 540C220 604 284 648 361 677C436 653 491 610 517 552C512 617 458 672 361 716C270 676 196 624 141 552C96 493 69 422 61 343Z" fill="url(#haa-lower-left)"/>
+    <path d="M361 677V716C437 688 495 651 535 607C572 567 594 520 596 478C563 542 522 590 469 627C437 650 401 665 361 677Z" fill="#c44b0a"/>
+    <path d="M61 343C81 418 114 485 164 540C220 604 284 648 361 677" fill="none" stroke="#ffd650" stroke-width="1.3" opacity=".75"/>
+    <use href="#haa-human-shape" fill="url(#haa-gold)" stroke="#f7910e" stroke-width=".7"/>
+    <g clip-path="url(#haa-human-clip)">
+      <path d="M230 40C180 80 151 131 166 186C173 218 197 233 231 241C269 249 293 275 320 291C343 305 366 301 376 314C381 324 371 333 359 335C333 342 311 321 286 313C267 306 251 310 250 327C248 345 264 374 288 399C325 436 363 451 395 468C407 474 408 485 400 489C369 483 332 465 304 449C274 430 248 409 226 384C205 362 189 345 164 326C125 297 95 257 84 215C73 178 76 149 76 122Z" fill="url(#haa-palm)"/>
+      <path d="M238 35C202 60 178 92 167 124C158 151 161 180 173 202C185 224 207 234 234 241C213 237 195 234 178 225C150 210 132 189 132 163C133 114 171 67 238 35Z" fill="#ffd157" opacity=".68"/>
+      <path d="M372 310C358 305 342 303 323 292C300 278 283 264 270 259C243 247 222 243 206 234" fill="none" stroke="#ffe179" stroke-width="1.3" opacity=".76"/>
+      <path d="M377 321C369 335 354 340 335 333C313 326 294 309 277 305C259 299 246 308 243 323C234 356 254 387 278 413C302 440 337 456 369 469C381 474 393 480 403 480" fill="none" stroke="#dc6700" stroke-width="17" opacity=".24"/>
+      <path d="M238 404C264 441 298 468 333 489C351 500 371 510 380 522" fill="none" stroke="#ffbd36" stroke-width="2" opacity=".6"/>
+      <path d="M201 432C221 469 256 500 294 523C307 531 321 538 326 545" fill="none" stroke="#ffc139" stroke-width="1.8" opacity=".56"/>
+      <path d="M158 457C174 485 193 506 220 524C232 532 245 538 251 545" fill="none" stroke="#ff9f17" stroke-width="1.3" opacity=".6"/>
+      <path d="M258 314C244 325 254 350 269 373C293 410 329 437 369 456C382 462 394 466 401 474C405 479 407 484 402 487C385 482 373 475 356 469C316 454 280 430 256 400C228 363 231 331 244 313C248 307 254 303 264 303" fill="url(#haa-finger-gold)" opacity=".42"/>
+      <path d="M239 35C180 72 150 130 160 178" fill="none" stroke="#ffe18a" stroke-width="1.4" opacity=".7"/>
+    </g>
+    <use href="#haa-robot-shape" fill="url(#haa-metal)" stroke="#ab421b" stroke-width=".8"/>
+    <g clip-path="url(#haa-robot-clip)">
+      <!-- Copper joint plates follow the original fingers. -->
+      <path d="M323 188L352 182L407 213L424 222L417 240L387 251L350 228Z" fill="url(#haa-finger-metal)"/>
+      <path d="M357 138L370 133L414 156L448 177L438 197L404 196L375 175Z" fill="url(#haa-finger-metal)"/>
+      <path d="M418 120L432 119L469 143L489 158L476 173L450 170L426 150Z" fill="url(#haa-finger-metal)"/>
+      <path d="M496 129L515 131L542 155L554 174L537 179L514 160Z" fill="url(#haa-finger-metal)"/>
+      <path d="M428 180L447 177L465 191L460 207L435 211L412 198L417 186Z" fill="#ff9c36"/>
+      <path d="M435 211L460 207L454 229L438 215Z" fill="#be4d16"/>
+      <path d="M463 158L478 157L498 172L497 186L480 188L461 174Z" fill="#ef8a2b"/>
+      <path d="M480 188L497 186L511 199L500 210L484 199Z" fill="#a8471f"/>
+      <path d="M535 165L551 166L565 181L568 195L553 192L536 180Z" fill="#f5983b"/>
+      <path d="M553 192L568 195L579 209L576 216L562 204Z" fill="#a7471d"/>
+      <path d="M460 207L476 201L499 228L528 266L518 280L493 274L477 246Z" fill="#faac4a"/>
+      <path d="M454 229L460 207L477 246L493 274L482 283L467 257Z" fill="#c26423"/>
+      <path d="M500 210L511 199L534 226L557 259L543 271L529 262L518 242Z" fill="#f4a044"/>
+      <path d="M562 204L576 216L595 246L601 267L585 278L568 253Z" fill="#f6a043"/>
+      <path d="M489 300L522 278L561 265L602 266L626 320L642 387L633 421L578 353Z" fill="#e48a43" opacity=".36"/>
+      <path d="M482 304L490 428L578 353Z" fill="#a94830" opacity=".7"/>
+      <path d="M490 428L562 474L578 353C534 392 520 407 490 428Z" fill="#8b3529" opacity=".72"/>
+      <path d="M578 353L633 421L562 474Z" fill="#c8663b" opacity=".7"/>
+      <path d="M562 474L633 421L567 547Z" fill="#63271f" opacity=".66"/>
+      <path d="M562 474L567 547L527 603L497 626L522 538L515 490Z" fill="#9e3f22" opacity=".7"/>
+      <path d="M597 283C623 339 633 392 622 445C610 502 582 548 550 581C600 542 633 491 646 436C656 379 644 324 622 281Z" fill="url(#haa-edge)" opacity=".69"/>
+      <path d="M348 347L379 343L419 369L441 390L462 398L490 428L480 463C453 456 421 434 402 411C389 397 372 389 358 375Z" fill="url(#haa-thumb)"/>
+      <path d="M356 357C371 350 386 361 404 370C413 375 420 382 424 390L413 400C393 387 372 379 356 369Z" fill="#eb8c36" opacity=".53"/>
+      <path d="M423 388C427 402 440 411 456 420L485 436L477 461C454 452 433 440 414 422L404 409Z" fill="#67291f" opacity=".4"/>
+      <path d="M527 511C539 550 521 596 492 627C460 664 414 696 361 716C423 698 473 673 515 641C560 607 592 567 614 525C582 564 551 583 525 596C537 565 540 536 527 511Z" fill="#ac4317" opacity=".72"/>
+      <path d="M361 716C411 697 455 668 485 634C516 598 530 558 527 520C540 553 528 597 502 633C471 673 422 701 361 716Z" fill="#ffa62c"/>
+      <path d="M362 145C371 166 405 181 427 193M420 129C429 147 458 159 471 167M500 138C509 154 532 167 540 177" fill="none" stroke="#ffc263" stroke-width="1.4" opacity=".64"/>
+      <path d="M338 194C345 202 363 211 379 220M367 354C382 354 398 367 412 374" fill="none" stroke="#ffc467" stroke-width="1.2" opacity=".7"/>
+    </g>
+    <!-- Circuit paths, with small radial node glows rather than blurred raster halos. -->
+    <g clip-path="url(#haa-robot-clip)">
+    <g fill="none" stroke="#ffbe1b" stroke-width="4.3" opacity=".66">
+      <path d="M369 219L426 244L483 305L522 279L562 265M483 305L578 353L602 266M522 279L578 353L634 421L562 474L490 428L421 399M483 305L490 428L578 353L562 474L567 547L527 603M634 421L567 547M478 458L490 428M518 492L562 474"/>
+    </g>
+    <g fill="none" stroke="#ffe65b" stroke-width="2.25">
+      <path d="M369 219L426 244L483 305L522 279L562 265M483 305L578 353L602 266M522 279L578 353L634 421L562 474L490 428L421 399M483 305L490 428L578 353L562 474L567 547L527 603M634 421L567 547M478 458L490 428M518 492L562 474"/>
+    </g>
+    <g fill="url(#haa-node-halo)">
+      <circle cx="369" cy="219" r="16"/><circle cx="426" cy="244" r="19"/><circle cx="483" cy="305" r="22"/>
+      <circle cx="522" cy="279" r="19"/><circle cx="562" cy="265" r="16"/><circle cx="602" cy="266" r="16"/>
+      <circle cx="578" cy="353" r="33"/><circle cx="634" cy="421" r="21"/><circle cx="490" cy="428" r="25"/>
+      <circle cx="421" cy="399" r="16"/><circle cx="562" cy="474" r="23"/><circle cx="567" cy="547" r="23"/><circle cx="527" cy="603" r="15"/>
+    </g>
+    <g fill="url(#haa-node)" stroke="#ffbb0a" stroke-width="1.8">
+      <circle cx="369" cy="219" r="8"/><circle cx="426" cy="244" r="10"/><circle cx="483" cy="305" r="12"/>
+      <circle cx="522" cy="279" r="10.5"/><circle cx="562" cy="265" r="8.8"/><circle cx="602" cy="266" r="8.5"/>
+      <circle cx="578" cy="353" r="18"/><circle cx="634" cy="421" r="11.5"/><circle cx="490" cy="428" r="13.5"/>
+      <circle cx="421" cy="399" r="8.5"/><circle cx="562" cy="474" r="12.5"/><circle cx="567" cy="547" r="12.5"/><circle cx="527" cy="603" r="7.5"/>
+    </g>
+    </g>
+  </g>
+</svg>
