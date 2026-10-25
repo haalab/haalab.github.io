@@ -221,6 +221,7 @@ body.site-lab {
 .site-lab[data-page="people"] .person-card {
   min-height: 12rem;
   padding: 1.7rem 0;
+  overflow: visible;
   border: 0;
   border-bottom: 1px solid #e3d7c7;
   border-radius: 0;
@@ -234,6 +235,78 @@ body.site-lab {
 .site-lab[data-page="people"] .person-affil { margin-bottom: .7rem; font-size: .79rem; line-height: 1.65; }
 .site-lab[data-page="people"] .person-topic { padding: 0; border-radius: 0; background: none; color: #985323; font-size: .76rem; font-weight: 500; line-height: 1.55; }
 .site-lab[data-page="people"] .person-note { font-size: .76rem; line-height: 1.65; }
+.site-lab[data-page="people"] .person-honor {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  max-width: 100%;
+  margin: .55rem 0 .15rem;
+  padding: .6rem .7rem;
+  border: 1px solid #e8cc82;
+  border-radius: 6px;
+  background: #fff4d9;
+  color: #6f4b12;
+}
+.site-lab[data-page="people"] .person-honor-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  margin-top: .1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.site-lab[data-page="people"] .person-honor-copy { min-width: 0; }
+.site-lab[data-page="people"] .person-honor-label {
+  display: block;
+  margin-bottom: .15rem;
+  font-size: .59rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.site-lab[data-page="people"] .person-honor-title {
+  margin: 0;
+  color: inherit;
+  font-size: .74rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.site-lab[data-page="people"] .person-more-papers { width: 100%; margin-top: .35rem; }
+.site-lab[data-page="people"] .person-more-papers > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 36px;
+  color: var(--primary-deep);
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  list-style: none;
+  cursor: pointer;
+}
+.site-lab[data-page="people"] .person-more-papers > summary::-webkit-details-marker { display: none; }
+.site-lab[data-page="people"] .person-more-papers > summary::after {
+  content: '';
+  width: .35rem;
+  height: .35rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+}
+.site-lab[data-page="people"] .person-more-papers[open] > summary::after { transform: translateY(1px) rotate(225deg); }
+.site-lab[data-page="people"] .person-more-papers-list {
+  border-left: 1px solid var(--line);
+  padding-left: .85rem;
+}
+.site-lab[data-page="people"] .person-more-papers-list > .person-note { margin-top: .85rem; }
+.site-lab[data-page="people"] .person-more-papers-list > .person-note:first-child { margin-top: .25rem; }
+@media (pointer: coarse) {
+  .site-lab[data-page="people"] .person-more-papers > summary { min-height: 44px; }
+}
 
 /* Dates act as a readable timeline, rather than decorative calendar tiles. */
 .site-lab[data-page="events"] main .container { max-width: 1140px !important; }
