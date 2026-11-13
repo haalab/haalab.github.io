@@ -33,7 +33,7 @@ const PUBLICATIONS = [
   },
   {
     "t": "When Diagnostic Simulation Forgets Social Reality",
-    "a": "Chung-Chi Chen, YU KAI HSUN, and Alipio Jorge. 2027.",
+    "a": "Chung-Chi Chen, Yu-Kai Hsun, and Alipio Jorge. 2027.",
     "v": "Findings of the Association for Computational Linguistics: EACL 2027.",
     "y": "2027",
     "s": "Conference",
