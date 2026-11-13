@@ -32,6 +32,19 @@ const PUBLICATIONS = [
     "n": ""
   },
   {
+    "t": "When Diagnostic Simulation Forgets Social Reality",
+    "a": "Chung-Chi Chen, YU KAI HSUN, and Alipio Jorge. 2027.",
+    "v": "Findings of the Association for Computational Linguistics: EACL 2027.",
+    "y": "2027",
+    "s": "Conference",
+    "g": [
+      "High-Fidelity Interaction Design",
+      "High-Stakes Decision-Making"
+    ],
+    "l": {},
+    "n": ""
+  },
+  {
     "t": "Linguistic Cues in Political Debates: Lexical Choices and Evaluative Framing in GPT-Generated Commentary",
     "a": "Yu-Yu Chang, Chung-Chi Chen, and Ming-Hung Wang. 2026.",
     "v": "Findings of the Association for Computational Linguistics: AACL-IJCNLP 2026.",
